@@ -320,56 +320,101 @@ export default function GetInTouch() {
             </form>
           </div>
 
-          {/* Right Side - Info Cards */}
+          {/* Right Side - Why Choose Us */}
           <div
-            className={`space-y-8 transition-all duration-700 delay-400 ${
+            className={`space-y-6 transition-all duration-700 delay-400 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
             }`}
           >
-            {/* Global Presence Card */}
-            <div>
-              <div className="flex items-start gap-3 mb-3">
-                <div className="text-[#0d9488] mt-1">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            {/* Why Partner With Us */}
+            <div className="bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-2xl p-6 text-white shadow-xl">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+                Why Partner With Us
+              </h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-medium italic text-[#0d9488]">
-                  Global Presence
-                </h3>
-              </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                We&apos;re across 5 continents, explore our office nearest to you.
-              </p>
-              <Link
-                href="/locations"
-                className="inline-block bg-[#0d9488] hover:bg-[#0f766e] text-white text-sm font-medium py-2 px-5 rounded-md transition-colors duration-300"
-              >
-                Learn more
-              </Link>
+                  <span>10+ Years of Industry Experience</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>500+ Projects Delivered Successfully</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>98% Client Satisfaction Rate</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>24/7 Dedicated Support Team</span>
+                </li>
+              </ul>
             </div>
 
-            {/* Global Leaders Card */}
-            <div>
-              <div className="flex items-start gap-3 mb-3">
-                <div className="text-[#0d9488] mt-1">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            {/* Response Time Guarantee */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#0d9488]/10 to-[#0d9488]/20 rounded-xl flex items-center justify-center">
+                  <svg className="w-7 h-7 text-[#0d9488]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-medium italic text-[#0d9488]">
-                  Global Leaders
-                </h3>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Quick Response</h3>
+                  <p className="text-sm text-gray-500">We value your time</p>
+                </div>
               </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                Our capability and competencies are backed by diverse Global leadership.
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Our team responds to all inquiries within <span className="font-semibold text-[#0d9488]">24 hours</span>. Get a free consultation and project estimate.
               </p>
-              <Link
-                href="/leadership"
-                className="inline-block bg-[#0d9488] hover:bg-[#0f766e] text-white text-sm font-medium py-2 px-5 rounded-md transition-colors duration-300"
-              >
-                Learn more
-              </Link>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>No commitment required</span>
+              </div>
+            </div>
+
+            {/* Trust Badges */}
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Trusted By</h4>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-white rounded-lg p-4 flex items-center justify-center shadow-sm">
+                  <img 
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" 
+                    alt="Google" 
+                    className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="bg-white rounded-lg p-4 flex items-center justify-center shadow-sm">
+                  <img 
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" 
+                    alt="AWS" 
+                    className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="bg-white rounded-lg p-4 flex items-center justify-center shadow-sm">
+                  <img 
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" 
+                    alt="Microsoft Azure" 
+                    className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 mt-4 text-center">
+                Certified & verified technology partner
+              </p>
             </div>
           </div>
         </div>

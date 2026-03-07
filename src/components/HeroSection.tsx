@@ -4,16 +4,20 @@ import { useState, useEffect } from "react";
 
 const slides = [
   {
-    heading: "We\nreimagine\ntomorrow",
-    subtext: "Driving growth and molding the future through transformative change",
+    heading: "Engineering\nDigital\nExcellence",
+    subtext: "Enterprise-grade software solutions that scale with your ambitions. Trusted by Fortune 500 companies worldwide.",
   },
   {
-    heading: "Innovation\nat its\nfinest",
-    subtext: "Building cutting-edge solutions for a digital-first world",
+    heading: "Accelerate\nYour Digital\nTransformation",
+    subtext: "From strategy to execution, we deliver end-to-end technology solutions that drive measurable business outcomes.",
   },
   {
-    heading: "Transform\nyour\nbusiness",
-    subtext: "Empowering enterprises with next-generation technology",
+    heading: "Innovation\nMeets\nExecution",
+    subtext: "Cutting-edge AI, Cloud, and DevOps expertise combined with 10+ years of enterprise delivery excellence.",
+  },
+  {
+    heading: "Your Vision\nOur\nExpertise",
+    subtext: "Partner with a team that has successfully delivered 500+ projects across Healthcare, Finance, and Technology sectors.",
   },
 ];
 
