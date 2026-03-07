@@ -182,7 +182,7 @@ export default function IndustriesImpact() {
       ref={sectionRef}
       className="w-full bg-white py-16 sm:py-20 md:py-28 lg:py-32"
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Heading */}
         <h2 
           className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#1a1a2e] mb-12 sm:mb-16 md:mb-20 transition-all duration-700 ${
@@ -193,7 +193,7 @@ export default function IndustriesImpact() {
         </h2>
 
         {/* Two Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-32">
           {/* Left Column */}
           <div>
             {leftColumn.map((industry, index) => (
