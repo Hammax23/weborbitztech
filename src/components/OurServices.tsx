@@ -431,7 +431,7 @@ export default function OurServices() {
             {/* Scrolling Container */}
             <div
               ref={techScrollRef}
-              className="flex gap-8 sm:gap-10 md:gap-12 overflow-x-hidden pt-2"
+              className="flex gap-12 sm:gap-16 md:gap-20 overflow-x-hidden pt-2"
             >
               {duplicatedStacks.map((tech, index) => (
                 <div

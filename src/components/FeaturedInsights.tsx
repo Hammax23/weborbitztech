@@ -91,7 +91,7 @@ export default function FeaturedInsights() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#1a1f2e] py-16 sm:py-20 md:py-24 lg:py-28"
+      className="w-full bg-[#1a1f2e] py-12 sm:py-14 md:py-16 lg:py-20"
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
         {/* Heading */}
@@ -107,7 +107,7 @@ export default function FeaturedInsights() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Side - Video */}
           <div 
-            className={`relative rounded-2xl overflow-hidden aspect-video lg:aspect-[4/5] transition-all duration-700 ${
+            className={`relative rounded-2xl overflow-hidden aspect-video lg:aspect-[4/4] transition-all duration-700 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
@@ -130,7 +130,7 @@ export default function FeaturedInsights() {
               <Link
                 href="#"
                 key={insight.id}
-                className={`group relative overflow-hidden rounded-xl min-h-[200px] sm:min-h-[220px] md:min-h-[240px] transition-all duration-700 ${
+                className={`group relative overflow-hidden rounded-xl min-h-[160px] sm:min-h-[180px] md:min-h-[200px] transition-all duration-700 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

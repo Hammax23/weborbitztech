@@ -8,46 +8,50 @@ const footerLinks = {
     title: "Services",
     sections: [
       {
-        heading: "Digital",
+        heading: "Development",
         links: [
-          { name: "Digital Consulting & Strategy", href: "/services/digital-consulting" },
-          { name: "Digital Commerce", href: "/services/digital-commerce" },
-          { name: "Business Applications", href: "/services/business-applications" },
+          { name: "Web Development", href: "/services/web-development" },
+          { name: "Mobile App Development", href: "/services/mobile-development" },
+          { name: "Custom Software Development", href: "/services/custom-software" },
         ],
       },
       {
-        heading: "Data & Analytics",
+        heading: "Solutions",
         links: [
-          { name: "Data Modernization", href: "/services/data-modernization" },
-          { name: "Advanced Analytics", href: "/services/advanced-analytics" },
-          { name: "Connected Intelligence", href: "/services/connected-intelligence" },
-          { name: "Data Management", href: "/services/data-management" },
-          { name: "Generative AI", href: "/services/generative-ai" },
+          { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+          { name: "AI/ML Solutions", href: "/services/ai-ml" },
+          { name: "E-commerce Solutions", href: "/services/ecommerce" },
+          { name: "DevOps & CI/CD", href: "/services/devops" },
+          { name: "UI/UX Design", href: "/services/ui-ux" },
         ],
       },
     ],
   },
-  cloud: {
-    title: "Cloud",
+  moreServices: {
+    title: "More Services",
     links: [
-      { name: "Cloud Operations & Migration", href: "/services/cloud-operations", highlight: true },
-      { name: "Cloud Applications", href: "/services/cloud-applications" },
-      { name: "Development & Integrations", href: "/services/development-integrations" },
-      { name: "Managed Services", href: "/services/managed-services" },
-      { name: "Digital Infrastructure Services", href: "/services/digital-infrastructure", bold: true },
-      { name: "Security", href: "/services/security", bold: true },
-      { name: "Emerging Technologies", href: "/services/emerging-technologies", bold: true },
-      { name: "Business Process Services", href: "/services/business-process", bold: true },
+      { name: "SEO/Digital Marketing", href: "/services/seo-marketing", highlight: true },
+      { name: "Maintenance & Support", href: "/services/maintenance" },
     ],
   },
   industries: {
     title: "Industries",
     links: [
-      { name: "Communications", href: "/industries/communications" },
-      { name: "Banking & Financial Services", href: "/industries/banking" },
-      { name: "Public Sector", href: "/industries/public-sector" },
-      { name: "Health", href: "/industries/health" },
-      { name: "Retail", href: "/industries/retail" },
+      { name: "Healthcare", href: "/industries/healthcare" },
+      { name: "Finance & Banking", href: "/industries/finance" },
+      { name: "E-commerce & Retail", href: "/industries/ecommerce" },
+      { name: "Education & E-learning", href: "/industries/education" },
+      { name: "Real Estate", href: "/industries/real-estate" },
+    ],
+  },
+  moreIndustries: {
+    title: "More Industries",
+    links: [
+      { name: "Logistics & Transportation", href: "/industries/logistics" },
+      { name: "Entertainment & Media", href: "/industries/entertainment" },
+      { name: "Manufacturing", href: "/industries/manufacturing" },
+      { name: "Hospitality & Travel", href: "/industries/hospitality" },
+      { name: "Telecommunications", href: "/industries/telecom" },
     ],
   },
   insights: {
@@ -165,17 +169,18 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 relative z-10">
-        {/* Main Footer Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 mb-12">
-          {/* Services Column */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.services.title}</h4>
-            {footerLinks.services.sections.map((section) => (
-              <div key={section.heading} className="mb-4">
-                <p className="text-sm font-semibold text-gray-800 mb-2">{section.heading}</p>
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 pt-12 sm:pt-14 pb-6 sm:pb-8 relative z-10">
+        {/* Main Footer Links Grid - All in one row */}
+        <div className="flex justify-between items-start mb-12">
+          {/* All Sections in One Row */}
+          <div className="flex gap-12 lg:gap-16">
+            {/* Services Column */}
+            <div>
+              <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.services.title}</h4>
+              <div className="mb-3">
+                <p className="text-sm font-semibold text-gray-800 mb-2">Development</p>
                 <ul className="space-y-1.5">
-                  {section.links.map((link) => (
+                  {footerLinks.services.sections[0].links.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}
@@ -187,81 +192,88 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-            ))}
+            </div>
+
+            {/* Industries Column */}
+            <div>
+              <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.industries.title}</h4>
+              <ul className="space-y-1.5">
+                {footerLinks.industries.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-600 hover:text-[#0d9488] transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Solutions Column */}
+            <div>
+              <h4 className="text-base font-semibold text-gray-900 mb-4">Solutions</h4>
+              <ul className="space-y-1.5">
+                {footerLinks.services.sections[1].links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-600 hover:text-[#0d9488] transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {/* More Services */}
+              <p className="text-sm font-semibold text-gray-800 mb-2 mt-4">More Services</p>
+              <ul className="space-y-1.5">
+                {footerLinks.moreServices.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className={`text-sm transition-colors ${
+                        link.highlight
+                          ? "text-[#f97316] hover:text-[#ea580c]"
+                          : "text-gray-600 hover:text-[#0d9488]"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* More Industries Column */}
+            <div>
+              <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.moreIndustries.title}</h4>
+              <ul className="space-y-1.5">
+                {footerLinks.moreIndustries.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-600 hover:text-[#0d9488] transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Cloud Column */}
-          <div>
-            <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.cloud.title}</h4>
-            <ul className="space-y-1.5">
-              {footerLinks.cloud.links.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={`text-sm transition-colors ${
-                      link.highlight
-                        ? "text-[#f97316] hover:text-[#ea580c]"
-                        : link.bold
-                        ? "font-semibold text-gray-800 hover:text-[#0d9488]"
-                        : "text-gray-600 hover:text-[#0d9488]"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries Column */}
-          <div>
-            <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.industries.title}</h4>
-            <ul className="space-y-1.5">
-              {footerLinks.industries.links.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-600 hover:text-[#0d9488] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Insights Column */}
-          <div>
-            <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.insights.title}</h4>
-            <ul className="space-y-1.5">
-              {footerLinks.insights.links.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-600 hover:text-[#0d9488] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links Column */}
-          <div>
-            <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.quickLinks.title}</h4>
-            <ul className="space-y-1.5">
-              {footerLinks.quickLinks.links.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-600 hover:text-[#0d9488] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Right Side - Canada Office */}
+          <div className="text-right">
+            <h4 className="text-base font-semibold text-gray-900 mb-2 flex items-center justify-end gap-2">
+              Canada <span className="font-normal text-gray-600">(Regional Office)</span>
+              <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-6 h-4 object-cover" />
+            </h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              231 Oak Park Blvd, Suit#301,<br />
+              Oakville, ON L6H 7S8
+            </p>
           </div>
         </div>
 
@@ -290,35 +302,20 @@ export default function Footer() {
             </form>
           </div>
 
-          {/* Canada Office & Social Links */}
-          <div className="flex flex-col items-end gap-3 -mt-8">
-            {/* Canada Office */}
-            <div className="text-right">
-              <h4 className="text-base font-semibold text-gray-900 mb-2 flex items-center justify-end gap-2">
-                Canada <span className="font-normal text-gray-600">(Regional Office)</span>
-                <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-6 h-4 object-cover" />
-              </h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                231 Oak Park Blvd, Suit#301,<br />
-                Oakville, ON L6H 7S8
-              </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-700 hover:bg-[#0d9488] text-white flex items-center justify-center transition-colors"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </Link>
-              ))}
-            </div>
+          {/* Social Links */}
+          <div className="flex items-center gap-3">
+            {socialLinks.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-700 hover:bg-[#0d9488] text-white flex items-center justify-center transition-colors"
+                aria-label={social.name}
+              >
+                {social.icon}
+              </Link>
+            ))}
           </div>
         </div>
 

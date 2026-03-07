@@ -7,6 +7,7 @@ import TechnologyImpact from "@/components/TechnologyImpact";
 import FeaturedInsights from "@/components/FeaturedInsights";
 import GetInTouch from "@/components/GetInTouch";
 import Footer from "@/components/Footer";
+import LetsTalkBusiness from "@/components/LetsTalkBusiness";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <IndustriesImpact />
       <GetInTouch />
       <Footer />
+      <LetsTalkBusiness />
     </main>
   );
 }
