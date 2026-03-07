@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://weborbitztech.vercel.app
+
+# Sitemaps
+Sitemap: https://weborbitztech.vercel.app/sitemap.xml
