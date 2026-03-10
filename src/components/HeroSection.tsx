@@ -32,6 +32,8 @@ export default function HeroSection() {
   const [nextVideo, setNextVideo] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const goToNextVideo = useCallback(() => {
@@ -70,24 +72,58 @@ export default function HeroSection() {
     }
   }, [currentVideo, goToNextVideo]);
 
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Auto-play first video and preload others
   useEffect(() => {
     const firstVideo = videoRefs.current[0];
     if (firstVideo) {
-      firstVideo.play().catch(() => {});
+      // Add event listeners for video loading
+      firstVideo.addEventListener('loadeddata', () => setVideoLoaded(true));
+      firstVideo.addEventListener('canplay', () => setVideoLoaded(true));
+      
+      // Force play with user interaction simulation for mobile
+      const playVideo = () => {
+        firstVideo.play().catch((e) => {
+          console.log('Video autoplay prevented:', e);
+          // If autoplay fails, still show the video frame
+          firstVideo.load();
+        });
+      };
+      
+      playVideo();
+      
+      // Also try to play on first user interaction (for strict mobile browsers)
+      const handleInteraction = () => {
+        playVideo();
+        document.removeEventListener('touchstart', handleInteraction);
+        document.removeEventListener('click', handleInteraction);
+      };
+      document.addEventListener('touchstart', handleInteraction, { once: true });
+      document.addEventListener('click', handleInteraction, { once: true });
     }
 
-    // Preload other videos
-    videos.forEach((src, index) => {
-      if (index > 0) {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'video';
-        link.href = src;
-        document.head.appendChild(link);
-      }
-    });
-  }, []);
+    // Preload other videos only on desktop
+    if (!isMobile) {
+      videos.forEach((src, index) => {
+        if (index > 0) {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'video';
+          link.href = src;
+          document.head.appendChild(link);
+        }
+      });
+    }
+  }, [isMobile]);
 
   // Text slide rotation
   useEffect(() => {
@@ -107,6 +143,14 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
+      {/* Fallback Background for Mobile / Video Loading */}
+      <div 
+        className={`absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] transition-opacity duration-500 ${
+          videoLoaded ? 'opacity-0' : 'opacity-100'
+        }`}
+        style={{ zIndex: 0 }}
+      />
+
       {/* Video Backgrounds */}
       {videos.map((src, index) => (
         <video
@@ -114,26 +158,35 @@ export default function HeroSection() {
           ref={(el) => { videoRefs.current[index] = el; }}
           muted
           playsInline
-          preload={index === 0 ? "auto" : "metadata"}
+          autoPlay={index === 0}
+          loop={isMobile}
+          preload={index === 0 ? "auto" : (isMobile ? "none" : "metadata")}
+          poster="/hero-poster.jpg"
           className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-in-out ${
-            index === currentVideo
-              ? isTransitioning
-                ? "-translate-x-full"
-                : "translate-x-0 z-[1]"
-              : index === nextVideo && isTransitioning
-              ? "translate-x-0 z-[2]"
-              : "translate-x-full z-0"
+            isMobile 
+              ? index === 0 ? 'translate-x-0 z-[1]' : 'hidden'
+              : index === currentVideo
+                ? isTransitioning
+                  ? "-translate-x-full"
+                  : "translate-x-0 z-[1]"
+                : index === nextVideo && isTransitioning
+                ? "translate-x-0 z-[2]"
+                : "translate-x-full z-0"
           }`}
+          style={{ 
+            WebkitTransform: 'translateZ(0)',
+            backfaceVisibility: 'hidden'
+          }}
         >
-          <source src={src} type="video/mp4" />
+          <source src={isMobile ? "/cover1.mp4" : src} type="video/mp4" />
         </video>
       ))}
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/30 z-[3]" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-[10] h-full flex items-center">
         <div className="max-w-[1400px] mx-auto px-6 w-full">
           <div className="max-w-2xl">
             {/* Heading */}
