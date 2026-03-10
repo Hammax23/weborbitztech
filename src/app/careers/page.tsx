@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const jobOpenings = [
   {
@@ -166,7 +168,9 @@ export default function CareersPage() {
   const filteredJobs = filter === "All" ? jobOpenings : jobOpenings.filter((job) => job.department === filter);
 
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -246,101 +250,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Why Join Us Section */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1a2e] mb-4">
-              Why Join <span className="text-[#0d9488]">WebOrbitz</span>?
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We offer more than just a job. Join us and be part of a culture that values innovation, growth, and work-life balance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="group p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#0d9488]/20 transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-[#0d9488]/10 rounded-xl flex items-center justify-center text-[#0d9488] mb-6 group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-[#1a1a2e] mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values Section */}
-      <section id="culture" className="py-20 md:py-28 bg-[#f8f9fa]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="inline-block px-4 py-2 bg-[#0d9488]/10 rounded-full text-[#0d9488] text-sm font-medium mb-4">
-                Our Culture
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1a2e] mb-6">
-                Values That <span className="text-[#0d9488]">Drive</span> Us
-              </h2>
-              <p className="text-gray-600 mb-8">
-                At WebOrbitz, our culture is built on a foundation of shared values that guide everything we do. 
-                We believe in creating an environment where everyone can thrive and do their best work.
-              </p>
-              <div className="space-y-6">
-                {values.map((value, index) => (
-                  <div key={index} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-[#0d9488] rounded-lg flex items-center justify-center text-white font-bold">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-[#1a1a2e] mb-1">{value.title}</h4>
-                      <p className="text-gray-600 text-sm">{value.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
-                      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3">Join Our Growing Team</h3>
-                    <p className="text-white/80 mb-6">Be part of something extraordinary</p>
-                    <div className="flex justify-center gap-4">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold">15+</div>
-                        <div className="text-white/70 text-sm">Countries</div>
-                      </div>
-                      <div className="w-px bg-white/30" />
-                      <div className="text-center">
-                        <div className="text-3xl font-bold">50+</div>
-                        <div className="text-white/70 text-sm">Clients</div>
-                      </div>
-                      <div className="w-px bg-white/30" />
-                      <div className="text-center">
-                        <div className="text-3xl font-bold">24/7</div>
-                        <div className="text-white/70 text-sm">Support</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#0d9488]/20 rounded-full blur-2xl" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Open Positions Section */}
       <section id="openings" className="py-20 md:py-28 bg-white">
@@ -350,109 +259,44 @@ export default function CareersPage() {
               Open <span className="text-[#0d9488]">Positions</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our current openings and find the perfect role that matches your skills and aspirations.
+              Currently, we don't have any open positions available. Please keep visiting our website regularly to stay updated on new opportunities.
             </p>
           </div>
 
-          {/* Department Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {departments.map((dept) => (
-              <button
-                key={dept}
-                onClick={() => setFilter(dept)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  filter === dept
-                    ? "bg-[#0d9488] text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {dept}
-              </button>
-            ))}
-          </div>
-
-          {/* Job Listings */}
-          <div className="space-y-4">
-            {filteredJobs.map((job) => (
-              <div
-                key={job.id}
-                className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${
-                  selectedJob === job.id ? "border-[#0d9488] shadow-lg" : "border-gray-200 hover:border-[#0d9488]/50"
-                }`}
-              >
-                <div
-                  className="p-6 cursor-pointer"
-                  onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
-                >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                      <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">{job.title}</h3>
-                      <div className="flex flex-wrap gap-3">
-                        <span className="inline-flex items-center gap-1 text-sm text-gray-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                          </svg>
-                          {job.department}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-sm text-gray-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
-                          {job.location}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-sm text-gray-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          {job.type}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-sm text-gray-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                          </svg>
-                          {job.experience}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <svg
-                        className={`w-6 h-6 text-[#0d9488] transition-transform duration-300 ${
-                          selectedJob === job.id ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Expanded Content */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    selectedJob === job.id ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-6 pb-6 border-t border-gray-100">
-                    <div className="pt-4">
-                      <p className="text-gray-600 mb-6">{job.description}</p>
-                      <Link
-                        href="#apply"
-                        className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300"
-                      >
-                        Apply Now
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+          {/* No Positions Available Message */}
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-12">
+              <div className="w-20 h-20 bg-[#0d9488]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-[#0d9488]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
-            ))}
+              <h3 className="text-2xl font-semibold text-[#1a1a2e] mb-4">
+                No Current Openings
+              </h3>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                We currently don't have any open positions, but we're always growing! 
+                Keep checking back regularly as new opportunities become available. 
+                We'd love to have talented individuals like you join our team in the future.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:careers@weborbitztech.ca"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Send Your Resume
+                </a>
+                <Link
+                  href="/"
+                  className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-[#0d9488] text-gray-700 hover:text-[#0d9488] px-6 py-3 rounded-lg font-medium transition-all duration-300"
+                >
+                  Back to Home
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -488,6 +332,8 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
