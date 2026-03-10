@@ -8,6 +8,11 @@ const videos = [
   "/cover3.mp4",
 ];
 
+const mobileVideos = [
+  "/cover1.mp4",
+  "/cover2.mp4",
+];
+
 const slides = [
   {
     heading: "Engineering\nDigital\nExcellence",
@@ -38,13 +43,14 @@ export default function HeroSection() {
 
   const goToNextVideo = useCallback(() => {
     setIsTransitioning(true);
-    const next = (currentVideo + 1) % videos.length;
+    const maxVideos = isMobile ? mobileVideos.length : videos.length;
+    const next = (currentVideo + 1) % maxVideos;
     setNextVideo(next);
     
     // Start transition
     setTimeout(() => {
       setCurrentVideo(next);
-      setNextVideo((next + 1) % videos.length);
+      setNextVideo((next + 1) % maxVideos);
       setIsTransitioning(false);
       
       // Play the new current video
@@ -54,7 +60,7 @@ export default function HeroSection() {
         nextVideoEl.play().catch(() => {});
       }
     }, 700); // Transition duration
-  }, [currentVideo]);
+  }, [currentVideo, isMobile]);
 
   // Handle video ended event
   useEffect(() => {
@@ -159,12 +165,16 @@ export default function HeroSection() {
           muted
           playsInline
           autoPlay={index === 0}
-          loop={isMobile}
+          loop={false}
           preload={index === 0 ? "auto" : (isMobile ? "none" : "metadata")}
           poster="/hero-poster.jpg"
           className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-in-out ${
             isMobile 
-              ? index === 0 ? 'translate-x-0 z-[1]' : 'hidden'
+              ? index < 2 
+                ? index === currentVideo % 2
+                  ? isTransitioning ? "-translate-x-full" : "translate-x-0 z-[1]"
+                  : index === nextVideo % 2 && isTransitioning ? "translate-x-0 z-[2]" : "translate-x-full z-0"
+                : 'hidden'
               : index === currentVideo
                 ? isTransitioning
                   ? "-translate-x-full"
@@ -178,7 +188,7 @@ export default function HeroSection() {
             backfaceVisibility: 'hidden'
           }}
         >
-          <source src={isMobile ? "/cover1.mp4" : src} type="video/mp4" />
+          <source src={isMobile ? mobileVideos[index % 2] : src} type="video/mp4" />
         </video>
       ))}
 

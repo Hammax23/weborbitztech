@@ -9,7 +9,7 @@ interface AnimatedLogoProps {
 
 export default function AnimatedLogo({ className = "", onClick }: AnimatedLogoProps) {
   return (
-    <div onClick={onClick} className={`flex items-center gap-3 lg:gap-4 group cursor-pointer ${className}`}>
+    <div onClick={onClick} className={`flex items-center gap-1 sm:gap-2 lg:gap-4 group cursor-pointer ${className}`}>
       {/* Logo Mark */}
       <div className="relative w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center shrink-0 -translate-y-1">
         
