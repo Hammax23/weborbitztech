@@ -110,6 +110,11 @@ export default function HeroSection() {
       // Also try to play on first user interaction (for strict mobile browsers)
       const handleInteraction = () => {
         playVideo();
+        // Also preload second video on mobile after interaction
+        const secondVideo = videoRefs.current[1];
+        if (secondVideo && isMobile) {
+          secondVideo.load();
+        }
         document.removeEventListener('touchstart', handleInteraction);
         document.removeEventListener('click', handleInteraction);
       };
@@ -117,18 +122,24 @@ export default function HeroSection() {
       document.addEventListener('click', handleInteraction, { once: true });
     }
 
-    // Preload other videos only on desktop
-    if (!isMobile) {
-      videos.forEach((src, index) => {
-        if (index > 0) {
-          const link = document.createElement('link');
-          link.rel = 'preload';
-          link.as = 'video';
-          link.href = src;
-          document.head.appendChild(link);
+    // Preload videos
+    const videosToPreload = isMobile ? mobileVideos : videos;
+    videosToPreload.forEach((src, index) => {
+      // Preload all videos
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'video';
+      link.href = src;
+      document.head.appendChild(link);
+      
+      // Also eagerly load second video element on mobile
+      if (isMobile && index === 1) {
+        const secondVideo = videoRefs.current[1];
+        if (secondVideo) {
+          secondVideo.load();
         }
-      });
-    }
+      }
+    });
   }, [isMobile]);
 
   // Text slide rotation
@@ -166,7 +177,7 @@ export default function HeroSection() {
           playsInline
           autoPlay={index === 0}
           loop={false}
-          preload={index === 0 ? "auto" : (isMobile ? "none" : "metadata")}
+          preload={isMobile ? (index < 2 ? "auto" : "none") : (index === 0 ? "auto" : "metadata")}
           poster="/hero-poster.jpg"
           className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-in-out ${
             isMobile 
