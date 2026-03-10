@@ -447,7 +447,7 @@ export default function IndustryPage() {
                   Our Services for {industry.title.split(' ')[0]}
                 </h2>
                 <p className="text-gray-600 max-w-xl">
-                  Purpose-built solutions designed to address your industry's unique needs.
+                  Purpose-built solutions designed to address your industry&apos;s unique needs.
                 </p>
               </div>
             </div>
@@ -493,7 +493,7 @@ export default function IndustryPage() {
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
               >
-                Let's Connect
+                Let&apos;s Connect
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -542,7 +542,7 @@ export default function IndustryPage() {
                   Ready To Get Started?
                 </h2>
                 <p className="text-white/70 text-lg mb-8">
-                  Let's discuss how our expertise in {industry.title.toLowerCase()} can help transform your business.
+                  Let&apos;s discuss how our expertise in {industry.title.toLowerCase()} can help transform your business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link

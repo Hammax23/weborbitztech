@@ -237,7 +237,7 @@ export default function ServicesPage() {
                 Your Success Is Our <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Priority</span>
               </h2>
               <p className="text-gray-600 text-lg mb-8">
-                We don't just build technology—we build partnerships. Our team of experts works closely with you to understand your challenges and deliver solutions that exceed expectations.
+                We don&apos;t just build technology—we build partnerships. Our team of experts works closely with you to understand your challenges and deliver solutions that exceed expectations.
               </p>
               
               <div className="space-y-6">
@@ -290,7 +290,7 @@ export default function ServicesPage() {
               Ready to Transform Your <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Business</span>?
             </h2>
             <p className="text-white/70 text-lg mb-10">
-              Let's discuss how our services can help you achieve your goals and drive real results.
+              Let&apos;s discuss how our services can help you achieve your goals and drive real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

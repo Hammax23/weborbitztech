@@ -153,7 +153,7 @@ export default function IndustriesPage() {
                 Industries We Serve
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                From healthcare to fintech, we bring deep domain expertise and cutting-edge technology to solve your industry's unique challenges.
+                From healthcare to fintech, we bring deep domain expertise and cutting-edge technology to solve your industry&apos;s unique challenges.
               </p>
             </div>
 
@@ -225,13 +225,13 @@ export default function IndustriesPage() {
                   Ready to Transform Your Industry?
                 </h2>
                 <p className="text-white/70 text-lg mb-8">
-                  Let's discuss how our industry expertise and technology solutions can help drive your business forward.
+                  Let&apos;s discuss how our industry expertise and technology solutions can help drive your business forward.
                 </p>
                 <Link
                   href="/#get-in-touch"
                   className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
                 >
-                  Let's Talk Business
+                  Let&apos;s Talk Business
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>

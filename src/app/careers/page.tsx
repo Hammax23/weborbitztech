@@ -205,7 +205,7 @@ export default function CareersPage() {
             </h1>
             <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-10">
               Join a team of passionate innovators, creative thinkers, and technology experts. 
-              Together, we're transforming businesses and shaping the digital landscape.
+              Together, we&apos;re transforming businesses and shaping the digital landscape.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -259,7 +259,7 @@ export default function CareersPage() {
               Open <span className="text-[#0d9488]">Positions</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Currently, we don't have any open positions available. Please keep visiting our website regularly to stay updated on new opportunities.
+              Currently, we don&apos;t have any open positions available. Please keep visiting our website regularly to stay updated on new opportunities.
             </p>
           </div>
 
@@ -275,9 +275,9 @@ export default function CareersPage() {
                 No Current Openings
               </h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                We currently don't have any open positions, but we're always growing! 
+                We currently don&apos;t have any open positions, but we&apos;re always growing! 
                 Keep checking back regularly as new opportunities become available. 
-                We'd love to have talented individuals like you join our team in the future.
+                We&apos;d love to have talented individuals like you join our team in the future.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -309,8 +309,8 @@ export default function CareersPage() {
               Ready to <span className="text-[#0d9488]">Join Us</span>?
             </h2>
             <p className="text-white/70 mb-10">
-              Don't see a perfect match? We're always looking for talented individuals. 
-              Send us your resume and let's explore opportunities together.
+              Don&apos;t see a perfect match? We&apos;re always looking for talented individuals. 
+              Send us your resume and let&apos;s explore opportunities together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
