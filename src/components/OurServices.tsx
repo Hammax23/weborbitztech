@@ -215,40 +215,19 @@ export default function OurServices() {
           <h2 
             className={`text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-bold leading-tight tracking-tight text-center transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
           >
-          {/* O - Pink/Purple gradient with shine */}
-          <span 
-            style={{
-              background: "linear-gradient(180deg, #d4a5c9 0%, #c77dbb 25%, #e8b4d9 45%, #9b4d8f 65%, #2d1f3d 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          {/* O - Blue metallic gradient */}
+          <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.2)]">
             O
           </span>
           <span className="text-[#1a1a2e]">ur</span>
           <span className="text-[#1a1a2e]">&nbsp;</span>
-          {/* S - Cyan/Blue gradient with shine */}
-          <span 
-            style={{
-              background: "linear-gradient(180deg, #7dd3e8 0%, #4fb8d4 20%, #a8e6f0 40%, #2d8cb8 60%, #1a3a5c 85%, #0d1b2a 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          {/* S - Blue metallic gradient */}
+          <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.2)]">
             S
           </span>
           <span className="text-[#1a1a2e]">ervic</span>
-          {/* e - Pink/Magenta gradient with shine */}
-          <span 
-            style={{
-              background: "linear-gradient(180deg, #e855a0 0%, #d63384 25%, #f590c0 45%, #c41c7f 65%, #6b1048 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          {/* e - Blue metallic gradient */}
+          <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.2)]">
             e
           </span>
           <span className="text-[#1a1a2e]">s</span>

@@ -139,7 +139,7 @@ export default function TechStack() {
                       alt={tech.name}
                       width={64}
                       height={64}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain saturate-[1.1] contrast-[1.05]"
                       unoptimized
                     />
                   </div>

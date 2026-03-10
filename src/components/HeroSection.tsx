@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+
+const videos = [
+  "/cover1.mp4",
+  "/cover2.mp4",
+  "/cover3.mp4",
+];
 
 const slides = [
   {
@@ -22,8 +28,68 @@ const slides = [
 ];
 
 export default function HeroSection() {
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const [nextVideo, setNextVideo] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
+  const goToNextVideo = useCallback(() => {
+    setIsTransitioning(true);
+    const next = (currentVideo + 1) % videos.length;
+    setNextVideo(next);
+    
+    // Start transition
+    setTimeout(() => {
+      setCurrentVideo(next);
+      setNextVideo((next + 1) % videos.length);
+      setIsTransitioning(false);
+      
+      // Play the new current video
+      const nextVideoEl = videoRefs.current[next];
+      if (nextVideoEl) {
+        nextVideoEl.currentTime = 0;
+        nextVideoEl.play().catch(() => {});
+      }
+    }, 700); // Transition duration
+  }, [currentVideo]);
+
+  // Handle video ended event
+  useEffect(() => {
+    const currentVideoEl = videoRefs.current[currentVideo];
+    
+    const handleEnded = () => {
+      goToNextVideo();
+    };
+
+    if (currentVideoEl) {
+      currentVideoEl.addEventListener('ended', handleEnded);
+      return () => {
+        currentVideoEl.removeEventListener('ended', handleEnded);
+      };
+    }
+  }, [currentVideo, goToNextVideo]);
+
+  // Auto-play first video and preload others
+  useEffect(() => {
+    const firstVideo = videoRefs.current[0];
+    if (firstVideo) {
+      firstVideo.play().catch(() => {});
+    }
+
+    // Preload other videos
+    videos.forEach((src, index) => {
+      if (index > 0) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'video';
+        link.href = src;
+        document.head.appendChild(link);
+      }
+    });
+  }, []);
+
+  // Text slide rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -41,16 +107,27 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
-        <source src="/cover.mp4" type="video/mp4" />
-      </video>
+      {/* Video Backgrounds */}
+      {videos.map((src, index) => (
+        <video
+          key={src}
+          ref={(el) => { videoRefs.current[index] = el; }}
+          muted
+          playsInline
+          preload={index === 0 ? "auto" : "metadata"}
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-in-out ${
+            index === currentVideo
+              ? isTransitioning
+                ? "-translate-x-full"
+                : "translate-x-0 z-[1]"
+              : index === nextVideo && isTransitioning
+              ? "translate-x-0 z-[2]"
+              : "translate-x-full z-0"
+          }`}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ))}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/30" />

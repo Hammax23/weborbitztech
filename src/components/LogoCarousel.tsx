@@ -32,13 +32,13 @@ export default function LogoCarousel() {
   }, []);
 
   const LogoItem = ({ children }: { children: React.ReactNode }) => (
-    <div className="flex-shrink-0 flex items-center justify-center h-12 md:h-16 px-8 md:px-12 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
+    <div className="flex-shrink-0 flex items-center justify-center h-12 md:h-16 px-8 md:px-12 transition-all duration-300 select-none">
       {children}
     </div>
   );
 
   return (
-    <section className="w-full bg-white py-10 md:py-14 overflow-hidden">
+    <section className="w-full bg-white py-6 md:py-8 overflow-hidden">
       {/* Logo Slider Container */}
       <div className="relative">
         {/* Gradient Overlays */}

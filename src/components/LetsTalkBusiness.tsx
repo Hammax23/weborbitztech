@@ -65,7 +65,7 @@ export default function LetsTalkBusiness() {
       {/* Floating Side Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-[#0d9488] hover:bg-[#0f766e] text-white py-6 px-3 rounded-l-lg shadow-lg transition-all duration-300 hover:px-4 group"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-gradient-to-b from-[#00E1FF] via-[#00B4FF] to-[#0055FF] hover:opacity-90 text-white py-6 px-2 rounded-l-md shadow-lg transition-all duration-300 group overflow-hidden"
         style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
       >
         <span className="text-sm font-semibold tracking-wider whitespace-nowrap">
@@ -76,7 +76,7 @@ export default function LetsTalkBusiness() {
       {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
       />
