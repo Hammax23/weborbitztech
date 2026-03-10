@@ -123,8 +123,8 @@ export default function ServicesPage() {
         
         {/* Animated Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#0d9488]/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#0d9488]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#00B4FF]/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#00B4FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-3xl" />
         </div>
 
@@ -143,15 +143,15 @@ export default function ServicesPage() {
             <div className="flex items-center justify-center gap-2 text-white/60 text-sm mb-8">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-[#0d9488]">Services</span>
+              <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Services</span>
             </div>
 
-            <span className="inline-block px-4 py-2 bg-[#0d9488]/20 border border-[#0d9488]/30 rounded-full text-[#0d9488] text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 bg-[#00B4FF]/20 border border-[#00B4FF]/30 rounded-full text-[#00E1FF] text-sm font-medium mb-6">
               Our Expertise
             </span>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              What We <span className="text-[#0d9488]">Do</span>
+              What We <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Do</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
@@ -170,7 +170,7 @@ export default function ServicesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className={`group relative p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#0d9488]/30 transition-all duration-500 ${
+                className={`group relative p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#00B4FF]/30 transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 50}ms` }}
@@ -178,12 +178,12 @@ export default function ServicesPage() {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-[#0d9488]/10 rounded-xl flex items-center justify-center text-[#0d9488] mb-6 group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300">
+                <div className="w-16 h-16 bg-[#00B4FF]/10 rounded-xl flex items-center justify-center text-[#00B4FF] mb-6 group-hover:bg-gradient-to-r group-hover:from-[#0055FF] group-hover:via-[#00B4FF] group-hover:to-[#00E1FF] group-hover:text-white transition-all duration-300">
                   <ServiceIcon type={service.icon} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-[#1a1a2e] mb-3 group-hover:text-[#0d9488] transition-colors">
+                <h3 className="text-xl font-semibold text-[#1a1a2e] mb-3 group-hover:text-[#00B4FF] transition-colors">
                   {service.title}
                 </h3>
 
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Arrow */}
-                <div className="flex items-center gap-2 text-[#0d9488] font-medium">
+                <div className="flex items-center gap-2 text-[#00B4FF] font-medium">
                   <span>Learn More</span>
                   <svg
                     className={`w-5 h-5 transition-transform duration-300 ${hoveredIndex === index ? "translate-x-2" : ""}`}
@@ -218,7 +218,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Hover Gradient */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0d9488]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00B4FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </Link>
             ))}
           </div>
@@ -230,11 +230,11 @@ export default function ServicesPage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-[#0d9488]/10 rounded-full text-[#0d9488] text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-2 bg-[#00B4FF]/10 rounded-full text-[#00B4FF] text-sm font-medium mb-4">
                 Why Choose Us
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1a2e] mb-6">
-                Your Success Is Our <span className="text-[#0d9488]">Priority</span>
+                Your Success Is Our <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Priority</span>
               </h2>
               <p className="text-gray-600 text-lg mb-8">
                 We don't just build technology—we build partnerships. Our team of experts works closely with you to understand your challenges and deliver solutions that exceed expectations.
@@ -248,7 +248,7 @@ export default function ServicesPage() {
                   { title: "24/7 Support", description: "Round-the-clock assistance for your peace of mind" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0d9488] flex items-center justify-center">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-[#0055FF] to-[#00B4FF] flex items-center justify-center">
                       <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -273,7 +273,7 @@ export default function ServicesPage() {
                   key={index}
                   className="bg-white p-8 rounded-2xl shadow-lg text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-[#0d9488] mb-2">{stat.value}</div>
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text mb-2">{stat.value}</div>
                   <div className="text-gray-600">{stat.label}</div>
                 </div>
               ))}
@@ -287,7 +287,7 @@ export default function ServicesPage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your <span className="text-[#0d9488]">Business</span>?
+              Ready to Transform Your <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Business</span>?
             </h2>
             <p className="text-white/70 text-lg mb-10">
               Let's discuss how our services can help you achieve your goals and drive real results.
@@ -295,7 +295,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/#get-in-touch"
-                className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#0d9488]/30"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0055FF] via-[#00B4FF] to-[#00E1FF] hover:opacity-90 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4FF]/30"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />

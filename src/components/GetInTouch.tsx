@@ -139,11 +139,11 @@ export default function GetInTouch() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <span className="text-[#b45da3]">G</span>
+          <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.2)]">G</span>
           <span className="text-gray-900">et</span>
-          <span className="text-[#0d9488]"> I</span>
+          <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.2)]"> I</span>
           <span className="text-gray-900">n</span>
-          <span className="text-[#e91e63]"> T</span>
+          <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.2)]"> T</span>
           <span className="text-gray-900">ouch</span>
         </h2>
 
@@ -313,7 +313,7 @@ export default function GetInTouch() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold py-3 px-8 rounded-md transition-colors duration-300"
+                className="bg-gradient-to-r from-[#0055FF] via-[#00B4FF] to-[#00E1FF] hover:opacity-90 text-white font-semibold py-3 px-8 rounded-md transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Submit
               </button>
@@ -327,7 +327,7 @@ export default function GetInTouch() {
             }`}
           >
             {/* Why Partner With Us */}
-            <div className="bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-2xl p-6 text-white shadow-xl">
+            <div className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] rounded-2xl p-6 text-white shadow-xl border border-white/5">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
