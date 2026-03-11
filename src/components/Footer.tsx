@@ -268,7 +268,7 @@ export default function Footer() {
           {/* Right Side - Canada Office */}
           <div className="text-right">
             <h4 className="text-base font-semibold text-gray-900 mb-2 flex items-center justify-end gap-2">
-              Canada <span className="font-normal text-gray-600">(Main Office)</span>
+              Canada <span className="font-normal text-gray-600">(Head Office)</span>
               <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-6 h-4 object-cover" />
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed">

@@ -92,12 +92,12 @@ export default function Navbar() {
                 </div>
 
                 {/* Blog */}
-                <Link href="#" className="text-white text-sm font-light hover:text-white/80 transition-colors py-2">
+                <Link href="/blog" className="text-white text-sm font-light hover:text-white/80 transition-colors py-2">
                   BLOG
                 </Link>
 
                 {/* About */}
-                <Link href="#" className="text-white text-sm font-light hover:text-white/80 transition-colors py-2">
+                <Link href="/about" className="text-white text-sm font-light hover:text-white/80 transition-colors py-2">
                   ABOUT
                 </Link>
               </div>
@@ -110,9 +110,9 @@ export default function Navbar() {
               </Link>
 
               {/* Let's Talk Business Button */}
-              <button className="border border-white text-white px-6 py-2 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+              <Link href="/lets-talk-business" className="border border-white text-white px-6 py-2 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300">
                 LET&apos;S TALK BUSINESS
-              </button>
+              </Link>
 
               {/* Search Icon */}
               <button className="text-white hover:text-white/80 transition-colors">
@@ -231,7 +231,7 @@ export default function Navbar() {
 
             {/* Simple Links */}
             <Link 
-              href="#" 
+              href="/blog"
               onClick={toggleMobileMenu}
               className="block py-4 text-white text-lg font-light tracking-wide border-b border-white/10 hover:text-[#00B4FF] transition-colors"
             >
@@ -239,7 +239,7 @@ export default function Navbar() {
             </Link>
 
             <Link 
-              href="#" 
+              href="/about"
               onClick={toggleMobileMenu}
               className="block py-4 text-white text-lg font-light tracking-wide border-b border-white/10 hover:text-[#00B4FF] transition-colors"
             >
@@ -257,12 +257,13 @@ export default function Navbar() {
 
           {/* Mobile CTA Button */}
           <div className="mt-8">
-            <button 
+            <Link 
+              href="/lets-talk-business"
               onClick={toggleMobileMenu}
-              className="w-full border border-white text-white py-4 text-sm font-light tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+              className="block w-full border border-white text-white py-4 text-sm font-light tracking-widest hover:bg-white hover:text-black transition-all duration-300 text-center"
             >
               LET&apos;S TALK BUSINESS
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Footer Section */}

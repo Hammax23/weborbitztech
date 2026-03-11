@@ -10,492 +10,492 @@ import Footer from "@/components/Footer";
 const servicesData: { [key: string]: ServiceData } = {
   "web-development": {
     title: "Web Development",
-    subtitle: "Enterprise-Grade Web Solutions",
-    description: "We build scalable, secure, and high-performance web applications that drive business growth and deliver exceptional user experiences.",
+    subtitle: "Websites & Web Applications",
+    description: "From business websites to complex web applications — we handle frontend, backend, databases, and everything in between.",
     heroImage: "/services/web-dev.jpg",
-    overview: "Our web development team specializes in creating custom web solutions that are tailored to your business needs. From complex enterprise applications to sleek corporate websites, we leverage cutting-edge technologies to deliver solutions that scale with your growth.",
+    overview: "We build websites and web apps using modern frameworks like React, Next.js, and Node.js. Whether you need a company website, a customer portal, an admin dashboard, or a full SaaS product — we write clean, maintainable code that works reliably. No bloated templates, no unnecessary complexity.",
     features: [
       {
-        title: "Custom Web Applications",
-        description: "Tailored solutions built from the ground up to meet your specific business requirements and workflows.",
+        title: "Business Websites",
+        description: "Corporate sites, landing pages, and marketing websites. Mobile-responsive, fast-loading, SEO-friendly.",
         icon: "code"
       },
       {
-        title: "Progressive Web Apps",
-        description: "Fast, reliable, and engaging web experiences that work seamlessly across all devices and platforms.",
+        title: "Web Applications",
+        description: "Dashboards, portals, booking systems, internal tools — any web-based software your business needs.",
         icon: "mobile"
       },
       {
-        title: "API Development & Integration",
-        description: "Robust RESTful and GraphQL APIs that connect your systems and enable seamless data flow.",
+        title: "API Development",
+        description: "RESTful APIs and GraphQL services to connect your frontend, mobile apps, and third-party systems.",
         icon: "api"
       },
       {
-        title: "Performance Optimization",
-        description: "Lightning-fast load times and smooth interactions through advanced optimization techniques.",
+        title: "Database Design",
+        description: "PostgreSQL, MongoDB, MySQL — proper schema design, indexing, and query optimization.",
         icon: "speed"
       }
     ],
     technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Redis", "AWS"],
     process: [
-      { step: "Discovery", description: "Understanding your business goals, target audience, and technical requirements." },
-      { step: "Planning", description: "Creating detailed project roadmap, architecture design, and technology selection." },
-      { step: "Development", description: "Agile development with regular sprints, code reviews, and continuous integration." },
-      { step: "Testing", description: "Comprehensive QA testing including unit, integration, and user acceptance testing." },
-      { step: "Deployment", description: "Seamless deployment to production with zero downtime and monitoring setup." },
-      { step: "Support", description: "Ongoing maintenance, updates, and 24/7 technical support." }
+      { step: "Requirements", description: "We discuss what you need, who will use it, and what problems it should solve." },
+      { step: "Planning", description: "Technical approach, timeline, and milestones — you know what to expect." },
+      { step: "Development", description: "We build in iterations. You see progress weekly, not after months." },
+      { step: "Testing", description: "We test across browsers and devices. Bugs get fixed before launch." },
+      { step: "Deployment", description: "We set up hosting, domains, SSL, and get your site live." },
+      { step: "Handover", description: "Documentation, training if needed, and support for any issues." }
     ],
     stats: [
-      { value: "500+", label: "Projects Delivered" },
-      { value: "99.9%", label: "Uptime Guarantee" },
-      { value: "50%", label: "Faster Load Times" },
-      { value: "24/7", label: "Support Available" }
+      { value: "200+", label: "Projects Completed" },
+      { value: "8+", label: "Years in Business" },
+      { value: "50+", label: "Active Clients" },
+      { value: "4.9", label: "Client Rating" }
     ],
     caseStudies: [
-      { title: "E-commerce Platform", industry: "Retail", result: "300% increase in online sales" },
-      { title: "Healthcare Portal", industry: "Healthcare", result: "50% reduction in patient wait times" },
-      { title: "Financial Dashboard", industry: "Finance", result: "Real-time analytics for 1M+ transactions" }
+      { title: "Real Estate Portal", industry: "Property", result: "Property listing and inquiry management system" },
+      { title: "Patient Booking System", industry: "Healthcare", result: "Online appointment scheduling for clinics" },
+      { title: "Inventory Dashboard", industry: "Retail", result: "Stock tracking and reporting for 5 warehouses" }
     ]
   },
   "mobile-app-development": {
     title: "Mobile App Development",
-    subtitle: "Native & Cross-Platform Excellence",
-    description: "Create powerful mobile experiences that engage users and drive business results across iOS and Android platforms.",
+    subtitle: "iOS & Android Apps",
+    description: "Native and cross-platform mobile apps for iOS and Android. We handle design, development, testing, and app store submission.",
     heroImage: "/services/mobile-dev.jpg",
-    overview: "Our mobile development expertise spans native iOS and Android development as well as cross-platform solutions. We create intuitive, high-performance mobile applications that users love and businesses rely on.",
+    overview: "We build mobile apps using React Native, Flutter, or native Swift/Kotlin — depending on what makes sense for your project. Most clients choose cross-platform to save time and budget while still getting a quality app on both platforms. We also handle the app store submission process.",
     features: [
       {
-        title: "Native iOS Development",
-        description: "Premium iOS applications built with Swift, optimized for Apple's ecosystem and design guidelines.",
+        title: "iOS Apps",
+        description: "iPhone and iPad apps built with Swift or cross-platform frameworks. App Store submission included.",
         icon: "apple"
       },
       {
-        title: "Native Android Development",
-        description: "Robust Android apps using Kotlin, designed for the diverse Android device landscape.",
+        title: "Android Apps",
+        description: "Apps for Android phones and tablets. We test on multiple devices to ensure compatibility.",
         icon: "android"
       },
       {
-        title: "Cross-Platform Development",
-        description: "Cost-effective solutions using React Native and Flutter for simultaneous iOS and Android deployment.",
+        title: "Cross-Platform",
+        description: "One codebase for both iOS and Android using React Native or Flutter. Faster development, lower cost.",
         icon: "cross"
       },
       {
-        title: "App Store Optimization",
-        description: "Strategic optimization to maximize visibility and downloads on App Store and Google Play.",
+        title: "Backend & APIs",
+        description: "Your app needs a server? We build that too — user auth, data storage, push notifications, payments.",
         icon: "store"
       }
     ],
-    technologies: ["Swift", "Kotlin", "React Native", "Flutter", "Firebase", "AWS Amplify", "GraphQL", "REST APIs"],
+    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Node.js", "PostgreSQL", "AWS"],
     process: [
-      { step: "Strategy", description: "Defining app objectives, target users, and key features for maximum impact." },
-      { step: "UX/UI Design", description: "Creating intuitive interfaces and seamless user journeys." },
-      { step: "Development", description: "Building robust, scalable mobile applications with clean architecture." },
-      { step: "Testing", description: "Rigorous testing across devices, OS versions, and network conditions." },
-      { step: "Launch", description: "App store submission, approval management, and launch strategy." },
-      { step: "Growth", description: "Analytics-driven improvements and feature updates based on user feedback." }
+      { step: "Concept", description: "We define what the app does, who uses it, and the core features for v1." },
+      { step: "Design", description: "Wireframes first, then full UI designs. You approve before we code." },
+      { step: "Development", description: "We build the app with regular builds for you to test on your phone." },
+      { step: "Testing", description: "Bug fixing, performance testing, and testing on real devices." },
+      { step: "Launch", description: "We handle App Store and Google Play submission and approval." },
+      { step: "Updates", description: "Bug fixes, OS updates, and new features as needed." }
     ],
     stats: [
-      { value: "200+", label: "Apps Launched" },
-      { value: "4.8★", label: "Average Rating" },
-      { value: "10M+", label: "Total Downloads" },
-      { value: "40%", label: "Cost Savings" }
+      { value: "80+", label: "Apps Built" },
+      { value: "iOS+Android", label: "Both Platforms" },
+      { value: "4.5+", label: "Avg Store Rating" },
+      { value: "3-6 mo", label: "Typical Timeline" }
     ],
     caseStudies: [
-      { title: "Fitness Tracking App", industry: "Health & Wellness", result: "1M+ active users in first year" },
-      { title: "Banking Mobile App", industry: "Finance", result: "4.9★ rating with 500K downloads" },
-      { title: "Food Delivery Platform", industry: "Food & Beverage", result: "200% increase in order volume" }
+      { title: "Service Booking App", industry: "Home Services", result: "Booking and payment for local service providers" },
+      { title: "Delivery Tracking", industry: "Logistics", result: "Real-time tracking for drivers and customers" },
+      { title: "Membership App", industry: "Fitness", result: "Class booking and member management for gyms" }
     ]
   },
   "cloud-solutions": {
     title: "Cloud Solutions",
-    subtitle: "Scalable Cloud Infrastructure",
-    description: "Transform your business with enterprise cloud solutions that provide scalability, security, and cost efficiency.",
+    subtitle: "AWS, Azure & Cloud Infrastructure",
+    description: "Cloud setup, migration, and management. We help you move to the cloud or optimize what you already have.",
     heroImage: "/services/cloud.jpg",
-    overview: "We help organizations leverage the full potential of cloud computing. From migration strategies to cloud-native development, our solutions ensure optimal performance, security, and cost management across AWS, Azure, and Google Cloud platforms.",
+    overview: "We work with AWS, Google Cloud, and Azure. Whether you're moving from on-premise servers, setting up a new infrastructure, or trying to reduce your monthly cloud bill — we can help. We focus on practical solutions: reliable hosting, proper security, automated backups, and costs that make sense.",
     features: [
       {
-        title: "Cloud Migration",
-        description: "Seamless migration of existing applications and data to cloud infrastructure with minimal disruption.",
+        title: "Cloud Setup",
+        description: "New cloud infrastructure from scratch — servers, databases, storage, networking, all configured properly.",
         icon: "migrate"
       },
       {
-        title: "Cloud Architecture",
-        description: "Designing scalable, resilient, and cost-optimized cloud architectures for your specific needs.",
+        title: "Migration",
+        description: "Move your existing apps and data to the cloud. We plan it carefully to minimize downtime.",
         icon: "architecture"
       },
       {
-        title: "Serverless Solutions",
-        description: "Event-driven architectures that automatically scale and reduce operational overhead.",
+        title: "Cost Optimization",
+        description: "Already on cloud but bills are high? We audit your setup and find ways to reduce costs.",
         icon: "serverless"
       },
       {
-        title: "Multi-Cloud Strategy",
-        description: "Leveraging multiple cloud providers for redundancy, compliance, and optimal performance.",
+        title: "DevOps Setup",
+        description: "CI/CD pipelines, Docker, Kubernetes — automated deployments so your team ships faster.",
         icon: "multicloud"
       }
     ],
-    technologies: ["AWS", "Azure", "Google Cloud", "Kubernetes", "Docker", "Terraform", "CloudFormation", "Lambda"],
+    technologies: ["AWS", "Google Cloud", "Azure", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "Linux"],
     process: [
-      { step: "Assessment", description: "Evaluating current infrastructure and defining cloud readiness." },
-      { step: "Strategy", description: "Developing comprehensive cloud adoption and migration strategy." },
-      { step: "Architecture", description: "Designing secure, scalable, and cost-effective cloud architecture." },
-      { step: "Migration", description: "Executing migration with minimal downtime and data integrity." },
-      { step: "Optimization", description: "Continuous monitoring and optimization for performance and cost." },
-      { step: "Management", description: "24/7 cloud management, security, and compliance monitoring." }
+      { step: "Audit", description: "We look at your current setup (or requirements) and identify what needs to be done." },
+      { step: "Planning", description: "Architecture design, cost estimates, and migration plan if applicable." },
+      { step: "Setup", description: "We configure the infrastructure, security groups, databases, and monitoring." },
+      { step: "Migration", description: "Data and application migration with testing at each step." },
+      { step: "Testing", description: "Load testing, security checks, and failover testing." },
+      { step: "Handover", description: "Documentation and training for your team to manage day-to-day." }
     ],
     stats: [
-      { value: "60%", label: "Cost Reduction" },
-      { value: "99.99%", label: "Availability" },
-      { value: "100+", label: "Cloud Projects" },
-      { value: "3x", label: "Faster Deployment" }
+      { value: "AWS", label: "Certified Team" },
+      { value: "50+", label: "Cloud Projects" },
+      { value: "30-50%", label: "Typical Cost Savings" },
+      { value: "99.9%", label: "Uptime Target" }
     ],
     caseStudies: [
-      { title: "Enterprise Migration", industry: "Manufacturing", result: "60% reduction in infrastructure costs" },
-      { title: "Serverless Platform", industry: "Media", result: "Auto-scaling for 10M+ daily users" },
-      { title: "Multi-Cloud Setup", industry: "Finance", result: "99.999% uptime achieved" }
+      { title: "E-commerce Migration", industry: "Retail", result: "Moved from shared hosting to AWS with auto-scaling" },
+      { title: "Startup Infrastructure", industry: "SaaS", result: "Full AWS setup with CI/CD for a new product" },
+      { title: "Cost Reduction", industry: "Media", result: "Reduced monthly cloud bill from $8K to $3K" }
     ]
   },
   "ai-ml-solutions": {
     title: "AI/ML Solutions",
-    subtitle: "Intelligent Business Solutions",
-    description: "Harness the power of artificial intelligence and machine learning to automate processes, gain insights, and drive innovation.",
+    subtitle: "AI Integration & Automation",
+    description: "Practical AI solutions — chatbots, automation, data analysis, and integrating AI APIs into your existing systems.",
     heroImage: "/services/ai-ml.jpg",
-    overview: "Our AI and ML solutions transform raw data into actionable intelligence. From predictive analytics to natural language processing, we build intelligent systems that learn, adapt, and deliver measurable business value.",
+    overview: "We help businesses use AI where it actually makes sense. This includes building chatbots, integrating OpenAI/GPT into your apps, automating repetitive tasks, and analyzing data to find useful patterns. We're not here to sell you on AI hype — we focus on practical applications that save time or improve your product.",
     features: [
       {
-        title: "Machine Learning Models",
-        description: "Custom ML models for prediction, classification, and pattern recognition tailored to your data.",
+        title: "Chatbots & Assistants",
+        description: "Customer support bots, internal helpdesk assistants, or product Q&A bots using GPT and similar models.",
         icon: "ml"
       },
       {
-        title: "Natural Language Processing",
-        description: "Text analysis, chatbots, and language understanding for enhanced customer interactions.",
+        title: "AI API Integration",
+        description: "Add OpenAI, Claude, or other AI services to your existing software. Text generation, summarization, etc.",
         icon: "nlp"
       },
       {
-        title: "Computer Vision",
-        description: "Image and video analysis for quality control, security, and automated inspections.",
+        title: "Document Processing",
+        description: "Extract data from invoices, forms, contracts. OCR + AI to automate manual data entry.",
         icon: "vision"
       },
       {
-        title: "Predictive Analytics",
-        description: "Data-driven forecasting for demand planning, risk assessment, and strategic decisions.",
+        title: "Data Analysis",
+        description: "Make sense of your data — trends, predictions, anomaly detection. Dashboards you can actually use.",
         icon: "analytics"
       }
     ],
-    technologies: ["Python", "TensorFlow", "PyTorch", "OpenAI", "AWS SageMaker", "Azure ML", "Scikit-learn", "Pandas"],
+    technologies: ["Python", "OpenAI API", "LangChain", "TensorFlow", "PostgreSQL", "Node.js", "AWS", "Pinecone"],
     process: [
-      { step: "Data Analysis", description: "Assessing data quality, availability, and potential for AI/ML applications." },
-      { step: "Model Design", description: "Selecting appropriate algorithms and designing model architecture." },
-      { step: "Training", description: "Training models with your data using best practices and optimization." },
-      { step: "Validation", description: "Rigorous testing and validation to ensure accuracy and reliability." },
-      { step: "Deployment", description: "Integrating models into production systems with monitoring." },
-      { step: "Refinement", description: "Continuous learning and model improvement based on new data." }
+      { step: "Problem Definition", description: "What are you trying to automate or improve? We define the actual use case." },
+      { step: "Feasibility", description: "Is AI the right solution? Sometimes simpler approaches work better." },
+      { step: "Prototype", description: "We build a quick proof-of-concept so you can see if it works for your needs." },
+      { step: "Development", description: "Full implementation with proper error handling and edge cases." },
+      { step: "Integration", description: "Connect it to your existing systems, databases, and workflows." },
+      { step: "Monitoring", description: "Track usage, accuracy, and costs. Adjust as needed." }
     ],
     stats: [
-      { value: "85%", label: "Accuracy Rate" },
-      { value: "50+", label: "AI Projects" },
-      { value: "40%", label: "Process Automation" },
-      { value: "3x", label: "ROI Increase" }
+      { value: "30+", label: "AI Projects" },
+      { value: "GPT-4", label: "Latest Models" },
+      { value: "2-8 wk", label: "Typical Timeline" },
+      { value: "ROI Focus", label: "Practical Results" }
     ],
     caseStudies: [
-      { title: "Fraud Detection System", industry: "Banking", result: "95% fraud detection accuracy" },
-      { title: "Demand Forecasting", industry: "Retail", result: "30% reduction in inventory costs" },
-      { title: "Customer Service Bot", industry: "Telecom", result: "60% reduction in support tickets" }
+      { title: "Support Chatbot", industry: "E-commerce", result: "Handles 60% of customer questions automatically" },
+      { title: "Invoice Processing", industry: "Accounting", result: "Extracts data from PDFs, saves 20 hrs/week" },
+      { title: "Content Generator", industry: "Marketing", result: "AI-assisted product descriptions for 5000+ SKUs" }
     ]
   },
   "devops-cicd": {
     title: "DevOps & CI/CD",
-    subtitle: "Accelerate Your Delivery Pipeline",
-    description: "Streamline your development workflow with automated pipelines, infrastructure as code, and continuous delivery practices.",
+    subtitle: "Automated Deployments & Infrastructure",
+    description: "Set up automated deployment pipelines, Docker containers, and proper infrastructure so your team can ship code faster.",
     heroImage: "/services/devops.jpg",
-    overview: "Our DevOps services bridge the gap between development and operations, enabling faster releases, improved reliability, and reduced costs. We implement industry-leading practices and tools to automate your entire software delivery lifecycle.",
+    overview: "We help development teams deploy code without manual headaches. This means setting up CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins), containerizing apps with Docker, and managing infrastructure with Terraform. The goal: push code, tests run automatically, and it deploys to staging/production without anyone SSH-ing into servers.",
     features: [
       {
-        title: "CI/CD Pipeline Setup",
-        description: "Automated build, test, and deployment pipelines for faster and safer releases.",
+        title: "CI/CD Pipelines",
+        description: "Automated testing and deployment. Push to main branch, it goes live. No manual steps.",
         icon: "pipeline"
       },
       {
-        title: "Infrastructure as Code",
-        description: "Version-controlled infrastructure using Terraform, CloudFormation, and Ansible.",
+        title: "Docker & Containers",
+        description: "Package your app properly so it runs the same everywhere — local, staging, production.",
         icon: "iac"
       },
       {
-        title: "Container Orchestration",
-        description: "Docker and Kubernetes solutions for scalable, portable application deployment.",
+        title: "Infrastructure Setup",
+        description: "Terraform, CloudFormation — your infrastructure defined in code, version controlled.",
         icon: "container"
       },
       {
-        title: "Monitoring & Observability",
-        description: "Comprehensive monitoring, logging, and alerting for proactive issue detection.",
+        title: "Monitoring & Logs",
+        description: "Know when things break before users tell you. Alerts, dashboards, log aggregation.",
         icon: "monitor"
       }
     ],
-    technologies: ["Jenkins", "GitLab CI", "GitHub Actions", "Docker", "Kubernetes", "Terraform", "Ansible", "Prometheus"],
+    technologies: ["GitHub Actions", "GitLab CI", "Docker", "Kubernetes", "Terraform", "AWS", "Datadog", "Grafana"],
     process: [
-      { step: "Assessment", description: "Evaluating current development practices and identifying improvement areas." },
-      { step: "Strategy", description: "Defining DevOps roadmap aligned with business objectives." },
-      { step: "Implementation", description: "Setting up tools, pipelines, and automated workflows." },
-      { step: "Integration", description: "Integrating with existing systems and training teams." },
-      { step: "Optimization", description: "Continuous improvement of processes and pipeline efficiency." },
-      { step: "Support", description: "Ongoing support, updates, and best practice guidance." }
+      { step: "Current State", description: "How do you deploy now? What's painful? What breaks often?" },
+      { step: "Design", description: "We design the pipeline and infrastructure based on your actual needs." },
+      { step: "Setup", description: "Configure CI/CD, containers, hosting, and monitoring tools." },
+      { step: "Migration", description: "Move your existing apps to the new setup with minimal disruption." },
+      { step: "Documentation", description: "Your team needs to understand it. We write clear docs." },
+      { step: "Training", description: "We show your devs how to use and maintain the new setup." }
     ],
     stats: [
-      { value: "10x", label: "Faster Deployments" },
-      { value: "70%", label: "Less Downtime" },
-      { value: "50%", label: "Cost Reduction" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "Minutes", label: "Deploy Time" },
+      { value: "Auto", label: "Rollbacks" },
+      { value: "40+", label: "Teams Helped" },
+      { value: "Zero", label: "Manual Deploys" }
     ],
     caseStudies: [
-      { title: "CI/CD Transformation", industry: "SaaS", result: "From monthly to daily deployments" },
-      { title: "Kubernetes Migration", industry: "E-commerce", result: "80% improvement in scalability" },
-      { title: "DevOps Culture", industry: "Enterprise", result: "50% faster time-to-market" }
+      { title: "Startup Pipeline", industry: "SaaS", result: "From FTP uploads to automated CI/CD in 2 weeks" },
+      { title: "Docker Migration", industry: "Fintech", result: "Containerized 12 microservices, unified deployment" },
+      { title: "Multi-Environment", industry: "Agency", result: "Staging, QA, Production — all automated" }
     ]
   },
   "ui-ux-design": {
     title: "UI/UX Design",
-    subtitle: "Human-Centered Design Excellence",
-    description: "Create intuitive, engaging, and visually stunning digital experiences that delight users and drive conversions.",
+    subtitle: "App & Website Design",
+    description: "User interface design for websites, mobile apps, and web applications. Figma designs your developers can actually build.",
     heroImage: "/services/design.jpg",
-    overview: "Our design team combines creativity with data-driven insights to create user experiences that are both beautiful and functional. From research to implementation, we ensure every interaction is meaningful and aligned with your brand.",
+    overview: "We design interfaces that look good and work well. This means wireframes to figure out the structure, then full visual designs in Figma. We hand off organized files with proper components, spacing, and specs — not messy artboards that leave developers guessing. We can also redesign existing apps that need a refresh.",
     features: [
       {
-        title: "User Research",
-        description: "Deep understanding of user needs, behaviors, and pain points through comprehensive research.",
+        title: "Website Design",
+        description: "Landing pages, corporate sites, and marketing websites. Clean layouts that communicate clearly.",
         icon: "research"
       },
       {
-        title: "UX Strategy",
-        description: "Strategic design thinking that aligns user needs with business goals.",
+        title: "App Design",
+        description: "Mobile and web app interfaces. Dashboard layouts, user flows, and all the screens you need.",
         icon: "strategy"
       },
       {
-        title: "Visual Design",
-        description: "Stunning visual interfaces that reflect your brand and engage users.",
+        title: "Wireframes & Prototypes",
+        description: "Low-fidelity wireframes first, then interactive prototypes you can click through.",
         icon: "visual"
       },
       {
-        title: "Prototyping & Testing",
-        description: "Interactive prototypes and usability testing for validated design decisions.",
+        title: "Design Systems",
+        description: "Reusable components, color palettes, typography — keeps your product consistent as it grows.",
         icon: "prototype"
       }
     ],
-    technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Principle", "Maze", "Hotjar", "UserTesting"],
+    technologies: ["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator", "Principle", "Lottie", "Zeplin"],
     process: [
-      { step: "Research", description: "User interviews, surveys, and competitive analysis." },
-      { step: "Define", description: "Personas, user journeys, and design requirements." },
-      { step: "Ideate", description: "Wireframing and exploring multiple design solutions." },
-      { step: "Design", description: "High-fidelity visual design and design system creation." },
-      { step: "Test", description: "Usability testing and iterating based on feedback." },
-      { step: "Handoff", description: "Developer-ready specifications and design documentation." }
+      { step: "Brief", description: "What does the app/site need to do? Who uses it? Any brand guidelines?" },
+      { step: "Wireframes", description: "Rough layouts to nail down structure and flow before we polish visuals." },
+      { step: "Visual Design", description: "Full designs with real content, proper spacing, and your brand style." },
+      { step: "Prototype", description: "Clickable prototype so you can test the flow before development." },
+      { step: "Revisions", description: "We refine based on your feedback. Usually 2-3 rounds." },
+      { step: "Handoff", description: "Organized Figma file with components, specs, and assets for devs." }
     ],
     stats: [
-      { value: "200+", label: "Projects Designed" },
-      { value: "40%", label: "Conversion Increase" },
-      { value: "95%", label: "Client Satisfaction" },
-      { value: "50%", label: "Reduced Bounce Rate" }
+      { value: "150+", label: "Projects Designed" },
+      { value: "Figma", label: "Primary Tool" },
+      { value: "1-4 wk", label: "Typical Timeline" },
+      { value: "Dev-Ready", label: "Proper Handoff" }
     ],
     caseStudies: [
-      { title: "Banking App Redesign", industry: "Finance", result: "60% increase in user engagement" },
-      { title: "E-commerce UX", industry: "Retail", result: "45% higher conversion rate" },
-      { title: "SaaS Dashboard", industry: "Technology", result: "70% reduction in support queries" }
+      { title: "SaaS Dashboard", industry: "B2B Software", result: "Complete UI for analytics platform, 40+ screens" },
+      { title: "Mobile App Redesign", industry: "Fitness", result: "Modernized outdated app, improved usability" },
+      { title: "E-commerce Website", industry: "Fashion", result: "Full website design with product pages and checkout" }
     ]
   },
   "ecommerce-solutions": {
     title: "E-commerce Solutions",
-    subtitle: "Powerful Online Retail Platforms",
-    description: "Build high-converting e-commerce experiences that scale with your business and delight your customers.",
+    subtitle: "Online Stores & Shopping Platforms",
+    description: "Shopify stores, WooCommerce sites, or custom e-commerce platforms. We build online stores that work.",
     heroImage: "/services/ecommerce.jpg",
-    overview: "We create comprehensive e-commerce solutions that drive sales and customer loyalty. From custom platforms to Shopify and WooCommerce implementations, we deliver online stores that convert visitors into customers.",
+    overview: "We build online stores using Shopify, WooCommerce, or custom solutions depending on your needs and budget. This includes product catalog setup, payment integration (Stripe, PayPal, local gateways), shipping configuration, and the admin tools you need to manage orders. We also handle migrations if you're moving from an existing platform.",
     features: [
       {
-        title: "Custom E-commerce Platforms",
-        description: "Tailored solutions built for unique business requirements and complex catalogs.",
+        title: "Shopify Stores",
+        description: "Custom Shopify themes, app integrations, and store setup. Good for most retail businesses.",
         icon: "custom"
       },
       {
-        title: "Platform Implementation",
-        description: "Expert Shopify, WooCommerce, and Magento setup and customization.",
+        title: "WooCommerce",
+        description: "WordPress-based stores with more flexibility. Good if you need custom functionality.",
         icon: "platform"
       },
       {
-        title: "Payment Integration",
-        description: "Secure payment gateways with multiple payment options and currencies.",
+        title: "Custom E-commerce",
+        description: "Built from scratch when Shopify/WooCommerce doesn't fit. Full control over everything.",
         icon: "payment"
       },
       {
-        title: "Inventory Management",
-        description: "Real-time inventory tracking and automated stock management systems.",
+        title: "Payment & Shipping",
+        description: "Stripe, PayPal, local payment methods. Shipping rates, zones, and carrier integrations.",
         icon: "inventory"
       }
     ],
-    technologies: ["Shopify", "WooCommerce", "Magento", "Stripe", "PayPal", "Next.js Commerce", "Medusa", "Saleor"],
+    technologies: ["Shopify", "WooCommerce", "Next.js", "Stripe", "PayPal", "Node.js", "PostgreSQL", "AWS"],
     process: [
-      { step: "Discovery", description: "Understanding your products, customers, and business model." },
-      { step: "Strategy", description: "E-commerce strategy and platform selection." },
-      { step: "Design", description: "Conversion-focused UX and brand-aligned visual design." },
-      { step: "Development", description: "Building your store with all required features and integrations." },
-      { step: "Launch", description: "Testing, migration, and successful store launch." },
-      { step: "Growth", description: "Ongoing optimization, marketing support, and scaling." }
+      { step: "Requirements", description: "What are you selling? How many products? Any special requirements?" },
+      { step: "Platform Choice", description: "We recommend Shopify, WooCommerce, or custom based on your needs." },
+      { step: "Design", description: "Store design — homepage, product pages, cart, checkout." },
+      { step: "Setup", description: "Products, categories, payments, shipping, taxes — all configured." },
+      { step: "Testing", description: "Test orders, payment flows, edge cases before going live." },
+      { step: "Launch", description: "Go live, monitor for issues, fix anything that comes up." }
     ],
     stats: [
-      { value: "150+", label: "Stores Launched" },
-      { value: "$50M+", label: "Revenue Generated" },
-      { value: "35%", label: "Average AOV Increase" },
-      { value: "99.9%", label: "Uptime" }
+      { value: "100+", label: "Stores Built" },
+      { value: "Shopify", label: "Partner" },
+      { value: "2-8 wk", label: "Typical Timeline" },
+      { value: "All Sizes", label: "10 to 10K Products" }
     ],
     caseStudies: [
-      { title: "Fashion E-commerce", industry: "Retail", result: "400% growth in online revenue" },
-      { title: "B2B Platform", industry: "Manufacturing", result: "Automated 10,000+ orders/month" },
-      { title: "Subscription Commerce", industry: "Food & Beverage", result: "85% customer retention rate" }
+      { title: "Fashion Brand", industry: "Apparel", result: "Shopify store with 500+ products, custom theme" },
+      { title: "Food Delivery", industry: "F&B", result: "WooCommerce with local delivery zones and time slots" },
+      { title: "B2B Wholesale", industry: "Manufacturing", result: "Custom pricing tiers and bulk order system" }
     ]
   },
   "custom-software-development": {
     title: "Custom Software Development",
-    subtitle: "Tailored Enterprise Solutions",
-    description: "Build bespoke software solutions that perfectly fit your business processes and give you a competitive edge.",
+    subtitle: "Business Software & Internal Tools",
+    description: "Custom software built for your specific workflow. When off-the-shelf tools don't fit, we build what you need.",
     heroImage: "/services/custom.jpg",
-    overview: "When off-the-shelf solutions fall short, our custom software development services deliver exactly what your business needs. We build scalable, secure, and maintainable software that evolves with your organization.",
+    overview: "Sometimes you need software that does exactly what your business requires — not a generic tool you have to work around. We build custom internal tools, admin panels, workflow automation systems, and business applications. You own the code, and it works the way your business works.",
     features: [
       {
-        title: "Enterprise Applications",
-        description: "Large-scale systems for complex business operations and workflows.",
+        title: "Internal Tools",
+        description: "Admin dashboards, reporting tools, data management systems for your team.",
         icon: "enterprise"
       },
       {
-        title: "System Integration",
-        description: "Connecting disparate systems for unified data flow and operations.",
+        title: "Workflow Automation",
+        description: "Automate repetitive processes. Approvals, notifications, data sync between systems.",
         icon: "integration"
       },
       {
-        title: "Legacy Modernization",
-        description: "Updating outdated systems to modern architectures without disruption.",
+        title: "System Integration",
+        description: "Connect your existing tools — CRM, accounting, inventory — so data flows automatically.",
         icon: "modernize"
       },
       {
-        title: "SaaS Development",
-        description: "Multi-tenant software-as-a-service platforms built for scale.",
+        title: "Legacy Updates",
+        description: "Old system still works but needs updating? We modernize without breaking what works.",
         icon: "saas"
       }
     ],
-    technologies: ["Java", "C#", ".NET", "Python", "Node.js", "React", "Angular", "PostgreSQL", "Oracle"],
+    technologies: ["Node.js", "Python", "React", "PostgreSQL", "MySQL", "Redis", "AWS", "Docker"],
     process: [
-      { step: "Analysis", description: "Deep dive into business processes and requirements." },
-      { step: "Architecture", description: "Designing scalable and maintainable software architecture." },
-      { step: "Development", description: "Agile development with regular demos and feedback." },
-      { step: "Quality Assurance", description: "Comprehensive testing and quality control." },
-      { step: "Deployment", description: "Phased rollout with training and change management." },
-      { step: "Evolution", description: "Continuous improvement and feature development." }
+      { step: "Discovery", description: "We learn your current workflow. What works? What doesn't? What's manual?" },
+      { step: "Scope", description: "Define exactly what the software needs to do. No scope creep." },
+      { step: "Design", description: "Database structure, user interface, how it fits with existing systems." },
+      { step: "Build", description: "Iterative development. You see progress and can give feedback regularly." },
+      { step: "Test", description: "We test with real scenarios. You test before it goes live." },
+      { step: "Deploy", description: "We handle hosting, training, and support for the first few months." }
     ],
     stats: [
-      { value: "300+", label: "Custom Solutions" },
-      { value: "15+", label: "Years Experience" },
-      { value: "98%", label: "On-Time Delivery" },
-      { value: "100%", label: "Code Ownership" }
+      { value: "70+", label: "Custom Systems" },
+      { value: "Your Code", label: "Full Ownership" },
+      { value: "Long-term", label: "Maintainable" },
+      { value: "1-6 mo", label: "Timeline Range" }
     ],
     caseStudies: [
-      { title: "ERP System", industry: "Manufacturing", result: "50% improvement in operational efficiency" },
-      { title: "CRM Platform", industry: "Insurance", result: "360° customer view for 1M+ customers" },
-      { title: "Logistics Platform", industry: "Supply Chain", result: "Real-time tracking for 50K shipments" }
+      { title: "Order Management", industry: "Distribution", result: "Replaced spreadsheets with proper order tracking system" },
+      { title: "HR Portal", industry: "Services", result: "Leave requests, timesheets, employee directory — all in one place" },
+      { title: "Booking System", industry: "Healthcare", result: "Custom scheduling for multi-location clinic network" }
     ]
   },
   "seo-digital-marketing": {
     title: "SEO/Digital Marketing",
-    subtitle: "Data-Driven Growth Strategies",
-    description: "Maximize your online visibility and drive qualified traffic with comprehensive digital marketing solutions.",
+    subtitle: "SEO & Online Marketing",
+    description: "Get found on Google. Technical SEO fixes, content that ranks, and marketing that brings real leads — not vanity metrics.",
     heroImage: "/services/seo.jpg",
-    overview: "Our digital marketing team combines technical SEO expertise with creative content strategies to improve your search rankings, drive organic traffic, and convert visitors into customers. We use data-driven approaches for measurable results.",
+    overview: "We help businesses show up when people search for what they offer. This includes fixing technical SEO issues, optimizing existing pages, creating content that targets relevant keywords, and running Google/Meta ads when paid traffic makes sense. We focus on results you can measure — rankings, traffic, leads — not just reports.",
     features: [
       {
         title: "Technical SEO",
-        description: "Site optimization for search engine crawlability, speed, and indexation.",
+        description: "Site speed, mobile-friendliness, crawl errors, structured data. The foundation stuff.",
         icon: "technical"
       },
       {
-        title: "Content Strategy",
-        description: "Keyword research and content planning that drives organic traffic.",
+        title: "On-Page SEO",
+        description: "Keyword research, meta tags, content optimization. Make your pages rank for the right terms.",
         icon: "content"
       },
       {
-        title: "Performance Marketing",
-        description: "PPC campaigns across Google, social media, and display networks.",
+        title: "Content Strategy",
+        description: "Blog posts, landing pages, and content that targets keywords your customers actually search.",
         icon: "ppc"
       },
       {
-        title: "Analytics & Reporting",
-        description: "Comprehensive tracking and insights for data-driven decisions.",
+        title: "Google Ads",
+        description: "Search and display campaigns. We manage the ads so you get leads, not wasted budget.",
         icon: "analytics"
       }
     ],
-    technologies: ["Google Analytics", "SEMrush", "Ahrefs", "Google Ads", "Meta Ads", "HubSpot", "Mailchimp", "Hotjar"],
+    technologies: ["Google Search Console", "Ahrefs", "SEMrush", "Google Analytics", "Google Ads", "Screaming Frog", "Surfer", "WordPress"],
     process: [
-      { step: "Audit", description: "Comprehensive analysis of current digital presence and competitors." },
-      { step: "Strategy", description: "Custom digital marketing strategy aligned with business goals." },
-      { step: "Implementation", description: "Executing SEO, content, and paid campaigns." },
-      { step: "Optimization", description: "Continuous testing and optimization for better results." },
-      { step: "Reporting", description: "Regular performance reports and actionable insights." },
-      { step: "Scaling", description: "Expanding successful strategies for continued growth." }
+      { step: "Audit", description: "We check your site for SEO issues and see where you stand vs competitors." },
+      { step: "Quick Wins", description: "Fix obvious issues first — broken links, missing tags, slow pages." },
+      { step: "Keyword Plan", description: "What should you rank for? We find keywords with traffic and intent." },
+      { step: "Optimization", description: "Update existing pages, create new content, build authority." },
+      { step: "Tracking", description: "Set up proper tracking so you know what's working." },
+      { step: "Monthly Work", description: "Ongoing optimization, new content, link building, reporting." }
     ],
     stats: [
-      { value: "500%", label: "Average Traffic Growth" },
-      { value: "Top 10", label: "Rankings Achieved" },
-      { value: "3x", label: "Lead Generation" },
-      { value: "150+", label: "Clients Served" }
+      { value: "50+", label: "SEO Clients" },
+      { value: "Organic", label: "Focus Area" },
+      { value: "3-6 mo", label: "Results Timeline" },
+      { value: "Monthly", label: "Reporting" }
     ],
     caseStudies: [
-      { title: "E-commerce SEO", industry: "Retail", result: "From page 5 to #1 for key terms" },
-      { title: "Lead Generation", industry: "B2B Services", result: "400% increase in qualified leads" },
-      { title: "Brand Awareness", industry: "Startup", result: "10M impressions in 6 months" }
+      { title: "Local Business", industry: "Services", result: "Page 1 rankings for 15 local keywords in 4 months" },
+      { title: "E-commerce SEO", industry: "Retail", result: "Organic traffic up 180% in 6 months" },
+      { title: "B2B Lead Gen", industry: "Software", result: "Google Ads campaign generating leads at $45/lead" }
     ]
   },
   "maintenance-support": {
     title: "Maintenance & Support",
-    subtitle: "24/7 Technical Excellence",
-    description: "Keep your applications running smoothly with proactive maintenance, monitoring, and dedicated support services.",
+    subtitle: "Ongoing Support & Maintenance",
+    description: "Keep your website or app running. Bug fixes, updates, security patches, and someone to call when things break.",
     heroImage: "/services/support.jpg",
-    overview: "Our maintenance and support services ensure your applications remain secure, performant, and up-to-date. From 24/7 monitoring to emergency response, we provide comprehensive support that lets you focus on your business.",
+    overview: "You have a website or app that needs ongoing care — updates, bug fixes, security patches, small changes. We offer monthly retainer plans so you have developers available when you need them. No need to hire full-time staff for work that's only needed sometimes. We also take over projects built by other teams if you need new support.",
     features: [
       {
-        title: "24/7 Monitoring",
-        description: "Round-the-clock system monitoring with instant alerts and response.",
+        title: "Bug Fixes",
+        description: "Something broken? We fix it. Usually within 24-48 hours depending on complexity.",
         icon: "monitoring"
       },
       {
-        title: "Security Updates",
-        description: "Regular security patches and vulnerability assessments.",
+        title: "Updates & Patches",
+        description: "Keep your CMS, plugins, and dependencies up to date. Security patches applied promptly.",
         icon: "security"
       },
       {
-        title: "Performance Tuning",
-        description: "Continuous optimization for speed and efficiency.",
+        title: "Small Changes",
+        description: "Need to update content, add a feature, or tweak something? That's what we're here for.",
         icon: "performance"
       },
       {
-        title: "Dedicated Support",
-        description: "Expert support team with guaranteed response times.",
+        title: "Monitoring",
+        description: "We set up alerts so we know when your site goes down — often before you do.",
         icon: "support"
       }
     ],
-    technologies: ["Datadog", "New Relic", "PagerDuty", "Jira", "Zendesk", "Slack", "AWS CloudWatch", "Grafana"],
+    technologies: ["WordPress", "React", "Node.js", "AWS", "Cloudflare", "UptimeRobot", "GitHub", "Slack"],
     process: [
-      { step: "Onboarding", description: "Understanding your systems and establishing baselines." },
-      { step: "Monitoring Setup", description: "Implementing comprehensive monitoring and alerting." },
-      { step: "Documentation", description: "Creating runbooks and standard operating procedures." },
-      { step: "Proactive Care", description: "Regular maintenance, updates, and health checks." },
-      { step: "Incident Response", description: "Rapid response and resolution for any issues." },
-      { step: "Continuous Improvement", description: "Regular reviews and recommendations for improvements." }
+      { step: "Handover", description: "You give us access. We review the codebase and document how things work." },
+      { step: "Retainer Setup", description: "We agree on hours per month and priority levels for requests." },
+      { step: "Request System", description: "You submit requests via email or Slack. We track everything." },
+      { step: "Regular Work", description: "We handle updates, fixes, and improvements each month." },
+      { step: "Reporting", description: "Monthly summary of what we did and any recommendations." },
+      { step: "Availability", description: "Need something urgent? We're reachable. Response times defined upfront." }
     ],
     stats: [
-      { value: "99.99%", label: "Uptime SLA" },
-      { value: "<15min", label: "Response Time" },
-      { value: "24/7", label: "Availability" },
-      { value: "95%", label: "First-Call Resolution" }
+      { value: "40+", label: "Active Clients" },
+      { value: "< 24hr", label: "Response Time" },
+      { value: "Monthly", label: "Retainer Plans" },
+      { value: "No Lock-in", label: "Cancel Anytime" }
     ],
     caseStudies: [
-      { title: "E-commerce Support", industry: "Retail", result: "Zero downtime during peak seasons" },
-      { title: "Healthcare Platform", industry: "Healthcare", result: "HIPAA-compliant 24/7 operations" },
-      { title: "Financial Systems", industry: "Finance", result: "99.999% uptime for critical systems" }
+      { title: "E-commerce Store", industry: "Retail", result: "Ongoing Shopify support, 10-15 requests/month" },
+      { title: "Company Website", industry: "Professional Services", result: "WordPress maintenance and content updates" },
+      { title: "Web App Takeover", industry: "SaaS", result: "Took over codebase from previous agency, ongoing development" }
     ]
   }
 };
@@ -574,7 +574,7 @@ export default function ServicePage() {
       <main className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-[#1a1a2e] mb-4">Service Not Found</h1>
-          <Link href="/" className="text-[#0d9488] hover:underline">
+          <Link href="/" className="text-[#00B4FF] hover:underline">
             Return to Home
           </Link>
         </div>
@@ -591,7 +591,7 @@ export default function ServicePage() {
         {/* Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-[#16213e] to-[#1a1a2e]" />
-          <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#0d9488]/10 to-transparent" />
+          <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#00B4FF]/10 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6">
@@ -601,7 +601,7 @@ export default function ServicePage() {
             <span>›</span>
             <Link href="/services" className="hover:text-white transition-colors">Services</Link>
             <span>›</span>
-            <span className="text-[#0d9488]">{service.title}</span>
+            <span className="text-[#00B4FF]">{service.title}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -615,7 +615,7 @@ export default function ServicePage() {
               </p>
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-[#00B4FF] hover:bg-[#0055FF] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
               >
                 Build Your Project Now
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -628,7 +628,7 @@ export default function ServicePage() {
             <div className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               {service.stats.map((stat, index) => (
                 <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
-                  <div className="text-3xl sm:text-4xl font-bold text-[#0d9488] mb-2">{stat.value}</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#00B4FF] mb-2">{stat.value}</div>
                   <div className="text-white/60 text-sm">{stat.label}</div>
                 </div>
               ))}
@@ -649,7 +649,7 @@ export default function ServicePage() {
             </p>
             <div className="flex flex-wrap gap-3">
               {service.technologies.map((tech, index) => (
-                <span key={index} className="px-4 py-2 bg-[#0d9488]/10 text-[#0d9488] rounded-full text-sm font-medium">
+                <span key={index} className="px-4 py-2 bg-[#00B4FF]/10 text-[#00B4FF] rounded-full text-sm font-medium">
                   {tech}
                 </span>
               ))}
@@ -674,10 +674,10 @@ export default function ServicePage() {
             {service.features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:border-[#0d9488]/30 transition-all duration-300 group"
+                className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:border-[#00B4FF]/30 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#0d9488]/10 rounded-xl flex items-center justify-center text-[#0d9488] group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#00B4FF]/10 rounded-xl flex items-center justify-center text-[#00B4FF] group-hover:bg-[#00B4FF] group-hover:text-white transition-all duration-300 flex-shrink-0">
                     <FeatureIcon type={feature.icon} />
                   </div>
                   <div className="flex-1">
@@ -688,7 +688,7 @@ export default function ServicePage() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <Link
                     href="#contact"
-                    className="inline-flex items-center gap-2 text-[#0d9488] font-medium hover:gap-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-[#00B4FF] font-medium hover:gap-3 transition-all duration-300"
                   >
                     Get in Touch
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -716,7 +716,7 @@ export default function ServicePage() {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#0d9488]/20" />
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#00B4FF]/20" />
             
             <div className="space-y-12">
               {service.process.map((step, index) => (
@@ -730,12 +730,12 @@ export default function ServicePage() {
                   </div>
                   
                   {/* Number Circle */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-[#0d9488] rounded-full items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-[#00B4FF] rounded-full items-center justify-center text-white font-bold text-lg shadow-lg">
                     {index + 1}
                   </div>
                   
                   {/* Mobile Number */}
-                  <div className="md:hidden flex-shrink-0 w-10 h-10 bg-[#0d9488] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="md:hidden flex-shrink-0 w-10 h-10 bg-[#00B4FF] rounded-full flex items-center justify-center text-white font-bold">
                     {index + 1}
                   </div>
                   
@@ -762,7 +762,7 @@ export default function ServicePage() {
             </div>
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#00B4FF] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
             >
               Let&apos;s Connect
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -775,7 +775,7 @@ export default function ServicePage() {
             {service.technologies.map((tech, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-xl p-4 text-center text-white font-medium hover:bg-white/10 hover:border-[#0d9488]/50 transition-all duration-300"
+                className="bg-white/5 border border-white/10 rounded-xl p-4 text-center text-white font-medium hover:bg-white/10 hover:border-[#00B4FF]/50 transition-all duration-300"
               >
                 {tech}
               </div>
@@ -805,19 +805,19 @@ export default function ServicePage() {
                 className="group bg-gradient-to-br from-[#f8f9fa] to-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
                 {/* Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-[#1a1a2e] to-[#0d9488]/80 relative overflow-hidden">
+                <div className="h-48 bg-gradient-to-br from-[#1a1a2e] to-[#00B4FF]/80 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#0d9488] text-white text-xs font-medium rounded-full">
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#00B4FF] text-white text-xs font-medium rounded-full">
                     Case Study
                   </span>
                 </div>
                 <div className="p-6">
-                  <span className="text-[#0d9488] text-sm font-medium">{study.industry}</span>
-                  <h3 className="text-lg font-semibold text-[#1a1a2e] mt-2 mb-3 group-hover:text-[#0d9488] transition-colors">
+                  <span className="text-[#00B4FF] text-sm font-medium">{study.industry}</span>
+                  <h3 className="text-lg font-semibold text-[#1a1a2e] mt-2 mb-3 group-hover:text-[#00B4FF] transition-colors">
                     {study.title}
                   </h3>
                   <div className="flex items-center gap-2 text-gray-600 text-sm">
-                    <svg className="w-4 h-4 text-[#0d9488]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-[#00B4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                     <span>{study.result}</span>
@@ -840,7 +840,7 @@ export default function ServicePage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-[#0d9488] hover:text-[#0d9488] hover:shadow-md transition-all duration-300"
+                  className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-[#00B4FF] hover:text-[#00B4FF] hover:shadow-md transition-all duration-300"
                 >
                   {s.name}
                 </Link>
@@ -852,7 +852,7 @@ export default function ServicePage() {
       {/* CTA Section - Devsinc Style */}
       <section id="contact" className="py-20 bg-[#1a1a2e]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-r from-[#0d9488]/20 to-transparent rounded-3xl p-12 md:p-16">
+          <div className="bg-gradient-to-r from-[#00B4FF]/20 to-transparent rounded-3xl p-12 md:p-16">
             <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready To Get Started?
@@ -863,7 +863,7 @@ export default function ServicePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/#get-in-touch"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-[#00B4FF] hover:bg-[#0055FF] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
                 >
                   Transform Your Digital Presence
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

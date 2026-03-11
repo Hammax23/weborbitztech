@@ -125,7 +125,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#00B4FF]/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#00B4FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0055FF]/10 rounded-full blur-3xl" />
         </div>
 
         {/* Grid Pattern */}
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                   {service.features.slice(0, 3).map((feature, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                      className="px-3 py-1 bg-[#00B4FF]/10 text-[#0055FF] text-xs rounded-full"
                     >
                       {feature}
                     </span>

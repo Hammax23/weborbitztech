@@ -67,21 +67,46 @@ export default function HeroSection() {
     }, 50);
   }, [currentVideo, isMobile]);
 
-  // Handle video ended event
+  // Handle video ended event - with fallback for desktop
   useEffect(() => {
-    const currentVideoEl = videoRefs.current[currentVideo];
+    if (!isReady) return;
     
-    const handleEnded = () => {
+    const currentVideoEl = videoRefs.current[currentVideo];
+    if (!currentVideoEl) return;
+    
+    let hasTransitioned = false;
+    
+    const triggerNextVideo = () => {
+      if (hasTransitioned) return;
+      hasTransitioned = true;
       goToNextVideo();
     };
 
-    if (currentVideoEl) {
-      currentVideoEl.addEventListener('ended', handleEnded);
-      return () => {
-        currentVideoEl.removeEventListener('ended', handleEnded);
-      };
+    const handleEnded = () => {
+      triggerNextVideo();
+    };
+
+    // Also use timeupdate as fallback for desktop (in case 'ended' doesn't fire)
+    const handleTimeUpdate = () => {
+      if (!hasTransitioned && currentVideoEl.duration && currentVideoEl.currentTime >= currentVideoEl.duration - 0.3) {
+        triggerNextVideo();
+      }
+    };
+
+    currentVideoEl.addEventListener('ended', handleEnded);
+    
+    // Add timeupdate fallback only for desktop
+    if (!isMobile) {
+      currentVideoEl.addEventListener('timeupdate', handleTimeUpdate);
     }
-  }, [currentVideo, goToNextVideo]);
+    
+    return () => {
+      currentVideoEl.removeEventListener('ended', handleEnded);
+      if (!isMobile) {
+        currentVideoEl.removeEventListener('timeupdate', handleTimeUpdate);
+      }
+    };
+  }, [currentVideo, goToNextVideo, isReady, isMobile]);
 
   // Detect mobile device immediately
   useEffect(() => {
