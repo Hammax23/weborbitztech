@@ -2,15 +2,17 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
+// Desktop videos (original quality)
 const videos = [
   "/cover1.mp4",
   "/cover2.mp4",
   "/cover3.mp4",
 ];
 
+// Mobile videos (compressed 480p for instant loading)
 const mobileVideos = [
-  "/cover1.mp4",
-  "/cover2.mp4",
+  "/cover1-mobile.mp4",
+  "/cover2-mobile.mp4",
 ];
 
 const slides = [
@@ -32,34 +34,37 @@ const slides = [
   },
 ];
 
+// Check if mobile on client side
+const getIsMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+};
+
 export default function HeroSection() {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [nextVideo, setNextVideo] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [isReady, setIsReady] = useState(false);
+  const [videosLoaded, setVideosLoaded] = useState<boolean[]>([]);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const goToNextVideo = useCallback(() => {
-    setIsTransitioning(true);
     const maxVideos = isMobile ? mobileVideos.length : videos.length;
     const next = (currentVideo + 1) % maxVideos;
-    setNextVideo(next);
     
-    // Start transition
+    // Prepare next video before transition
+    const nextVideoEl = videoRefs.current[next];
+    if (nextVideoEl) {
+      nextVideoEl.currentTime = 0;
+      nextVideoEl.play().catch(() => {});
+    }
+    
+    // Smooth crossfade - update state after brief delay for video to start
     setTimeout(() => {
+      setNextVideo(next);
       setCurrentVideo(next);
-      setNextVideo((next + 1) % maxVideos);
-      setIsTransitioning(false);
-      
-      // Play the new current video
-      const nextVideoEl = videoRefs.current[next];
-      if (nextVideoEl) {
-        nextVideoEl.currentTime = 0;
-        nextVideoEl.play().catch(() => {});
-      }
-    }, 700); // Transition duration
+    }, 50);
   }, [currentVideo, isMobile]);
 
   // Handle video ended event
@@ -78,69 +83,74 @@ export default function HeroSection() {
     }
   }, [currentVideo, goToNextVideo]);
 
-  // Detect mobile device
+  // Detect mobile device immediately
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    const mobile = getIsMobile();
+    setIsMobile(mobile);
+    setIsReady(true);
+    
+    // Initialize videos loaded array
+    const videoCount = mobile ? mobileVideos.length : videos.length;
+    setVideosLoaded(new Array(videoCount).fill(false));
+    
+    const handleResize = () => {
+      setIsMobile(getIsMobile());
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto-play first video and preload others
+  // Preload and auto-play videos
   useEffect(() => {
-    const firstVideo = videoRefs.current[0];
-    if (firstVideo) {
-      // Add event listeners for video loading
-      firstVideo.addEventListener('loadeddata', () => setVideoLoaded(true));
-      firstVideo.addEventListener('canplay', () => setVideoLoaded(true));
-      
-      // Force play with user interaction simulation for mobile
-      const playVideo = () => {
-        firstVideo.play().catch((e) => {
-          console.log('Video autoplay prevented:', e);
-          // If autoplay fails, still show the video frame
-          firstVideo.load();
-        });
-      };
-      
-      playVideo();
-      
-      // Also try to play on first user interaction (for strict mobile browsers)
-      const handleInteraction = () => {
-        playVideo();
-        // Also preload second video on mobile after interaction
-        const secondVideo = videoRefs.current[1];
-        if (secondVideo && isMobile) {
-          secondVideo.load();
-        }
-        document.removeEventListener('touchstart', handleInteraction);
-        document.removeEventListener('click', handleInteraction);
-      };
-      document.addEventListener('touchstart', handleInteraction, { once: true });
-      document.addEventListener('click', handleInteraction, { once: true });
-    }
-
-    // Preload videos
-    const videosToPreload = isMobile ? mobileVideos : videos;
-    videosToPreload.forEach((src, index) => {
-      // Preload all videos
+    if (!isReady) return;
+    
+    const videosToUse = isMobile ? mobileVideos : videos;
+    
+    // Preload all videos via link tags (high priority)
+    videosToUse.forEach((src, index) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'video';
       link.href = src;
+      if (index === 0) link.setAttribute('fetchpriority', 'high');
       document.head.appendChild(link);
-      
-      // Also eagerly load second video element on mobile
-      if (isMobile && index === 1) {
-        const secondVideo = videoRefs.current[1];
-        if (secondVideo) {
-          secondVideo.load();
-        }
+    });
+
+    // Setup video elements
+    videosToUse.forEach((_, index) => {
+      const videoEl = videoRefs.current[index];
+      if (videoEl) {
+        // Mark as loaded when ready
+        const handleLoaded = () => {
+          setVideosLoaded(prev => {
+            const newState = [...prev];
+            newState[index] = true;
+            return newState;
+          });
+        };
+        videoEl.addEventListener('loadeddata', handleLoaded);
+        videoEl.addEventListener('canplaythrough', handleLoaded);
+        
+        // Load video
+        videoEl.load();
       }
     });
-  }, [isMobile]);
+
+    // Play first video
+    const firstVideo = videoRefs.current[0];
+    if (firstVideo) {
+      firstVideo.play().catch(() => {
+        // Autoplay blocked - wait for user interaction
+        const handleInteraction = () => {
+          firstVideo.play().catch(() => {});
+          document.removeEventListener('touchstart', handleInteraction);
+          document.removeEventListener('click', handleInteraction);
+        };
+        document.addEventListener('touchstart', handleInteraction, { once: true });
+        document.addEventListener('click', handleInteraction, { once: true });
+      });
+    }
+  }, [isReady, isMobile]);
 
   // Text slide rotation
   useEffect(() => {
@@ -163,13 +173,13 @@ export default function HeroSection() {
       {/* Fallback Background for Mobile / Video Loading */}
       <div 
         className={`absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] transition-opacity duration-500 ${
-          videoLoaded ? 'opacity-0' : 'opacity-100'
+          videosLoaded[0] ? 'opacity-0' : 'opacity-100'
         }`}
         style={{ zIndex: 0 }}
       />
 
-      {/* Video Backgrounds */}
-      {videos.map((src, index) => (
+      {/* Video Backgrounds - Crossfade Effect */}
+      {isReady && (isMobile ? mobileVideos : videos).map((src, index) => (
         <video
           key={src}
           ref={(el) => { videoRefs.current[index] = el; }}
@@ -177,29 +187,20 @@ export default function HeroSection() {
           playsInline
           autoPlay={index === 0}
           loop={false}
-          preload={isMobile ? (index < 2 ? "auto" : "none") : (index === 0 ? "auto" : "metadata")}
+          preload="auto"
           poster="/hero-poster.jpg"
-          className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-in-out ${
-            isMobile 
-              ? index < 2 
-                ? index === currentVideo % 2
-                  ? isTransitioning ? "-translate-x-full" : "translate-x-0 z-[1]"
-                  : index === nextVideo % 2 && isTransitioning ? "translate-x-0 z-[2]" : "translate-x-full z-0"
-                : 'hidden'
-              : index === currentVideo
-                ? isTransitioning
-                  ? "-translate-x-full"
-                  : "translate-x-0 z-[1]"
-                : index === nextVideo && isTransitioning
-                ? "translate-x-0 z-[2]"
-                : "translate-x-full z-0"
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
+            index === currentVideo
+              ? "opacity-100 z-[2]"
+              : "opacity-0 z-[1]"
           }`}
           style={{ 
-            WebkitTransform: 'translateZ(0)',
+            willChange: 'opacity',
+            transform: 'translateZ(0)',
             backfaceVisibility: 'hidden'
           }}
         >
-          <source src={isMobile ? mobileVideos[index % 2] : src} type="video/mp4" />
+          <source src={src} type="video/mp4" />
         </video>
       ))}
 

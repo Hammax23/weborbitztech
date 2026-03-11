@@ -9,7 +9,7 @@ interface AnimatedLogoProps {
 
 export default function AnimatedLogo({ className = "", onClick }: AnimatedLogoProps) {
   return (
-    <div onClick={onClick} className={`flex items-center gap-1 sm:gap-2 lg:gap-4 group cursor-pointer ${className}`}>
+    <div onClick={onClick} className={`flex items-center gap-1 sm:gap-3 lg:gap-3 group cursor-pointer ${className}`}>
       {/* Logo Mark */}
       <div className="relative w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center shrink-0 -translate-y-1">
         
@@ -126,21 +126,21 @@ export default function AnimatedLogo({ className = "", onClick }: AnimatedLogoPr
 
       {/* Text Container */}
       <div className="flex flex-col justify-center">
-        <div className="flex items-center text-[1.25rem] lg:text-[1.7rem] font-semibold tracking-tight leading-none text-white" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+        <div className="flex items-center text-[1.2rem] lg:text-[1.6rem] tracking-[0.05em] leading-none text-white font-semibold" style={{ fontFamily: 'var(--font-oswald), "Oswald", sans-serif' }}>
           <span>WEB</span>
-          <span className="ml-[0.15em]">
-            {/* Static Gradient ORBITZ */}
+          <span>
+            {/* Gradient ORBITZ */}
             <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">ORBITZ</span>
           </span>
         </div>
         
-        <div className="flex items-center justify-between gap-[3px] mt-1.5 px-[2px]">
-          <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#00B4FF] to-transparent opacity-70"></div>
+        <div className="flex items-center justify-center w-full mt-0.5">
+          <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent to-[#00B4FF] opacity-70"></div>
           {/* TECHNOLOGIES in White */}
-          <span className="text-[0.45rem] lg:text-[0.55rem] tracking-[0.45em] font-semibold leading-none ml-1.5 uppercase text-white drop-shadow-sm" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+          <span className="text-[0.45rem] lg:text-[0.6rem] tracking-[0.3em] leading-none uppercase text-white drop-shadow-sm font-medium px-2" style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
             TECHNOLOGIES
           </span>
-          <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#00B4FF] to-transparent opacity-70"></div>
+          <div className="h-[1px] flex-grow bg-gradient-to-l from-transparent to-[#00B4FF] opacity-70"></div>
         </div>
       </div>
     </div>
