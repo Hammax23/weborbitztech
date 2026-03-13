@@ -30,44 +30,64 @@ const techStacks = [
 
 const serviceCards = [
   {
-    title: "Generative AI",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    gradient: "from-cyan-500/30 to-blue-600/30",
-  },
-  {
-    title: "Dynamics 365 ERP",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
-    gradient: "from-gray-500/30 to-slate-600/30",
-  },
-  {
-    title: "Mobile App Development",
-    image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=600&h=400&fit=crop",
-    gradient: "from-purple-500/30 to-indigo-600/30",
-  },
-  {
-    title: "Staff Augmentation",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=400&fit=crop",
-    gradient: "from-teal-500/30 to-cyan-600/30",
-  },
-  {
-    title: "Cloud Solutions",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
+    title: "Web Development",
+    href: "/services/web-development",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop",
     gradient: "from-blue-500/30 to-indigo-600/30",
   },
   {
-    title: "Data Analytics",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    title: "Mobile App Development",
+    href: "/services/mobile-app-development",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
+    gradient: "from-purple-500/30 to-indigo-600/30",
+  },
+  {
+    title: "Cloud Solutions",
+    href: "/services/cloud-solutions",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+    gradient: "from-cyan-500/30 to-blue-600/30",
+  },
+  {
+    title: "AI/ML Solutions",
+    href: "/services/ai-ml-solutions",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop",
+    gradient: "from-violet-500/30 to-purple-600/30",
+  },
+  {
+    title: "DevOps & CI/CD",
+    href: "/services/devops-cicd",
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=600&h=400&fit=crop",
+    gradient: "from-orange-500/30 to-red-600/30",
+  },
+  {
+    title: "UI/UX Design",
+    href: "/services/ui-ux-design",
+    image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=400&fit=crop",
+    gradient: "from-pink-500/30 to-rose-600/30",
+  },
+  {
+    title: "E-commerce Solutions",
+    href: "/services/ecommerce-solutions",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
     gradient: "from-emerald-500/30 to-teal-600/30",
   },
   {
-    title: "Cybersecurity",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
-    gradient: "from-red-500/30 to-orange-600/30",
+    title: "Custom Software Development",
+    href: "/services/custom-software-development",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+    gradient: "from-slate-500/30 to-gray-600/30",
   },
   {
-    title: "DevOps Services",
-    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop",
-    gradient: "from-violet-500/30 to-purple-600/30",
+    title: "SEO/Digital Marketing",
+    href: "/services/seo-digital-marketing",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    gradient: "from-amber-500/30 to-orange-600/30",
+  },
+  {
+    title: "Maintenance & Support",
+    href: "/services/maintenance-support",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+    gradient: "from-teal-500/30 to-cyan-600/30",
   },
 ];
 
@@ -320,8 +340,9 @@ export default function OurServices() {
               }`}
             >
               {visibleCards.map((card, index) => (
-                <div
+                <Link
                   key={`${currentIndex}-${index}`}
+                  href={card.href}
                   className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] min-h-[120px] sm:min-h-[140px] md:min-h-[180px] lg:min-h-[200px] group cursor-pointer transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 active:scale-[0.98] shadow-lg"
                 >
                   {/* Background Image */}
@@ -339,7 +360,7 @@ export default function OurServices() {
                       {card.title}
                     </h4>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 

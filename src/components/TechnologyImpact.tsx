@@ -6,27 +6,27 @@ import Link from "next/link";
 const stats = [
   {
     id: 1,
-    number: "48",
+    number: "5",
     suffix: "+",
-    label: "Years of continual excellence",
+    label: "Years of Industry Experience",
   },
   {
     id: 2,
-    number: "7700",
+    number: "50",
     suffix: "+",
-    label: "Change makers driving revolution",
+    label: "Projects Successfully Delivered",
   },
   {
     id: 3,
-    number: "16",
+    number: "8",
     suffix: "+",
-    label: "Countries with our presence and clientele",
+    label: "Countries Served Worldwide",
   },
   {
     id: 4,
-    number: "300",
+    number: "40",
     suffix: "+",
-    label: "Active clients across the globe",
+    label: "Happy Clients & Partners",
   },
 ];
 

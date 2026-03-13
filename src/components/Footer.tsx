@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import AnimatedLogo from "./AnimatedLogo";
 
 const footerLinks = {
   services: {
@@ -278,14 +277,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Subscribe Section & Logo */}
+        {/* Subscribe Section */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 pb-10 border-b border-gray-300">
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block relative w-[240px] h-[72px] bg-gray-900 rounded-lg p-2">
-              <AnimatedLogo />
-            </Link>
-          </div>
-          
           <div className="max-w-md w-full">
             <h4 className="text-lg font-semibold text-gray-900 mb-2">Subscribe</h4>
             <p className="text-sm text-gray-600 mb-4">

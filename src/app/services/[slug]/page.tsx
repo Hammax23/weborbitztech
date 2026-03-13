@@ -574,7 +574,7 @@ export default function ServicePage() {
       <main className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-[#1a1a2e] mb-4">Service Not Found</h1>
-          <Link href="/" className="text-[#00B4FF] hover:underline">
+          <Link href="/" className="text-[#262b3f] hover:underline">
             Return to Home
           </Link>
         </div>
@@ -587,11 +587,15 @@ export default function ServicePage() {
       <Navbar />
       <main className="min-h-screen bg-white">
         {/* Hero Section - Devsinc Style */}
-      <section className="relative bg-[#1a1a2e] pt-32 pb-20 overflow-hidden">
-        {/* Background Pattern */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background Image Cover */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-[#16213e] to-[#1a1a2e]" />
-          <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#00B4FF]/10 to-transparent" />
+          <img 
+            src="/servicedetailcover.png" 
+            alt={service.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#1a1a2e]/80" />
         </div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6">
@@ -601,11 +605,11 @@ export default function ServicePage() {
             <span>›</span>
             <Link href="/services" className="hover:text-white transition-colors">Services</Link>
             <span>›</span>
-            <span className="text-[#00B4FF]">{service.title}</span>
+            <span className="text-white">{service.title}</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
+          <div className="max-w-3xl">
+            {/* Content */}
             <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 {service.title}
@@ -615,7 +619,7 @@ export default function ServicePage() {
               </p>
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-[#00B4FF] hover:bg-[#0055FF] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-white text-white hover:bg-[#262b3f] hover:border-[#262b3f] px-8 py-4 rounded-lg font-medium transition-all duration-300"
               >
                 Build Your Project Now
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -623,37 +627,20 @@ export default function ServicePage() {
                 </svg>
               </Link>
             </div>
-
-            {/* Right - Stats Grid */}
-            <div className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-              {service.stats.map((stat, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
-                  <div className="text-3xl sm:text-4xl font-bold text-[#00B4FF] mb-2">{stat.value}</div>
-                  <div className="text-white/60 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Overview Section - Devsinc Style */}
-      <section className="py-20 bg-white">
+      {/* Overview Section */}
+      <section className="py-20 bg-[#f8f9fa]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-6">
               {service.subtitle}
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              {service.overview}
+            <p className="text-gray-600 text-lg leading-relaxed">
+              We focus on understanding your business goals first, then build solutions that actually solve problems — not just look good on paper. Every project gets dedicated attention, clear communication, and a team that takes ownership of delivering results on time.
             </p>
-            <div className="flex flex-wrap gap-3">
-              {service.technologies.map((tech, index) => (
-                <span key={index} className="px-4 py-2 bg-[#00B4FF]/10 text-[#00B4FF] rounded-full text-sm font-medium">
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -670,32 +657,17 @@ export default function ServicePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {service.features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:border-[#00B4FF]/30 transition-all duration-300 group"
+                className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-lg hover:border-[#262b3f]/30 transition-all duration-300 group"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#00B4FF]/10 rounded-xl flex items-center justify-center text-[#00B4FF] group-hover:bg-[#00B4FF] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                    <FeatureIcon type={feature.icon} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                  </div>
+                <div className="w-10 h-10 bg-[#262b3f]/10 rounded-lg flex items-center justify-center text-[#262b3f] group-hover:bg-[#262b3f] group-hover:text-white transition-all duration-300 mb-4">
+                  <FeatureIcon type={feature.icon} />
                 </div>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <Link
-                    href="#contact"
-                    className="inline-flex items-center gap-2 text-[#00B4FF] font-medium hover:gap-3 transition-all duration-300"
-                  >
-                    Get in Touch
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
+                <h3 className="text-base font-semibold text-[#1a1a2e] mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -716,7 +688,7 @@ export default function ServicePage() {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#00B4FF]/20" />
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#262b3f]/20" />
             
             <div className="space-y-12">
               {service.process.map((step, index) => (
@@ -730,12 +702,12 @@ export default function ServicePage() {
                   </div>
                   
                   {/* Number Circle */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-[#00B4FF] rounded-full items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-[#262b3f] rounded-full items-center justify-center text-white font-bold text-lg shadow-lg">
                     {index + 1}
                   </div>
                   
                   {/* Mobile Number */}
-                  <div className="md:hidden flex-shrink-0 w-10 h-10 bg-[#00B4FF] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="md:hidden flex-shrink-0 w-10 h-10 bg-[#262b3f] rounded-full flex items-center justify-center text-white font-bold">
                     {index + 1}
                   </div>
                   
@@ -762,7 +734,7 @@ export default function ServicePage() {
             </div>
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2 bg-[#00B4FF] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
             >
               Let&apos;s Connect
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -771,60 +743,142 @@ export default function ServicePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {service.technologies.map((tech, index) => (
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+            {[
+              { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+              { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+              { name: "Vue.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
+              { name: "Angular", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+              { name: "Svelte", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
+              { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+              { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+              { name: "Laravel", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
+              { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+              { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+              { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+              { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+              { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+              { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+              { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+              { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+              { name: "Sass", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
+              { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+              { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+              { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+              { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+              { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+              { name: "Redis", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+              { name: "GraphQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+              { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+              { name: "Azure", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+              { name: "Google Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+              { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+              { name: "Kubernetes", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
+              { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+              { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+              { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+            ].map((tech, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-xl p-4 text-center text-white font-medium hover:bg-white/10 hover:border-[#00B4FF]/50 transition-all duration-300"
+                className="bg-white/5 border border-white/10 rounded-lg p-3 flex flex-col items-center gap-2 hover:bg-white/10 transition-all duration-300 group"
               >
-                {tech}
+                <img src={tech.logo} alt={tech.name} className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-white text-xs font-medium">{tech.name}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies - Devsinc Style */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-4">
-                Stories of Our Transformations
-              </h2>
-              <p className="text-gray-600 max-w-xl">
-                Real outcomes we&apos;ve delivered for businesses across services and industries.
-              </p>
-            </div>
+      {/* Why Choose Us Section - Premium Style */}
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#262b3f]/5 rounded-full blur-3xl -translate-y-1/2"></div>
+        
+        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6">
+          <div className="text-center mb-20">
+            <span className="text-[#262b3f] text-sm font-medium tracking-wider uppercase mb-4 block">Our Approach</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a2e]">
+              Why Choose WebOrbitz?
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {service.caseStudies.map((study, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-[#f8f9fa] to-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
-              >
-                {/* Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-[#1a1a2e] to-[#00B4FF]/80 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#00B4FF] text-white text-xs font-medium rounded-full">
-                    Case Study
-                  </span>
+          {/* Curved Cards Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* Card 1 */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#262b3f]/10 to-transparent rounded-[50px] rounded-bl-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 border border-gray-200 rounded-[50px] rounded-bl-none group-hover:border-[#262b3f]/50 transition-all duration-500"></div>
+              <div className="relative p-6 pt-10 pb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#262b3f] to-[#1a1a2e] rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-[#262b3f]/25 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                  </svg>
                 </div>
-                <div className="p-6">
-                  <span className="text-[#00B4FF] text-sm font-medium">{study.industry}</span>
-                  <h3 className="text-lg font-semibold text-[#1a1a2e] mt-2 mb-3 group-hover:text-[#00B4FF] transition-colors">
-                    {study.title}
-                  </h3>
-                  <div className="flex items-center gap-2 text-gray-600 text-sm">
-                    <svg className="w-4 h-4 text-[#00B4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                    <span>{study.result}</span>
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold text-[#1a1a2e] mb-3">End-to-End Expertise</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">Complete solutions from planning to deployment and ongoing support.</p>
               </div>
-            ))}
+            </div>
+
+            {/* Card 2 */}
+            <div className="relative group lg:mt-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#262b3f]/10 to-transparent rounded-[50px] rounded-bl-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 border border-gray-200 rounded-[50px] rounded-bl-none group-hover:border-[#262b3f]/50 transition-all duration-500"></div>
+              <div className="relative p-6 pt-10 pb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#262b3f] to-[#1a1a2e] rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-[#262b3f]/25 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a2e] mb-3">Modern Technologies</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">We use {service.technologies.slice(0, 3).join(", ")} and more for robust solutions.</p>
+              </div>
+            </div>
+
+            {/* Card 3 - Center highlighted */}
+            <div className="relative group lg:mt-4">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#262b3f]/10 to-transparent rounded-[50px] rounded-bl-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 border border-gray-200 rounded-[50px] rounded-bl-none group-hover:border-[#262b3f]/50 transition-all duration-500"></div>
+              <div className="relative p-6 pt-10 pb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#262b3f] to-[#1a1a2e] rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-[#262b3f]/25 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a2e] mb-3">Scalable Solutions</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">Built to grow with your business, from startup to enterprise scale.</p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="relative group lg:mt-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#262b3f]/10 to-transparent rounded-[50px] rounded-bl-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 border border-gray-200 rounded-[50px] rounded-bl-none group-hover:border-[#262b3f]/50 transition-all duration-500"></div>
+              <div className="relative p-6 pt-10 pb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#262b3f] to-[#1a1a2e] rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-[#262b3f]/25 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a2e] mb-3">Dedicated Team</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">Direct communication with developers who understand your project.</p>
+              </div>
+            </div>
+
+            {/* Card 5 */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#262b3f]/10 to-transparent rounded-[50px] rounded-bl-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 border border-gray-200 rounded-[50px] rounded-bl-none group-hover:border-[#262b3f]/50 transition-all duration-500"></div>
+              <div className="relative p-6 pt-10 pb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#262b3f] to-[#1a1a2e] rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg shadow-[#262b3f]/25 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a2e] mb-3">Security First</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">Best practices for data protection and secure development.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -840,7 +894,7 @@ export default function ServicePage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-[#00B4FF] hover:text-[#00B4FF] hover:shadow-md transition-all duration-300"
+                  className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-[#262b3f] hover:text-[#262b3f] hover:shadow-md transition-all duration-300"
                 >
                   {s.name}
                 </Link>
@@ -852,7 +906,7 @@ export default function ServicePage() {
       {/* CTA Section - Devsinc Style */}
       <section id="contact" className="py-20 bg-[#1a1a2e]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-r from-[#00B4FF]/20 to-transparent rounded-3xl p-12 md:p-16">
+          <div className="bg-gradient-to-r from-[#262b3f]/20 to-transparent rounded-3xl p-12 md:p-16">
             <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready To Get Started?
@@ -863,7 +917,7 @@ export default function ServicePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/#get-in-touch"
-                  className="inline-flex items-center justify-center gap-2 bg-[#00B4FF] hover:bg-[#0055FF] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
                 >
                   Transform Your Digital Presence
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
