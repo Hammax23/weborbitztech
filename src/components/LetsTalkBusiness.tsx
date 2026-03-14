@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const regions = [
   "Select Region",
@@ -33,6 +33,14 @@ const jobOptions = [
 
 export default function LetsTalkBusiness() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Listen for custom event to open the panel
+  useEffect(() => {
+    const handleOpenPanel = () => setIsOpen(true);
+    window.addEventListener('openLetsTalkBusiness', handleOpenPanel);
+    return () => window.removeEventListener('openLetsTalkBusiness', handleOpenPanel);
+  }, []);
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -65,7 +73,7 @@ export default function LetsTalkBusiness() {
       {/* Floating Side Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-gradient-to-b from-[#00E1FF] via-[#00B4FF] to-[#0055FF] hover:opacity-90 text-white py-6 px-2 rounded-l-md shadow-lg transition-all duration-300 group overflow-hidden"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-gradient-to-b from-[#00E1FF] via-[#0055FF] to-[#FF6B6B] hover:opacity-90 text-white py-6 px-2 rounded-l-md shadow-lg transition-all duration-300 group overflow-hidden"
         style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
       >
         <span className="text-sm font-semibold tracking-wider whitespace-nowrap">
@@ -268,7 +276,7 @@ export default function LetsTalkBusiness() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+              className="w-full py-4 bg-gradient-to-r from-[#00E1FF] via-[#0055FF] to-[#FF6B6B] hover:opacity-90 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
             >
               Submit
             </button>

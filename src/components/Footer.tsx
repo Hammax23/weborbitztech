@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
 const footerLinks = {
@@ -131,14 +130,6 @@ const bottomLinks = [
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Subscribe:", email);
-    setEmail("");
-  };
-
   return (
     <footer className="w-full bg-[#f5f5f5] relative overflow-hidden">
       {/* Decorative Chevrons - Right Side */}
@@ -171,9 +162,9 @@ export default function Footer() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 pt-12 sm:pt-14 pb-6 sm:pb-8 relative z-10">
         {/* Main Footer Links Grid - All in one row */}
-        <div className="flex justify-between items-start mb-12">
-          {/* All Sections in One Row */}
-          <div className="flex gap-12 lg:gap-16">
+        <div className="flex justify-between items-start mb-12 w-full">
+          {/* All Sections in One Row - Full Width */}
+          <div className="flex justify-between w-full">
             {/* Services Column */}
             <div>
               <h4 className="text-base font-semibold text-gray-900 mb-4">{footerLinks.services.title}</h4>
@@ -264,42 +255,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Side - Canada Office */}
-          <div className="text-right">
-            <h4 className="text-base font-semibold text-gray-900 mb-2 flex items-center justify-end gap-2">
+        </div>
+
+        {/* Social Links Section */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-10 pb-10 border-b border-gray-300">
+          {/* Canada Head Office */}
+          <div>
+            <h4 className="text-base font-semibold text-gray-900 mb-2 flex items-center gap-2">
               Canada <span className="font-normal text-gray-600">(Head Office)</span>
-              <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-6 h-4 object-cover" />
+              <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-6 h-4 object-cover rounded-sm" />
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed">
               231 Oak Park Blvd, Suit#301,<br />
               Oakville, ON L6H 7S8
             </p>
-          </div>
-        </div>
-
-        {/* Subscribe Section */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 pb-10 border-b border-gray-300">
-          <div className="max-w-md w-full">
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Subscribe</h4>
-            <p className="text-sm text-gray-600 mb-4">
-              Stay updated on how future of technology is shaping.
-            </p>
-            <form onSubmit={handleSubscribe} className="flex gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email here"
-                className="flex-1 px-4 py-2.5 border border-gray-300 rounded-sm focus:border-[#0d9488] focus:outline-none text-sm"
-                required
-              />
-              <button
-                type="submit"
-                className="px-6 py-2.5 border border-gray-800 text-gray-800 text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors rounded-sm"
-              >
-                Submit
-              </button>
-            </form>
           </div>
 
           {/* Social Links */}

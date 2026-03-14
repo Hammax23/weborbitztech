@@ -631,32 +631,27 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Overview Section */}
-      <section className="py-20 bg-[#f8f9fa]">
+      {/* Combined Overview & Features Section */}
+      <section id="features" className="py-20 bg-[#f8f9fa]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-6">
+          {/* Header with Subtitle & Description */}
+          <div className="max-w-4xl mx-auto text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-4">
               {service.subtitle}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
               We focus on understanding your business goals first, then build solutions that actually solve problems — not just look good on paper. Every project gets dedicated attention, clear communication, and a team that takes ownership of delivering results on time.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Features Section - Devsinc Style (Vertical List with CTAs) */}
-      <section id="features" className="py-20 bg-[#f8f9fa]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-4">
+          {/* What We Offer Label */}
+          <div className="text-center mb-8">
+            <span className="inline-block bg-[#262b3f]/10 text-[#262b3f] text-sm font-semibold px-4 py-2 rounded-full">
               What We Offer
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive solutions designed to address your specific challenges and drive measurable results.
-            </p>
+            </span>
           </div>
 
+          {/* Feature Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {service.features.map((feature, index) => (
               <div
@@ -748,30 +743,22 @@ export default function ServicePage() {
               { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
               { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
               { name: "Vue.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
-              { name: "Angular", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-              { name: "Svelte", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
               { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
               { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
               { name: "Laravel", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
               { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
               { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-              { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
               { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
               { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
               { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-              { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-              { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-              { name: "Sass", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
               { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
               { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
               { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
               { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-              { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
               { name: "Redis", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
               { name: "GraphQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
               { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
               { name: "Azure", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-              { name: "Google Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
               { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
               { name: "Kubernetes", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
               { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
@@ -883,49 +870,27 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Other Services */}
-      <section className="py-16 bg-[#f8f9fa]">
+      {/* CTA Section - Slim */}
+      <section id="contact" className="py-10 bg-[#1a1a2e]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <h3 className="text-xl font-semibold text-[#1a1a2e] mb-6 text-center">Explore Other Services</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {allServices
-              .filter((s) => s.slug !== slug)
-              .map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/services/${s.slug}`}
-                  className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-[#262b3f] hover:text-[#262b3f] hover:shadow-md transition-all duration-300"
-                >
-                  {s.name}
-                </Link>
-              ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Devsinc Style */}
-      <section id="contact" className="py-20 bg-[#1a1a2e]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-r from-[#262b3f]/20 to-transparent rounded-3xl p-12 md:p-16">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 bg-gradient-to-r from-[#262b3f]/20 to-transparent rounded-2xl p-6 md:p-8">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                 Ready To Get Started?
               </h2>
-              <p className="text-white/70 text-lg mb-8">
-                Let&apos;s discuss how our {service.title.toLowerCase()} services can help transform your business and drive real results.
+              <p className="text-white/70 text-sm">
+                Let&apos;s discuss how our {service.title.toLowerCase()} services can help transform your business.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/#get-in-touch"
-                  className="inline-flex items-center justify-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
-                >
-                  Transform Your Digital Presence
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
             </div>
+            <Link
+              href="/#get-in-touch"
+              className="inline-flex items-center justify-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
+            >
+              Transform Your Digital Presence
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

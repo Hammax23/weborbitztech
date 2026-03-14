@@ -52,148 +52,152 @@ export default function LogoCarousel() {
             className="flex items-center gap-6 md:gap-10 will-change-transform"
             style={{ width: "max-content" }}
           >
-            {/* First set of logos */}
+            {/* First set of logos - Canadian Companies */}
             <LogoItem>
-              <span className="text-xl md:text-2xl font-light text-gray-700 tracking-wide">recurate</span>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-red-600 rounded flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">M</span>
+                </div>
+                <span className="text-lg md:text-xl font-semibold text-gray-800">MapleLeaf Tech</span>
+              </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <svg className="w-6 h-6 md:w-7 md:h-7 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-                  <circle cx="12" cy="12" r="10"/>
+                <span className="text-xl md:text-2xl font-bold text-blue-700">North</span>
+                <span className="text-xl md:text-2xl font-light text-gray-500">Star</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
-                <span className="text-xl md:text-2xl font-medium text-gray-700">Kallidus</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">GreenPath Solutions</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <div className="flex items-center gap-1">
-                <span className="text-green-600 text-xl">◆</span>
-                <span className="text-lg md:text-xl font-medium text-gray-700">HoneyBricks</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <span className="text-lg md:text-xl font-light tracking-[0.2em] text-gray-600 uppercase">Weatherbys</span>
+              <span className="text-lg md:text-xl font-bold tracking-wide text-gray-800">VANCOUVER<span className="text-cyan-500">DIGITAL</span></span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <div className="w-6 h-6 md:w-7 md:h-7 bg-green-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">iD</span>
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">QC</span>
                 </div>
-                <span className="text-xl md:text-2xl font-medium text-gray-700">inDrive</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <div className="flex flex-col items-center leading-none">
-                <span className="text-lg md:text-xl font-serif italic text-amber-600">Sacred</span>
-                <span className="text-xl md:text-2xl font-bold text-indigo-900 -mt-1">TAILS</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <div className="flex flex-col items-center leading-none">
-                <div className="flex gap-0.5">
-                  <div className="w-1.5 h-6 bg-blue-900"></div>
-                  <div className="w-1.5 h-6 bg-blue-900"></div>
-                  <div className="w-1.5 h-6 bg-green-600"></div>
-                </div>
-                <span className="text-sm md:text-base font-bold text-blue-900 tracking-wider mt-1">NISHAT</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">QuebecCommerce</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <span className="text-xl md:text-2xl font-light text-gray-700">Alef</span>
-                <div className="flex flex-col items-start leading-none">
-                  <span className="text-cyan-500 text-2xl font-light">آ</span>
+                <span className="text-xl md:text-2xl font-light text-gray-600">alpine</span>
+                <span className="text-xl md:text-2xl font-bold text-blue-600">LABS</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 md:w-6 md:h-6 border-2 border-red-600 rounded-sm flex items-center justify-center">
+                  <span className="text-red-600 text-xs font-bold">+</span>
                 </div>
+                <span className="text-lg md:text-xl font-medium text-gray-800">CanadaCare Health</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <div className="flex flex-col items-center leading-none">
-                <span className="text-lg md:text-xl text-gray-700 font-light">الغرير</span>
-                <span className="text-[10px] text-gray-500 tracking-wider">AL GHURAIR</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <span className="text-xl md:text-2xl font-bold text-orange-600">TELENOR</span>
+              <span className="text-lg md:text-xl font-semibold text-gray-700">Toronto<span className="text-amber-500">Eats</span></span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <div className="w-5 h-5 border-2 border-blue-600 rounded"></div>
-                <span className="text-xl md:text-2xl font-medium text-gray-700">Engro</span>
+                <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 22,22 2,22"/>
+                </svg>
+                <span className="text-lg md:text-xl font-medium text-gray-700">PeakView Media</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-xl md:text-2xl font-light text-red-600">Jazz</span>
+              <span className="text-lg md:text-xl tracking-widest font-light text-gray-600 uppercase">Montréal Studio</span>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-indigo-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">OC</span>
+                </div>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Ottawa Connect</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <span className="text-xl md:text-2xl font-bold text-teal-600">Frost<span className="font-light text-gray-500">byte</span></span>
             </LogoItem>
 
-            {/* Duplicate set for seamless loop */}
+            {/* Duplicate set for seamless loop - Canadian Companies */}
             <LogoItem>
-              <span className="text-xl md:text-2xl font-light text-gray-700 tracking-wide">recurate</span>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-red-600 rounded flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">M</span>
+                </div>
+                <span className="text-lg md:text-xl font-semibold text-gray-800">MapleLeaf Tech</span>
+              </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <svg className="w-6 h-6 md:w-7 md:h-7 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-                  <circle cx="12" cy="12" r="10"/>
+                <span className="text-xl md:text-2xl font-bold text-blue-700">North</span>
+                <span className="text-xl md:text-2xl font-light text-gray-500">Star</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
-                <span className="text-xl md:text-2xl font-medium text-gray-700">Kallidus</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">GreenPath Solutions</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <div className="flex items-center gap-1">
-                <span className="text-green-600 text-xl">◆</span>
-                <span className="text-lg md:text-xl font-medium text-gray-700">HoneyBricks</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <span className="text-lg md:text-xl font-light tracking-[0.2em] text-gray-600 uppercase">Weatherbys</span>
+              <span className="text-lg md:text-xl font-bold tracking-wide text-gray-800">VANCOUVER<span className="text-cyan-500">DIGITAL</span></span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <div className="w-6 h-6 md:w-7 md:h-7 bg-green-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">iD</span>
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">QC</span>
                 </div>
-                <span className="text-xl md:text-2xl font-medium text-gray-700">inDrive</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <div className="flex flex-col items-center leading-none">
-                <span className="text-lg md:text-xl font-serif italic text-amber-600">Sacred</span>
-                <span className="text-xl md:text-2xl font-bold text-indigo-900 -mt-1">TAILS</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <div className="flex flex-col items-center leading-none">
-                <div className="flex gap-0.5">
-                  <div className="w-1.5 h-6 bg-blue-900"></div>
-                  <div className="w-1.5 h-6 bg-blue-900"></div>
-                  <div className="w-1.5 h-6 bg-green-600"></div>
-                </div>
-                <span className="text-sm md:text-base font-bold text-blue-900 tracking-wider mt-1">NISHAT</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">QuebecCommerce</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <span className="text-xl md:text-2xl font-light text-gray-700">Alef</span>
-                <div className="flex flex-col items-start leading-none">
-                  <span className="text-cyan-500 text-2xl font-light">آ</span>
+                <span className="text-xl md:text-2xl font-light text-gray-600">alpine</span>
+                <span className="text-xl md:text-2xl font-bold text-blue-600">LABS</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 md:w-6 md:h-6 border-2 border-red-600 rounded-sm flex items-center justify-center">
+                  <span className="text-red-600 text-xs font-bold">+</span>
                 </div>
+                <span className="text-lg md:text-xl font-medium text-gray-800">CanadaCare Health</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <div className="flex flex-col items-center leading-none">
-                <span className="text-lg md:text-xl text-gray-700 font-light">الغرير</span>
-                <span className="text-[10px] text-gray-500 tracking-wider">AL GHURAIR</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <span className="text-xl md:text-2xl font-bold text-orange-600">TELENOR</span>
+              <span className="text-lg md:text-xl font-semibold text-gray-700">Toronto<span className="text-amber-500">Eats</span></span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <div className="w-5 h-5 border-2 border-blue-600 rounded"></div>
-                <span className="text-xl md:text-2xl font-medium text-gray-700">Engro</span>
+                <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 22,22 2,22"/>
+                </svg>
+                <span className="text-lg md:text-xl font-medium text-gray-700">PeakView Media</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-xl md:text-2xl font-light text-red-600">Jazz</span>
+              <span className="text-lg md:text-xl tracking-widest font-light text-gray-600 uppercase">Montréal Studio</span>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-indigo-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">OC</span>
+                </div>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Ottawa Connect</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <span className="text-xl md:text-2xl font-bold text-teal-600">Frost<span className="font-light text-gray-500">byte</span></span>
             </LogoItem>
           </div>
         </div>

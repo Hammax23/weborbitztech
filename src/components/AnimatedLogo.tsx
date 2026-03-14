@@ -130,7 +130,7 @@ export default function AnimatedLogo({ className = "", onClick }: AnimatedLogoPr
           <span>WEB</span>
           <span>
             {/* Gradient ORBITZ */}
-            <span className="bg-gradient-to-tr from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">ORBITZ</span>
+            <span className="bg-gradient-to-r from-[#00E1FF] via-[#0055FF] to-[#FF6B6B] text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">ORBITZ</span>
           </span>
         </div>
         

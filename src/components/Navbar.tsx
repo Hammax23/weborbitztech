@@ -3,13 +3,112 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import AnimatedLogo from "./AnimatedLogo";
+
+// Search data - all searchable pages and services
+const searchData = [
+  { title: "Home", href: "/", category: "Pages" },
+  { title: "About Us", href: "/about", category: "Pages" },
+  { title: "Blog", href: "/blog", category: "Pages" },
+  { title: "Careers", href: "/careers", category: "Pages" },
+  { title: "Contact Us", href: "/lets-talk-business", category: "Pages" },
+  { title: "Web Development", href: "/services/web-development", category: "Services" },
+  { title: "Mobile App Development", href: "/services/mobile-app-development", category: "Services" },
+  { title: "Cloud Solutions", href: "/services/cloud-solutions", category: "Services" },
+  { title: "AI/ML Solutions", href: "/services/ai-ml-solutions", category: "Services" },
+  { title: "DevOps & CI/CD", href: "/services/devops-cicd", category: "Services" },
+  { title: "UI/UX Design", href: "/services/ui-ux-design", category: "Services" },
+  { title: "E-commerce Solutions", href: "/services/ecommerce-solutions", category: "Services" },
+  { title: "Custom Software Development", href: "/services/custom-software-development", category: "Services" },
+  { title: "SEO/Digital Marketing", href: "/services/seo-digital-marketing", category: "Services" },
+  { title: "Maintenance & Support", href: "/services/maintenance-support", category: "Services" },
+];
 
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<typeof searchData>([]);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState({ code: "EN", name: "English", flag: "🇨🇦" });
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const languages = [
+    { code: "EN", name: "English", flag: "🇨🇦" },
+    { code: "FR", name: "Français", flag: "🇨🇦" },
+  ];
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Handle search
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+      return;
+    }
+    const filtered = searchData.filter((item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(filtered);
+  }, [searchQuery]);
+
+  // Focus input when search opens
+  useEffect(() => {
+    if (isSearchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchOpen]);
+
+  // Close search on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsSearchOpen(false);
+        setSearchQuery("");
+      }
+    };
+    if (isSearchOpen) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      if (!isMobileMenuOpen) {
+        document.body.style.overflow = "unset";
+      }
+    };
+  }, [isSearchOpen, isMobileMenuOpen]);
+
+  const openSearch = () => {
+    setIsSearchOpen(true);
+    setIsMobileMenuOpen(false);
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+    setSearchQuery("");
+  };
+
+  const handleSearchSelect = (href: string) => {
+    closeSearch();
+    router.push(href);
+  };
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -115,21 +214,64 @@ export default function Navbar() {
               </Link>
 
               {/* Search Icon */}
-              <button className="text-white hover:text-white/80 transition-colors">
+              <button 
+                onClick={openSearch}
+                className="text-white hover:text-white/80 transition-colors"
+                aria-label="Open search"
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </button>
 
-              {/* Globe Icon */}
-              <button className="flex items-center gap-1 text-white hover:text-white/80 transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+              {/* Language Dropdown */}
+              <div ref={langRef} className="relative">
+                <button 
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className="flex items-center gap-1 text-white hover:text-white/80 transition-colors"
+                >
+                  <span className="text-sm">{selectedLang.flag}</span>
+                  <span className="text-sm font-light">{selectedLang.code}</span>
+                  <svg className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Dropdown Menu */}
+                {isLangOpen && (
+                  <div className="absolute top-full right-0 mt-3 bg-[#1a1a2e] rounded-xl shadow-2xl border border-white/10 overflow-hidden min-w-[180px] z-50 backdrop-blur-xl">
+                    <div className="px-4 py-2 border-b border-white/10">
+                      <p className="text-[10px] uppercase tracking-wider text-white/40 font-medium">Select Language</p>
+                    </div>
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setSelectedLang(lang);
+                          setIsLangOpen(false);
+                        }}
+                        className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all duration-200 ${
+                          selectedLang.code === lang.code 
+                            ? 'bg-gradient-to-r from-[#00B4FF]/20 to-transparent' 
+                            : 'hover:bg-white/5'
+                        }`}
+                      >
+                        <span className="text-xl">{lang.flag}</span>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-white">{lang.name}</p>
+                        </div>
+                        {selectedLang.code === lang.code && (
+                          <div className="w-5 h-5 rounded-full bg-[#00B4FF] flex items-center justify-center">
+                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -270,20 +412,33 @@ export default function Navbar() {
           <div className="mt-8 pt-6 border-t border-white/10">
             <div className="flex items-center justify-between">
               {/* Search */}
-              <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
+              <button 
+                onClick={openSearch}
+                className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <span className="text-sm">Search</span>
               </button>
 
-              {/* Language */}
-              <button className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-                <span className="text-sm">EN</span>
-              </button>
+              {/* Language Selector */}
+              <div className="flex items-center gap-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => setSelectedLang(lang)}
+                    className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm transition-colors ${
+                      selectedLang.code === lang.code
+                        ? 'bg-white/20 text-white'
+                        : 'text-white/50 hover:text-white'
+                    }`}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.code}</span>
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Social Links */}
@@ -530,6 +685,107 @@ export default function Navbar() {
         </div>
       )}
 
+      {/* Search Modal Overlay */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[100] bg-[#1a1a2e]/95 backdrop-blur-sm">
+          {/* Close Button */}
+          <button
+            onClick={closeSearch}
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            aria-label="Close search"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Search Container */}
+          <div className="flex flex-col items-center justify-start pt-32 px-4">
+            {/* Search Input */}
+            <div className="w-full max-w-2xl">
+              <div className="relative">
+                <svg
+                  className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-white/50"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search pages, services..."
+                  className="w-full bg-white/10 border border-white/20 rounded-full py-5 pl-16 pr-6 text-white text-lg placeholder:text-white/40 focus:outline-none focus:border-white/40 transition-colors"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+
+              {/* Search Results */}
+              {searchResults.length > 0 && (
+                <div className="mt-6 bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+                  {searchResults.map((result, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleSearchSelect(result.href)}
+                      className="w-full flex items-center justify-between px-6 py-4 hover:bg-white/10 transition-colors text-left border-b border-white/5 last:border-b-0"
+                    >
+                      <div>
+                        <p className="text-white font-medium">{result.title}</p>
+                        <p className="text-white/50 text-sm">{result.category}</p>
+                      </div>
+                      <svg className="w-5 h-5 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* No Results */}
+              {searchQuery && searchResults.length === 0 && (
+                <div className="mt-6 text-center">
+                  <p className="text-white/50">No results found for &quot;{searchQuery}&quot;</p>
+                </div>
+              )}
+
+              {/* Quick Links when no search */}
+              {!searchQuery && (
+                <div className="mt-8">
+                  <p className="text-white/40 text-sm mb-4">Quick Links</p>
+                  <div className="flex flex-wrap gap-3">
+                    {searchData.slice(0, 6).map((item, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSearchSelect(item.href)}
+                        className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/70 text-sm hover:bg-white/10 hover:text-white transition-colors"
+                      >
+                        {item.title}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Keyboard Hint */}
+              <p className="mt-8 text-center text-white/30 text-sm">
+                Press <kbd className="px-2 py-1 bg-white/10 rounded text-white/50">ESC</kbd> to close
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </>
   );

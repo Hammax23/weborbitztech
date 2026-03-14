@@ -5,7 +5,6 @@ import OurServices from "@/components/OurServices";
 import IndustriesImpact from "@/components/IndustriesImpact";
 import TechnologyImpact from "@/components/TechnologyImpact";
 import FeaturedInsights from "@/components/FeaturedInsights";
-import GetInTouch from "@/components/GetInTouch";
 import Footer from "@/components/Footer";
 import LetsTalkBusiness from "@/components/LetsTalkBusiness";
 
@@ -20,7 +19,6 @@ export default function Home() {
       
       <FeaturedInsights />
       <IndustriesImpact />
-      <GetInTouch />
       <Footer />
       <LetsTalkBusiness />
     </main>

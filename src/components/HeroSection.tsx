@@ -251,7 +251,10 @@ export default function HeroSection() {
             </p>
 
             {/* CTA Button */}
-            <button className="border border-white text-white px-8 py-3 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
+              className="border border-white text-white px-8 py-3 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+            >
               GET IN TOUCH
             </button>
           </div>
