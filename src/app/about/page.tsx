@@ -64,7 +64,7 @@ export default function AboutPage() {
               </div>
               <div className="bg-white rounded-xl p-6 border border-transparent hover:border-[#262b3f]/20 transition-all">
                 <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2">Planning</h3>
-                <p className="text-gray-600 text-sm">Clear scope, realistic timeline, no surprises. You know what you're getting.</p>
+                <p className="text-gray-600 text-sm">Clear scope, realistic timeline, no surprises. You know what you&apos;re getting.</p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-transparent hover:border-[#262b3f]/20 transition-all">
                 <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2">Development</h3>

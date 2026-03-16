@@ -24,7 +24,7 @@ export default function CareersPage() {
                 Join Our Team
               </h1>
               <p className="text-white/70 leading-relaxed">
-                We're looking for people who want to build great software and grow with us. If that sounds like you, let's talk.
+                We&apos;re looking for people who want to build great software and grow with us. If that sounds like you, let&apos;s talk.
               </p>
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function CareersPage() {
                   No open positions right now
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  We don't have any roles open at the moment, but we're always interested in meeting talented people. Drop us your resume and we'll reach out when something comes up.
+                  We don&apos;t have any roles open at the moment, but we&apos;re always interested in meeting talented people. Drop us your resume and we&apos;ll reach out when something comes up.
                 </p>
                 <a
                   href="mailto:careers@weborbitztech.ca"
@@ -99,7 +99,7 @@ export default function CareersPage() {
                   Interested?
                 </h2>
                 <p className="text-white/70 text-sm">
-                  Send us your resume. We'll get back to you if there's a fit.
+                  Send us your resume. We&apos;ll get back to you if there&apos;s a fit.
                 </p>
               </div>
               <a
