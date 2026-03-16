@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogData";
@@ -69,10 +70,11 @@ export default function BlogPage() {
             <Link href={`/blog/${featuredPost.slug}`} className="group block">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100">
                 <div className="relative h-64 lg:h-auto min-h-[280px] overflow-hidden">
-                  <img 
+                  <Image 
                     src={featuredPost.image} 
                     alt={featuredPost.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1.5 bg-[#262b3f] text-white text-xs font-medium rounded-full">
@@ -106,10 +108,11 @@ export default function BlogPage() {
                   className="group bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#262b3f]/20"
                 >
                   <div className="relative h-44 overflow-hidden">
-                    <img 
+                    <Image 
                       src={post.image} 
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="px-2.5 py-1 bg-white/90 text-[#262b3f] text-xs font-medium rounded-full">
@@ -147,7 +150,7 @@ export default function BlogPage() {
                   Have a Project in Mind?
                 </h2>
                 <p className="text-white/70 text-sm">
-                  Let's discuss how we can help build your software solution.
+                  Let&apos;s discuss how we can help build your software solution.
                 </p>
               </div>
               <Link

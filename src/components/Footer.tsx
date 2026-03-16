@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   services: {
@@ -251,7 +252,7 @@ export default function Footer() {
           <div>
             <h4 className="text-base font-semibold text-gray-900 mb-2 flex items-center gap-2">
               Canada <span className="font-normal text-gray-600">(Head Office)</span>
-              <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-6 h-4 object-cover rounded-sm" />
+              <Image src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" width={24} height={16} className="object-cover rounded-sm" />
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed">
               231 Oak Park Blvd, Suit#301,<br />

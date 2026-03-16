@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const regions = [
   "Select Region",
@@ -146,7 +147,7 @@ export default function LetsTalkBusiness() {
               </label>
               <div className="flex gap-2">
                 <div className="flex items-center gap-2 px-3 py-3 border border-gray-300 rounded-lg bg-gray-50">
-                  <img src="https://flagcdn.com/w40/ca.png" alt="Canada" className="w-6 h-4 object-cover rounded-sm" />
+                  <Image src="https://flagcdn.com/w40/ca.png" alt="Canada" width={24} height={16} className="object-cover rounded-sm" />
                   <span className="text-sm font-medium text-gray-900">+1</span>
                 </div>
                 <input

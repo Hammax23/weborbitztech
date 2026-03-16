@@ -133,7 +133,7 @@ export default function BlogPostPage() {
                   Need Help With Your Project?
                 </h2>
                 <p className="text-white/70 text-sm">
-                  Let's discuss how we can help build your software solution.
+                  Let&apos;s discuss how we can help build your software solution.
                 </p>
               </div>
               <Link

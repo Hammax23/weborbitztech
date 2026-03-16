@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   "Web Development",
@@ -186,7 +187,7 @@ export default function GetInTouch() {
                 <label className="block text-xs text-gray-500 mb-1">Phone Number*</label>
                 <div className="flex items-center border-b border-gray-300">
                   <span className="text-gray-600 pr-2 flex items-center gap-2">
-                    <img src="https://flagcdn.com/w40/ca.png" alt="Canada" className="w-6 h-4 object-cover rounded-sm" />
+                    <Image src="https://flagcdn.com/w40/ca.png" alt="Canada" width={24} height={16} className="object-cover rounded-sm" />
                     <span className="text-sm font-medium">+1</span>
                   </span>
                   <input
@@ -391,24 +392,30 @@ export default function GetInTouch() {
               <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Trusted By</h4>
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-white rounded-lg p-4 flex items-center justify-center shadow-sm">
-                  <img 
+                  <Image 
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" 
                     alt="Google" 
-                    className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    width={32}
+                    height={32}
+                    className="opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="bg-white rounded-lg p-4 flex items-center justify-center shadow-sm">
-                  <img 
+                  <Image 
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" 
                     alt="AWS" 
-                    className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    width={32}
+                    height={32}
+                    className="opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="bg-white rounded-lg p-4 flex items-center justify-center shadow-sm">
-                  <img 
+                  <Image 
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" 
                     alt="Microsoft Azure" 
-                    className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    width={32}
+                    height={32}
+                    className="opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
               </div>

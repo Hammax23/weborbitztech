@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -111,7 +112,7 @@ const servicesData: { [key: string]: ServiceData } = {
     subtitle: "AWS, Azure & Cloud Infrastructure",
     description: "Cloud setup, migration, and management. We help you move to the cloud or optimize what you already have.",
     heroImage: "/services/cloud.jpg",
-    overview: "We work with AWS, Google Cloud, and Azure. Whether you're moving from on-premise servers, setting up a new infrastructure, or trying to reduce your monthly cloud bill — we can help. We focus on practical solutions: reliable hosting, proper security, automated backups, and costs that make sense.",
+    overview: "We work with AWS, Google Cloud, and Azure. Whether you are moving from on-premise servers, setting up a new infrastructure, or trying to reduce your monthly cloud bill — we can help. We focus on practical solutions: reliable hosting, proper security, automated backups, and costs that make sense.",
     features: [
       {
         title: "Cloud Setup",
@@ -160,7 +161,7 @@ const servicesData: { [key: string]: ServiceData } = {
     subtitle: "AI Integration & Automation",
     description: "Practical AI solutions — chatbots, automation, data analysis, and integrating AI APIs into your existing systems.",
     heroImage: "/services/ai-ml.jpg",
-    overview: "We help businesses use AI where it actually makes sense. This includes building chatbots, integrating OpenAI/GPT into your apps, automating repetitive tasks, and analyzing data to find useful patterns. We're not here to sell you on AI hype — we focus on practical applications that save time or improve your product.",
+    overview: "We help businesses use AI where it actually makes sense. This includes building chatbots, integrating OpenAI/GPT into your apps, automating repetitive tasks, and analyzing data to find useful patterns. We are not here to sell you on AI hype — we focus on practical applications that save time or improve your product.",
     features: [
       {
         title: "Chatbots & Assistants",
@@ -234,7 +235,7 @@ const servicesData: { [key: string]: ServiceData } = {
     ],
     technologies: ["GitHub Actions", "GitLab CI", "Docker", "Kubernetes", "Terraform", "AWS", "Datadog", "Grafana"],
     process: [
-      { step: "Current State", description: "How do you deploy now? What's painful? What breaks often?" },
+      { step: "Current State", description: "How do you deploy now? What is painful? What breaks often?" },
       { step: "Design", description: "We design the pipeline and infrastructure based on your actual needs." },
       { step: "Setup", description: "Configure CI/CD, containers, hosting, and monitoring tools." },
       { step: "Migration", description: "Move your existing apps to the new setup with minimal disruption." },
@@ -307,7 +308,7 @@ const servicesData: { [key: string]: ServiceData } = {
     subtitle: "Online Stores & Shopping Platforms",
     description: "Shopify stores, WooCommerce sites, or custom e-commerce platforms. We build online stores that work.",
     heroImage: "/services/ecommerce.jpg",
-    overview: "We build online stores using Shopify, WooCommerce, or custom solutions depending on your needs and budget. This includes product catalog setup, payment integration (Stripe, PayPal, local gateways), shipping configuration, and the admin tools you need to manage orders. We also handle migrations if you're moving from an existing platform.",
+    overview: "We build online stores using Shopify, WooCommerce, or custom solutions depending on your needs and budget. This includes product catalog setup, payment integration (Stripe, PayPal, local gateways), shipping configuration, and the admin tools you need to manage orders. We also handle migrations if you are moving from an existing platform.",
     features: [
       {
         title: "Shopify Stores",
@@ -321,7 +322,7 @@ const servicesData: { [key: string]: ServiceData } = {
       },
       {
         title: "Custom E-commerce",
-        description: "Built from scratch when Shopify/WooCommerce doesn't fit. Full control over everything.",
+        description: "Built from scratch when Shopify/WooCommerce does not fit. Full control over everything.",
         icon: "payment"
       },
       {
@@ -354,7 +355,7 @@ const servicesData: { [key: string]: ServiceData } = {
   "custom-software-development": {
     title: "Custom Software Development",
     subtitle: "Business Software & Internal Tools",
-    description: "Custom software built for your specific workflow. When off-the-shelf tools don't fit, we build what you need.",
+    description: "Custom software built for your specific workflow. When off-the-shelf tools do not fit, we build what you need.",
     heroImage: "/services/custom.jpg",
     overview: "Sometimes you need software that does exactly what your business requires — not a generic tool you have to work around. We build custom internal tools, admin panels, workflow automation systems, and business applications. You own the code, and it works the way your business works.",
     features: [
@@ -381,7 +382,7 @@ const servicesData: { [key: string]: ServiceData } = {
     ],
     technologies: ["Node.js", "Python", "React", "PostgreSQL", "MySQL", "Redis", "AWS", "Docker"],
     process: [
-      { step: "Discovery", description: "We learn your current workflow. What works? What doesn't? What's manual?" },
+      { step: "Discovery", description: "We learn your current workflow. What works? What does not? What is manual?" },
       { step: "Scope", description: "Define exactly what the software needs to do. No scope creep." },
       { step: "Design", description: "Database structure, user interface, how it fits with existing systems." },
       { step: "Build", description: "Iterative development. You see progress and can give feedback regularly." },
@@ -434,7 +435,7 @@ const servicesData: { [key: string]: ServiceData } = {
       { step: "Quick Wins", description: "Fix obvious issues first — broken links, missing tags, slow pages." },
       { step: "Keyword Plan", description: "What should you rank for? We find keywords with traffic and intent." },
       { step: "Optimization", description: "Update existing pages, create new content, build authority." },
-      { step: "Tracking", description: "Set up proper tracking so you know what's working." },
+      { step: "Tracking", description: "Set up proper tracking so you know what is working." },
       { step: "Monthly Work", description: "Ongoing optimization, new content, link building, reporting." }
     ],
     stats: [
@@ -454,7 +455,7 @@ const servicesData: { [key: string]: ServiceData } = {
     subtitle: "Ongoing Support & Maintenance",
     description: "Keep your website or app running. Bug fixes, updates, security patches, and someone to call when things break.",
     heroImage: "/services/support.jpg",
-    overview: "You have a website or app that needs ongoing care — updates, bug fixes, security patches, small changes. We offer monthly retainer plans so you have developers available when you need them. No need to hire full-time staff for work that's only needed sometimes. We also take over projects built by other teams if you need new support.",
+    overview: "You have a website or app that needs ongoing care — updates, bug fixes, security patches, small changes. We offer monthly retainer plans so you have developers available when you need them. No need to hire full-time staff for work that is only needed sometimes. We also take over projects built by other teams if you need new support.",
     features: [
       {
         title: "Bug Fixes",
@@ -468,7 +469,7 @@ const servicesData: { [key: string]: ServiceData } = {
       },
       {
         title: "Small Changes",
-        description: "Need to update content, add a feature, or tweak something? That's what we're here for.",
+        description: "Need to update content, add a feature, or tweak something? That is what we are here for.",
         icon: "performance"
       },
       {
@@ -484,7 +485,7 @@ const servicesData: { [key: string]: ServiceData } = {
       { step: "Request System", description: "You submit requests via email or Slack. We track everything." },
       { step: "Regular Work", description: "We handle updates, fixes, and improvements each month." },
       { step: "Reporting", description: "Monthly summary of what we did and any recommendations." },
-      { step: "Availability", description: "Need something urgent? We're reachable. Response times defined upfront." }
+      { step: "Availability", description: "Need something urgent? We are reachable. Response times defined upfront." }
     ],
     stats: [
       { value: "40+", label: "Active Clients" },
@@ -590,10 +591,11 @@ export default function ServicePage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         {/* Background Image Cover */}
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src="/servicedetailcover.png" 
             alt={service.title}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-[#1a1a2e]/80" />
         </div>
@@ -769,7 +771,7 @@ export default function ServicePage() {
                 key={index}
                 className="bg-white/5 border border-white/10 rounded-lg p-3 flex flex-col items-center gap-2 hover:bg-white/10 transition-all duration-300 group"
               >
-                <img src={tech.logo} alt={tech.name} className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                <Image src={tech.logo} alt={tech.name} width={32} height={32} className="group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-white text-xs font-medium">{tech.name}</span>
               </div>
             ))}
