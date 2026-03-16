@@ -619,15 +619,15 @@ export default function ServicePage() {
               <p className="text-lg text-white/70 mb-8 leading-relaxed">
                 {service.description}
               </p>
-              <Link
-                href="#contact"
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
                 className="inline-flex items-center gap-2 border border-white text-white hover:bg-[#262b3f] hover:border-[#262b3f] px-8 py-4 rounded-lg font-medium transition-all duration-300"
               >
                 Build Your Project Now
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -729,15 +729,6 @@ export default function ServicePage() {
                 Equipped with the latest tools, our teams deliver impactful solutions designed to grow your business.
               </p>
             </div>
-            <Link
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
-            >
-              Let&apos;s Connect
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
@@ -884,15 +875,15 @@ export default function ServicePage() {
                 Let&apos;s discuss how our {service.title.toLowerCase()} services can help transform your business.
               </p>
             </div>
-            <Link
-              href="/#get-in-touch"
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
               className="inline-flex items-center justify-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
             >
               Transform Your Digital Presence
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
       </section>

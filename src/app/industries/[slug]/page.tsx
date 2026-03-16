@@ -346,15 +346,15 @@ export default function IndustryPage() {
                 {industry.description}
               </p>
               <div className="flex flex-wrap items-center gap-6">
-                <Link
-                  href="#contact"
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
                   className="inline-flex items-center gap-2 border border-white text-white hover:bg-[#262b3f] hover:border-[#262b3f] px-6 py-3 rounded-lg font-medium transition-all duration-300"
                 >
-                  Get Started
+                  Build Your Project Now
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </button>
                 <div className="flex items-center gap-6 text-white/60 text-sm">
                   {industry.heroStats.slice(0, 3).map((stat, index) => (
                     <div key={index} className="flex items-center gap-2">
@@ -406,15 +406,15 @@ export default function IndustryPage() {
                   Let&apos;s discuss how our {industry.title.split(' ')[0].toLowerCase()} services can help transform your business.
                 </p>
               </div>
-              <Link
-                href="/#get-in-touch"
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
                 className="inline-flex items-center justify-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
               >
                 Transform Your Digital Presence
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </section>

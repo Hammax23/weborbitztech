@@ -253,9 +253,12 @@ export default function HeroSection() {
             {/* CTA Button */}
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
-              className="border border-white text-white px-8 py-3 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+              className="inline-flex items-center gap-2 border border-white text-white px-8 py-3 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300"
             >
-              GET IN TOUCH
+              BUILD YOUR PROJECT NOW
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </button>
           </div>
         </div>

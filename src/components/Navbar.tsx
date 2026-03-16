@@ -479,15 +479,9 @@ export default function Navbar() {
                     className="w-4/5 h-36 object-cover rounded-lg ml-0"
                   />
                 </div>
-                <p className="text-gray-700 text-sm mb-3">
+                <p className="text-gray-700 text-sm">
                   Why data standards matter & why they&apos;re important
                 </p>
-                <Link href="#" className="text-[#00B4FF] text-sm font-medium hover:text-[#00E1FF] flex items-center gap-1">
-                  LEARN MORE
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
               </div>
 
               {/* Services Columns */}
@@ -598,15 +592,9 @@ export default function Navbar() {
                     className="w-4/5 h-36 object-cover rounded-lg ml-0"
                   />
                 </div>
-                <p className="text-gray-700 text-sm mb-3">
+                <p className="text-gray-700 text-sm">
                   Transforming industries with innovative solutions
                 </p>
-                <Link href="/industries" className="text-[#00B4FF] text-sm font-medium hover:text-[#00E1FF] flex items-center gap-1">
-                  VIEW ALL
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
               </div>
               <div className="col-span-9 grid grid-cols-2 gap-y-5 gap-x-8">
                 <Link href="/industries/healthcare" className="flex items-center gap-3 text-gray-700 hover:text-[#00B4FF] transition-colors">

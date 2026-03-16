@@ -3,6 +3,24 @@ const nextConfig = {
   // Enable compression
   compress: true,
   
+  // Configure external images
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
+      },
+    ],
+  },
+  
   // Cache headers for static assets including videos
   async headers() {
     return [
