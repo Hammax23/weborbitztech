@@ -10,18 +10,18 @@ const footerLinks = {
         heading: "Development",
         links: [
           { name: "Web Development", href: "/services/web-development" },
-          { name: "Mobile App Development", href: "/services/mobile-development" },
-          { name: "Custom Software Development", href: "/services/custom-software" },
+          { name: "Mobile App Development", href: "/services/mobile-app-development" },
+          { name: "Custom Software Development", href: "/services/custom-software-development" },
         ],
       },
       {
         heading: "Solutions",
         links: [
           { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-          { name: "AI/ML Solutions", href: "/services/ai-ml" },
-          { name: "E-commerce Solutions", href: "/services/ecommerce" },
-          { name: "DevOps & CI/CD", href: "/services/devops" },
-          { name: "UI/UX Design", href: "/services/ui-ux" },
+          { name: "AI/ML Solutions", href: "/services/ai-ml-solutions" },
+          { name: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
+          { name: "DevOps & CI/CD", href: "/services/devops-cicd" },
+          { name: "UI/UX Design", href: "/services/ui-ux-design" },
         ],
       },
     ],
@@ -29,16 +29,16 @@ const footerLinks = {
   moreServices: {
     title: "More Services",
     links: [
-      { name: "SEO/Digital Marketing", href: "/services/seo-marketing", highlight: true },
-      { name: "Maintenance & Support", href: "/services/maintenance" },
+      { name: "SEO/Digital Marketing", href: "/services/seo-digital-marketing", highlight: true },
+      { name: "Maintenance & Support", href: "/services/maintenance-support" },
     ],
   },
   industries: {
     title: "Industries",
     links: [
       { name: "Healthcare", href: "/industries/healthcare" },
-      { name: "Finance & Banking", href: "/industries/finance" },
-      { name: "E-commerce & Retail", href: "/industries/ecommerce" },
+      { name: "Finance & Banking", href: "/industries/finance-banking" },
+      { name: "E-commerce & Retail", href: "/industries/ecommerce-retail" },
       { name: "Education & E-learning", href: "/industries/education" },
       { name: "Real Estate", href: "/industries/real-estate" },
     ],
@@ -47,29 +47,19 @@ const footerLinks = {
     title: "More Industries",
     links: [
       { name: "Logistics & Transportation", href: "/industries/logistics" },
-      { name: "Entertainment & Media", href: "/industries/entertainment" },
+      { name: "Entertainment & Media", href: "/industries/entertainment-media" },
       { name: "Manufacturing", href: "/industries/manufacturing" },
-      { name: "Hospitality & Travel", href: "/industries/hospitality" },
-      { name: "Telecommunications", href: "/industries/telecom" },
-    ],
-  },
-  insights: {
-    title: "Insights",
-    links: [
-      { name: "Case Studies", href: "/insights/case-studies" },
-      { name: "Newsroom", href: "/insights/newsroom" },
-      { name: "Whitepapers / EBooks", href: "/insights/whitepapers" },
-      { name: "Blogs", href: "/insights/blogs" },
+      { name: "Hospitality & Travel", href: "/industries/hospitality-travel" },
+      { name: "Telecommunications", href: "/industries/telecommunications" },
     ],
   },
   quickLinks: {
     title: "Quick Links",
     links: [
-      { name: "Who we are", href: "/about" },
+      { name: "About Us", href: "/about" },
+      { name: "Blog", href: "/blog" },
       { name: "Careers", href: "/careers" },
-      { name: "Our Leadership", href: "/leadership" },
-      { name: "Investor Relation", href: "/investors" },
-      { name: "Financial Reports", href: "/financial-reports" },
+      { name: "Contact Us", href: "/lets-talk-business" },
     ],
   },
 };
@@ -123,10 +113,8 @@ const socialLinks = [
 ];
 
 const bottomLinks = [
-  { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Terms & Conditions", href: "/terms" },
-  { name: "Sitemap", href: "/sitemap" },
-  { name: "Cookie Policy", href: "/cookie-policy" },
+  { name: "Privacy Policy", href: "#" },
+  { name: "Terms & Conditions", href: "#" },
 ];
 
 export default function Footer() {

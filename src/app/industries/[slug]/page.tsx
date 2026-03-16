@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
@@ -300,29 +299,11 @@ interface IndustryData {
   technologies: string[];
 }
 
-const allIndustries = [
-  { slug: "healthcare", name: "Healthcare & Pharmaceuticals" },
-  { slug: "finance-banking", name: "Finance & Banking" },
-  { slug: "ecommerce-retail", name: "E-commerce & Retail" },
-  { slug: "education", name: "Education & E-learning" },
-  { slug: "real-estate", name: "Real Estate & Property" },
-  { slug: "logistics", name: "Logistics & Transportation" },
-  { slug: "entertainment-media", name: "Entertainment & Media" },
-  { slug: "manufacturing", name: "Manufacturing & Industry" },
-  { slug: "hospitality-travel", name: "Hospitality & Travel" },
-  { slug: "telecommunications", name: "Telecommunications" }
-];
 
 export default function IndustryPage() {
   const params = useParams();
   const slug = params.slug as string;
   const industry = industriesData[slug];
-
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   if (!industry) {
     return (
@@ -331,7 +312,7 @@ export default function IndustryPage() {
         <main className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-[#1a1a2e] mb-4">Industry Not Found</h1>
-            <Link href="/industries" className="text-[#0d9488] hover:underline">
+            <Link href="/industries" className="text-[#1a1a2e] hover:underline">
               View All Industries
             </Link>
           </div>
@@ -345,217 +326,95 @@ export default function IndustryPage() {
     <>
       <Navbar />
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative bg-[#1a1a2e] pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-[#16213e] to-[#1a1a2e]" />
-            <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#0d9488]/10 to-transparent" />
-          </div>
-
+        {/* Hero Section - Minimal */}
+        <section className="relative bg-[#1a1a2e] pt-28 pb-16 overflow-hidden">
           <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-white/50 text-sm mb-12">
+            <div className="flex items-center gap-2 text-white/50 text-sm mb-8">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span>›</span>
               <Link href="/industries" className="hover:text-white transition-colors">Industries</Link>
               <span>›</span>
-              <span className="text-[#0d9488]">{industry.title}</span>
+              <span className="text-white">{industry.title}</span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                  {industry.title}
-                </h1>
-                <p className="text-lg text-white/70 mb-8 leading-relaxed">
-                  {industry.description}
-                </p>
+            <div className="max-w-3xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                {industry.title}
+              </h1>
+              <p className="text-white/70 mb-6 leading-relaxed">
+                {industry.description}
+              </p>
+              <div className="flex flex-wrap items-center gap-6">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                  className="inline-flex items-center gap-2 border border-white text-white hover:bg-[#262b3f] hover:border-[#262b3f] px-6 py-3 rounded-lg font-medium transition-all duration-300"
                 >
-                  Transform Your Business
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  Get Started
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </Link>
-              </div>
-
-              <div className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-                {industry.heroStats.map((stat, index) => (
-                  <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
-                    <div className="text-3xl sm:text-4xl font-bold text-[#0d9488] mb-2">{stat.value}</div>
-                    <div className="text-white/60 text-sm">{stat.label}</div>
-                  </div>
-                ))}
+                <div className="flex items-center gap-6 text-white/60 text-sm">
+                  {industry.heroStats.slice(0, 3).map((stat, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <span className="text-white font-semibold">{stat.value}</span>
+                      <span>{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Subtitle Section */}
-        <section className="py-20 bg-white">
+        {/* Solutions Section - Combined */}
+        <section className="py-16 bg-white">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="max-w-4xl">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-6">
+            <div className="mb-12">
+              <span className="inline-block bg-[#262b3f]/10 text-[#262b3f] text-sm font-semibold px-4 py-2 rounded-full mb-4">What We Deliver</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a2e]">
                 {industry.subtitle}
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                {industry.description}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Challenges Section */}
-        <section className="py-20 bg-[#f8f9fa]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-4">
-                How We Address Your Challenges
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                We understand the unique challenges facing your industry and deliver targeted solutions.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {industry.challenges.map((challenge, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:border-[#0d9488]/30 transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-[#0d9488]/10 rounded-xl flex items-center justify-center text-[#0d9488] mb-6 group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#1a1a2e] mb-3">{challenge.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{challenge.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mb-4">
-                  Our Services for {industry.title.split(' ')[0]}
-                </h2>
-                <p className="text-gray-600 max-w-xl">
-                  Purpose-built solutions designed to address your industry&apos;s unique needs.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {industry.services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl hover:border-[#0d9488]/30 transition-all duration-300 group"
+                  className="bg-[#f8f9fa] rounded-xl p-6 hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-[#262b3f]/20"
                 >
-                  <h3 className="text-xl font-semibold text-[#1a1a2e] mb-3 group-hover:text-[#0d9488] transition-colors">
+                  <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2 group-hover:text-[#262b3f] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">{service.description}</p>
-                  <Link
-                    href="#contact"
-                    className="inline-flex items-center gap-2 text-[#0d9488] font-medium hover:gap-3 transition-all duration-300"
-                  >
-                    Get in Touch
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
+                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Tech Stack */}
-        <section className="py-20 bg-[#1a1a2e]">
+        {/* CTA Section - Slim */}
+        <section id="contact" className="py-10 bg-[#1a1a2e]">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 bg-gradient-to-r from-[#262b3f]/20 to-transparent rounded-2xl p-6 md:p-8">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                  Technologies We Use
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                  Ready To Get Started?
                 </h2>
-                <p className="text-white/60 max-w-xl">
-                  Equipped with the latest tools, our teams deliver impactful solutions for your industry.
+                <p className="text-white/70 text-sm">
+                  Let&apos;s discuss how our {industry.title.split(' ')[0].toLowerCase()} services can help transform your business.
                 </p>
               </div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
+                href="/#get-in-touch"
+                className="inline-flex items-center justify-center gap-2 bg-[#262b3f] hover:bg-[#0055FF] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
               >
-                Let&apos;s Connect
+                Transform Your Digital Presence
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </Link>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {industry.technologies.map((tech, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 border border-white/10 rounded-xl p-4 text-center text-white font-medium hover:bg-white/10 hover:border-[#0d9488]/50 transition-all duration-300"
-                >
-                  {tech}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Other Industries */}
-        <section className="py-16 bg-[#f8f9fa]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <h3 className="text-xl font-semibold text-[#1a1a2e] mb-6 text-center">Explore Other Industries</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {allIndustries
-                .filter((ind) => ind.slug !== slug)
-                .map((ind) => (
-                  <Link
-                    key={ind.slug}
-                    href={`/industries/${ind.slug}`}
-                    className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium hover:border-[#0d9488] hover:text-[#0d9488] hover:shadow-md transition-all duration-300"
-                  >
-                    {ind.name}
-                  </Link>
-                ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section id="contact" className="py-20 bg-[#1a1a2e]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="bg-gradient-to-r from-[#0d9488]/20 to-transparent rounded-3xl p-12 md:p-16">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-                  Ready To Get Started?
-                </h2>
-                <p className="text-white/70 text-lg mb-8">
-                  Let&apos;s discuss how our expertise in {industry.title.toLowerCase()} can help transform your business.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/#get-in-touch"
-                    className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
-                  >
-                    Talk To Our Experts
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </section>

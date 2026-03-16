@@ -124,35 +124,17 @@ export default function LetsTalkBusinessPage() {
         <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
           
-          {/* Animated Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-[#00B4FF]/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#0055FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00E1FF]/5 rounded-full blur-3xl" />
-          </div>
-
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: '60px 60px'
-            }} />
-          </div>
 
           <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 pt-32 pb-16 text-center">
             <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-              <div className="flex items-center justify-center gap-2 text-white/60 text-sm mb-8">
+              <div className="flex items-center gap-2 text-white/50 text-sm mb-8">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                <span>/</span>
-                <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Let&apos;s Talk Business</span>
+                <span>›</span>
+                <span className="text-white">Contact</span>
               </div>
-
-              <span className="inline-block px-4 py-2 bg-[#00B4FF]/20 border border-[#00B4FF]/30 rounded-full text-[#00E1FF] text-sm font-medium mb-6">
-                Start Your Journey
-              </span>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Let&apos;s Build Something <span className="bg-gradient-to-r from-[#0055FF] via-[#00E1FF] to-[#0055FF] text-transparent bg-clip-text">Amazing</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Let&apos;s Talk
               </h1>
               
               <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
@@ -162,19 +144,6 @@ export default function LetsTalkBusinessPage() {
           </div>
         </section>
 
-        {/* Stats Bar */}
-        <section className="py-8 bg-gradient-to-r from-[#0055FF] via-[#00B4FF] to-[#00E1FF]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-white/80 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Main Content */}
         <section className="py-20">
@@ -197,7 +166,7 @@ export default function LetsTalkBusinessPage() {
                       {/* Personal Information */}
                       <div>
                         <h3 className="text-lg font-semibold text-[#1a1a2e] mb-4 flex items-center gap-2">
-                          <span className="w-8 h-8 bg-gradient-to-r from-[#0055FF] to-[#00B4FF] rounded-full flex items-center justify-center text-white text-sm">1</span>
+                          <span className="w-8 h-8 bg-[#262b3f] rounded-full flex items-center justify-center text-white text-sm">1</span>
                           Personal Information
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -209,7 +178,7 @@ export default function LetsTalkBusinessPage() {
                               value={formData.firstName}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="John"
                             />
                           </div>
@@ -221,7 +190,7 @@ export default function LetsTalkBusinessPage() {
                               value={formData.lastName}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="Doe"
                             />
                           </div>
@@ -233,7 +202,7 @@ export default function LetsTalkBusinessPage() {
                               value={formData.email}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="john@company.com"
                             />
                           </div>
@@ -244,7 +213,7 @@ export default function LetsTalkBusinessPage() {
                               name="phone"
                               value={formData.phone}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="+1 (555) 000-0000"
                             />
                           </div>
@@ -254,7 +223,7 @@ export default function LetsTalkBusinessPage() {
                       {/* Company Information */}
                       <div>
                         <h3 className="text-lg font-semibold text-[#1a1a2e] mb-4 flex items-center gap-2">
-                          <span className="w-8 h-8 bg-gradient-to-r from-[#0055FF] to-[#00B4FF] rounded-full flex items-center justify-center text-white text-sm">2</span>
+                          <span className="w-8 h-8 bg-[#262b3f] rounded-full flex items-center justify-center text-white text-sm">2</span>
                           Company Details
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -266,7 +235,7 @@ export default function LetsTalkBusinessPage() {
                               value={formData.company}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="Acme Inc."
                             />
                           </div>
@@ -277,7 +246,7 @@ export default function LetsTalkBusinessPage() {
                               name="jobTitle"
                               value={formData.jobTitle}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="CTO, Product Manager, etc."
                             />
                           </div>
@@ -287,7 +256,7 @@ export default function LetsTalkBusinessPage() {
                       {/* Project Details */}
                       <div>
                         <h3 className="text-lg font-semibold text-[#1a1a2e] mb-4 flex items-center gap-2">
-                          <span className="w-8 h-8 bg-gradient-to-r from-[#0055FF] to-[#00B4FF] rounded-full flex items-center justify-center text-white text-sm">3</span>
+                          <span className="w-8 h-8 bg-[#262b3f] rounded-full flex items-center justify-center text-white text-sm">3</span>
                           Project Information
                         </h3>
                         <div className="space-y-6">
@@ -298,7 +267,7 @@ export default function LetsTalkBusinessPage() {
                               value={formData.service}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all bg-white"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all bg-white"
                             >
                               <option value="">Select a service</option>
                               {services.map((service) => (
@@ -313,7 +282,7 @@ export default function LetsTalkBusinessPage() {
                                 name="budget"
                                 value={formData.budget}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all bg-white"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all bg-white"
                               >
                                 <option value="">Select budget range</option>
                                 {budgetRanges.map((range) => (
@@ -327,7 +296,7 @@ export default function LetsTalkBusinessPage() {
                                 name="timeline"
                                 value={formData.timeline}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all bg-white"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all bg-white"
                               >
                                 <option value="">Select timeline</option>
                                 {timelineOptions.map((option) => (
@@ -344,7 +313,7 @@ export default function LetsTalkBusinessPage() {
                               onChange={handleChange}
                               required
                               rows={5}
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all resize-none"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all resize-none"
                               placeholder="Tell us about your project goals, challenges, and what success looks like for you..."
                             />
                           </div>
@@ -355,7 +324,7 @@ export default function LetsTalkBusinessPage() {
                               name="howDidYouHear"
                               value={formData.howDidYouHear}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00B4FF] focus:ring-2 focus:ring-[#00B4FF]/20 transition-all"
+                              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#262b3f] focus:ring-2 focus:ring-[#262b3f]/20 transition-all"
                               placeholder="Google, Referral, LinkedIn, etc."
                             />
                           </div>
@@ -367,7 +336,7 @@ export default function LetsTalkBusinessPage() {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-gradient-to-r from-[#0055FF] via-[#00B4FF] to-[#00E1FF] text-white py-4 px-8 rounded-xl font-semibold text-lg hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4FF]/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                          className="w-full bg-[#262b3f] hover:bg-[#0055FF] text-white py-4 px-8 rounded-xl font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                         >
                           {isSubmitting ? (
                             <>
@@ -387,14 +356,14 @@ export default function LetsTalkBusinessPage() {
                           )}
                         </button>
                         <p className="text-center text-gray-500 text-sm mt-4">
-                          By submitting, you agree to our <Link href="#" className="text-[#00B4FF] hover:underline">Privacy Policy</Link> and <Link href="#" className="text-[#00B4FF] hover:underline">Terms of Service</Link>
+                          By submitting, you agree to our <Link href="#" className="text-[#262b3f] hover:underline">Privacy Policy</Link> and <Link href="#" className="text-[#262b3f] hover:underline">Terms of Service</Link>
                         </p>
                       </div>
                     </form>
                   </div>
                 ) : (
                   <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-12 text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-[#0055FF] to-[#00B4FF] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="w-20 h-20 bg-[#262b3f] rounded-full flex items-center justify-center mx-auto mb-6">
                       <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -406,13 +375,13 @@ export default function LetsTalkBusinessPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Link
                         href="/"
-                        className="px-8 py-3 bg-gradient-to-r from-[#0055FF] via-[#00B4FF] to-[#00E1FF] text-white rounded-xl font-medium hover:opacity-90 transition-all"
+                        className="px-8 py-3 bg-[#262b3f] hover:bg-[#0055FF] text-white rounded-xl font-medium transition-all"
                       >
                         Back to Home
                       </Link>
                       <Link
                         href="/services"
-                        className="px-8 py-3 border border-gray-200 text-gray-700 rounded-xl font-medium hover:border-[#00B4FF] hover:text-[#00B4FF] transition-all"
+                        className="px-8 py-3 border border-gray-200 text-gray-700 rounded-xl font-medium hover:border-[#262b3f] hover:text-[#262b3f] transition-all"
                       >
                         Explore Services
                       </Link>
@@ -429,7 +398,7 @@ export default function LetsTalkBusinessPage() {
                   <div className="space-y-6">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-[#00B4FF]/20 rounded-xl flex items-center justify-center text-[#00E1FF] flex-shrink-0">
+                        <div className="w-12 h-12 bg-[#262b3f]/20 rounded-xl flex items-center justify-center text-white flex-shrink-0">
                           <BenefitIcon type={benefit.icon} />
                         </div>
                         <div>
@@ -445,19 +414,19 @@ export default function LetsTalkBusinessPage() {
                 <div className={`bg-white rounded-3xl border border-gray-100 shadow-lg p-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                   <h3 className="text-xl font-semibold text-[#1a1a2e] mb-6">Prefer to Talk?</h3>
                   <div className="space-y-4">
-                    <a href="mailto:hello@weborbitz.com" className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-[#00B4FF]/5 transition-colors group">
-                      <div className="w-10 h-10 bg-[#00B4FF]/10 rounded-lg flex items-center justify-center text-[#00B4FF] group-hover:bg-[#00B4FF] group-hover:text-white transition-all">
+                    <a href="mailto:hello@weborbitz.com" className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-[#262b3f]/5 transition-colors group">
+                      <div className="w-10 h-10 bg-[#262b3f]/10 rounded-lg flex items-center justify-center text-[#262b3f] group-hover:bg-[#262b3f] group-hover:text-white transition-all">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
                         <div className="text-sm text-gray-500">Email Us</div>
-                        <div className="font-medium text-[#1a1a2e]">hello@weborbitz.com</div>
+                        <div className="font-medium text-[#1a1a2e]">info@weborbitztech.ca</div>
                       </div>
                     </a>
-                    <a href="tel:+1234567890" className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-[#00B4FF]/5 transition-colors group">
-                      <div className="w-10 h-10 bg-[#00B4FF]/10 rounded-lg flex items-center justify-center text-[#00B4FF] group-hover:bg-[#00B4FF] group-hover:text-white transition-all">
+                    <a href="tel:+1234567890" className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-[#262b3f]/5 transition-colors group">
+                      <div className="w-10 h-10 bg-[#262b3f]/10 rounded-lg flex items-center justify-center text-[#262b3f] group-hover:bg-[#262b3f] group-hover:text-white transition-all">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
@@ -494,22 +463,6 @@ export default function LetsTalkBusinessPage() {
           </div>
         </section>
 
-        {/* Trust Badges */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10">
-              <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">Trusted by Industry Leaders</h3>
-              <p className="text-gray-600">Join 500+ companies who have transformed their business with us</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8 items-center opacity-50">
-              {["AWS Partner", "Microsoft Gold", "Google Cloud", "ISO 27001", "SOC 2", "CMMI Level 5"].map((badge, index) => (
-                <div key={index} className="px-6 py-3 bg-white rounded-lg border border-gray-200 text-gray-600 font-medium">
-                  {badge}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

@@ -6,7 +6,7 @@ import Link from "next/link";
 const stats = [
   {
     id: 1,
-    number: "5",
+    number: "12",
     suffix: "+",
     label: "Years of Industry Experience",
   },

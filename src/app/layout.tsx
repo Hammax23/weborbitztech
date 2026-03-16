@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
+import LetsTalkBusiness from "@/components/LetsTalkBusiness";
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ 
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${oswald.variable}`}>{children}</body>
+      <body className={`${inter.className} ${oswald.variable}`}>
+        {children}
+        <LetsTalkBusiness />
+      </body>
     </html>
   );
 }

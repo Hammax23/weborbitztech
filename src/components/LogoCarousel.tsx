@@ -56,148 +56,148 @@ export default function LogoCarousel() {
             <LogoItem>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 md:w-7 md:h-7 bg-red-600 rounded flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">M</span>
+                  <span className="text-white text-xs font-bold">🍁</span>
                 </div>
-                <span className="text-lg md:text-xl font-semibold text-gray-800">MapleLeaf Tech</span>
+                <span className="text-lg md:text-xl font-semibold text-gray-800">Maple Harvest Foods</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <span className="text-xl md:text-2xl font-bold text-blue-700">North</span>
-                <span className="text-xl md:text-2xl font-light text-gray-500">Star</span>
+                <span className="text-xl md:text-2xl font-bold text-emerald-700">True</span>
+                <span className="text-xl md:text-2xl font-light text-gray-500">North Realty</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-                <span className="text-lg md:text-xl font-medium text-gray-700">GreenPath Solutions</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <span className="text-lg md:text-xl font-bold tracking-wide text-gray-800">VANCOUVER<span className="text-cyan-500">DIGITAL</span></span>
-            </LogoItem>
-            <LogoItem>
-              <div className="flex items-center gap-1">
-                <div className="w-6 h-6 md:w-7 md:h-7 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-[10px] font-bold">QC</span>
+                <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs">🛒</span>
                 </div>
-                <span className="text-lg md:text-xl font-medium text-gray-700">QuebecCommerce</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">ShopBC Online</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <span className="text-lg md:text-xl font-bold tracking-wide text-gray-800">PRAIRIE<span className="text-amber-600">FARMS</span></span>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-1">
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-blue-700 rounded flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">🏠</span>
+                </div>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Calgary Homes</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <span className="text-xl md:text-2xl font-light text-gray-600">alpine</span>
-                <span className="text-xl md:text-2xl font-bold text-blue-600">LABS</span>
+                <span className="text-xl md:text-2xl font-light text-gray-600">fresh</span>
+                <span className="text-xl md:text-2xl font-bold text-green-600">MARKET</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 md:w-6 md:h-6 border-2 border-red-600 rounded-sm flex items-center justify-center">
-                  <span className="text-red-600 text-xs font-bold">+</span>
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-purple-600 rounded flex items-center justify-center">
+                  <span className="text-white text-xs">📦</span>
                 </div>
-                <span className="text-lg md:text-xl font-medium text-gray-800">CanadaCare Health</span>
+                <span className="text-lg md:text-xl font-medium text-gray-800">CanadaCart</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-lg md:text-xl font-semibold text-gray-700">Toronto<span className="text-amber-500">Eats</span></span>
+              <span className="text-lg md:text-xl font-semibold text-gray-700">Ontario<span className="text-red-500">Bites</span></span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="12,2 22,22 2,22"/>
-                </svg>
-                <span className="text-lg md:text-xl font-medium text-gray-700">PeakView Media</span>
+                <div className="w-5 h-5 bg-teal-600 rounded flex items-center justify-center">
+                  <span className="text-white text-[10px]">🏢</span>
+                </div>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Edmonton Properties</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-lg md:text-xl tracking-widest font-light text-gray-600 uppercase">Montréal Studio</span>
+              <span className="text-lg md:text-xl tracking-wide font-medium text-gray-600">WEST<span className="text-blue-600">COAST</span> Eats</span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-indigo-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-[10px] font-bold">OC</span>
+                <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">VR</span>
                 </div>
-                <span className="text-lg md:text-xl font-medium text-gray-700">Ottawa Connect</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Vancouver Realtors</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-xl md:text-2xl font-bold text-teal-600">Frost<span className="font-light text-gray-500">byte</span></span>
+              <span className="text-xl md:text-2xl font-bold text-orange-600">Quick<span className="font-light text-gray-500">Shop</span></span>
             </LogoItem>
 
             {/* Duplicate set for seamless loop - Canadian Companies */}
             <LogoItem>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 md:w-7 md:h-7 bg-red-600 rounded flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">M</span>
+                  <span className="text-white text-xs font-bold">🍁</span>
                 </div>
-                <span className="text-lg md:text-xl font-semibold text-gray-800">MapleLeaf Tech</span>
+                <span className="text-lg md:text-xl font-semibold text-gray-800">Maple Harvest Foods</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <span className="text-xl md:text-2xl font-bold text-blue-700">North</span>
-                <span className="text-xl md:text-2xl font-light text-gray-500">Star</span>
+                <span className="text-xl md:text-2xl font-bold text-emerald-700">True</span>
+                <span className="text-xl md:text-2xl font-light text-gray-500">North Realty</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-                <span className="text-lg md:text-xl font-medium text-gray-700">GreenPath Solutions</span>
-              </div>
-            </LogoItem>
-            <LogoItem>
-              <span className="text-lg md:text-xl font-bold tracking-wide text-gray-800">VANCOUVER<span className="text-cyan-500">DIGITAL</span></span>
-            </LogoItem>
-            <LogoItem>
-              <div className="flex items-center gap-1">
-                <div className="w-6 h-6 md:w-7 md:h-7 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-[10px] font-bold">QC</span>
+                <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs">🛒</span>
                 </div>
-                <span className="text-lg md:text-xl font-medium text-gray-700">QuebecCommerce</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">ShopBC Online</span>
+              </div>
+            </LogoItem>
+            <LogoItem>
+              <span className="text-lg md:text-xl font-bold tracking-wide text-gray-800">PRAIRIE<span className="text-amber-600">FARMS</span></span>
+            </LogoItem>
+            <LogoItem>
+              <div className="flex items-center gap-1">
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-blue-700 rounded flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">🏠</span>
+                </div>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Calgary Homes</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <span className="text-xl md:text-2xl font-light text-gray-600">alpine</span>
-                <span className="text-xl md:text-2xl font-bold text-blue-600">LABS</span>
+                <span className="text-xl md:text-2xl font-light text-gray-600">fresh</span>
+                <span className="text-xl md:text-2xl font-bold text-green-600">MARKET</span>
               </div>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 md:w-6 md:h-6 border-2 border-red-600 rounded-sm flex items-center justify-center">
-                  <span className="text-red-600 text-xs font-bold">+</span>
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-purple-600 rounded flex items-center justify-center">
+                  <span className="text-white text-xs">📦</span>
                 </div>
-                <span className="text-lg md:text-xl font-medium text-gray-800">CanadaCare Health</span>
+                <span className="text-lg md:text-xl font-medium text-gray-800">CanadaCart</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-lg md:text-xl font-semibold text-gray-700">Toronto<span className="text-amber-500">Eats</span></span>
+              <span className="text-lg md:text-xl font-semibold text-gray-700">Ontario<span className="text-red-500">Bites</span></span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-1">
-                <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="12,2 22,22 2,22"/>
-                </svg>
-                <span className="text-lg md:text-xl font-medium text-gray-700">PeakView Media</span>
+                <div className="w-5 h-5 bg-teal-600 rounded flex items-center justify-center">
+                  <span className="text-white text-[10px]">🏢</span>
+                </div>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Edmonton Properties</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-lg md:text-xl tracking-widest font-light text-gray-600 uppercase">Montréal Studio</span>
+              <span className="text-lg md:text-xl tracking-wide font-medium text-gray-600">WEST<span className="text-blue-600">COAST</span> Eats</span>
             </LogoItem>
             <LogoItem>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-indigo-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-[10px] font-bold">OC</span>
+                <div className="w-6 h-6 bg-rose-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold">VR</span>
                 </div>
-                <span className="text-lg md:text-xl font-medium text-gray-700">Ottawa Connect</span>
+                <span className="text-lg md:text-xl font-medium text-gray-700">Vancouver Realtors</span>
               </div>
             </LogoItem>
             <LogoItem>
-              <span className="text-xl md:text-2xl font-bold text-teal-600">Frost<span className="font-light text-gray-500">byte</span></span>
+              <span className="text-xl md:text-2xl font-bold text-orange-600">Quick<span className="font-light text-gray-500">Shop</span></span>
             </LogoItem>
           </div>
         </div>
