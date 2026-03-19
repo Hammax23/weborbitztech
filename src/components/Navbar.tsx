@@ -209,9 +209,12 @@ export default function Navbar() {
               </Link>
 
               {/* Let's Talk Business Button */}
-              <Link href="/lets-talk-business" className="border border-white text-white px-6 py-2 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+              <button 
+                onClick={() => window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'))}
+                className="border border-white text-white px-6 py-2 text-sm font-light tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+              >
                 LET&apos;S TALK BUSINESS
-              </Link>
+              </button>
 
               {/* Search Icon */}
               <button 
@@ -232,45 +235,11 @@ export default function Navbar() {
                 >
                   <span className="text-sm">{selectedLang.flag}</span>
                   <span className="text-sm font-light">{selectedLang.code}</span>
-                  <svg className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {/* <svg className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  </svg> */}
                 </button>
 
-                {/* Dropdown Menu */}
-                {isLangOpen && (
-                  <div className="absolute top-full right-0 mt-3 bg-[#1a1a2e] rounded-xl shadow-2xl border border-white/10 overflow-hidden min-w-[180px] z-50 backdrop-blur-xl">
-                    <div className="px-4 py-2 border-b border-white/10">
-                      <p className="text-[10px] uppercase tracking-wider text-white/40 font-medium">Select Language</p>
-                    </div>
-                    {languages.map((lang) => (
-                      <button
-                        key={lang.code}
-                        onClick={() => {
-                          setSelectedLang(lang);
-                          setIsLangOpen(false);
-                        }}
-                        className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all duration-200 ${
-                          selectedLang.code === lang.code 
-                            ? 'bg-gradient-to-r from-[#00B4FF]/20 to-transparent' 
-                            : 'hover:bg-white/5'
-                        }`}
-                      >
-                        <span className="text-xl">{lang.flag}</span>
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-white">{lang.name}</p>
-                        </div>
-                        {selectedLang.code === lang.code && (
-                          <div className="w-5 h-5 rounded-full bg-[#00B4FF] flex items-center justify-center">
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
 
@@ -399,13 +368,15 @@ export default function Navbar() {
 
           {/* Mobile CTA Button */}
           <div className="mt-8">
-            <Link 
-              href="/lets-talk-business"
-              onClick={toggleMobileMenu}
+            <button 
+              onClick={() => {
+                toggleMobileMenu();
+                window.dispatchEvent(new CustomEvent('openLetsTalkBusiness'));
+              }}
               className="block w-full border border-white text-white py-4 text-sm font-light tracking-widest hover:bg-white hover:text-black transition-all duration-300 text-center"
             >
               LET&apos;S TALK BUSINESS
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Footer Section */}

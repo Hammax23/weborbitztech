@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import LetsTalkBusiness from "@/components/LetsTalkBusiness";
+import TimedCTAPopup from "@/components/TimedCTAPopup";
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${oswald.variable}`}>
         {children}
         <LetsTalkBusiness />
+        <TimedCTAPopup />
       </body>
     </html>
   );

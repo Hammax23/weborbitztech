@@ -18,7 +18,7 @@ const mobileVideos = [
 const slides = [
   {
     heading: "Engineering\nDigital\nExcellence",
-    subtext: "Enterprise-grade software solutions that scale with your ambitions. Trusted by Fortune 500 companies worldwide.",
+    subtext: "Enterprise-grade software solutions that scale with your ambitions. Trusted by Fortune 150+ companies worldwide.",
   },
   {
     heading: "Accelerate\nYour Digital\nTransformation",
@@ -26,11 +26,11 @@ const slides = [
   },
   {
     heading: "Innovation\nMeets\nExecution",
-    subtext: "Cutting-edge AI, Cloud, and DevOps expertise combined with 10+ years of enterprise delivery excellence.",
+    subtext: "Cutting-edge AI, Cloud, and DevOps expertise combined with 12+ years of enterprise delivery excellence.",
   },
   {
     heading: "Your Vision\nOur\nExpertise",
-    subtext: "Partner with a team that has successfully delivered 500+ projects across Healthcare, Finance, and Technology sectors.",
+    subtext: "Partner with a team that has successfully delivered 100+ projects across Healthcare, Finance, and Technology sectors.",
   },
 ];
 

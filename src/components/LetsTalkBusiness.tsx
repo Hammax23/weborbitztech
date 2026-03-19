@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 const regions = [
@@ -33,15 +34,10 @@ const jobOptions = [
 ];
 
 export default function LetsTalkBusiness() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  // Listen for custom event to open the panel
-  useEffect(() => {
-    const handleOpenPanel = () => setIsOpen(true);
-    window.addEventListener('openLetsTalkBusiness', handleOpenPanel);
-    return () => window.removeEventListener('openLetsTalkBusiness', handleOpenPanel);
-  }, []);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -54,6 +50,21 @@ export default function LetsTalkBusiness() {
     hearAbout: "",
   });
 
+  const isAdminPage = pathname?.startsWith('/admin');
+
+  // Listen for custom event to open the panel
+  useEffect(() => {
+    if (isAdminPage) return;
+    const handleOpenPanel = () => setIsOpen(true);
+    window.addEventListener('openLetsTalkBusiness', handleOpenPanel);
+    return () => window.removeEventListener('openLetsTalkBusiness', handleOpenPanel);
+  }, [isAdminPage]);
+
+  // Hide on admin pages
+  if (isAdminPage) {
+    return null;
+  }
+
   const handleServiceToggle = (service: string) => {
     setFormData((prev) => ({
       ...prev,
@@ -63,10 +74,57 @@ export default function LetsTalkBusiness() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setIsOpen(false);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: `${formData.phoneCode} ${formData.phoneNumber}`,
+          companyName: formData.companyName,
+          companyUrl: formData.companyUrl,
+          services: formData.services,
+          projectDetails: formData.projectDetails,
+          hearAbout: formData.hearAbout,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form after success
+        setFormData({
+          fullName: "",
+          email: "",
+          phoneCode: "+1",
+          phoneNumber: "",
+          companyName: "",
+          companyUrl: "",
+          services: [],
+          projectDetails: "",
+          hearAbout: "",
+        });
+        // Close panel after 3 seconds
+        setTimeout(() => {
+          setIsOpen(false);
+          setSubmitStatus('idle');
+        }, 3000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,6 +139,17 @@ export default function LetsTalkBusiness() {
           Let&apos;s Talk Business
         </span>
       </button>
+
+      {/* Floating Email Button */}
+      <a
+        href="mailto:info@weborbitztech.ca"
+        className="fixed right-4 bottom-6 z-50 bg-gradient-to-r from-[#0055FF] to-[#00E1FF] hover:from-[#0044DD] hover:to-[#00C8E8] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+        title="Email us at info@weborbitztech.ca"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </a>
 
       {/* Overlay */}
       <div
@@ -274,12 +343,62 @@ export default function LetsTalkBusiness() {
               </label>
             </div>
 
+            {/* Success Message */}
+            {submitStatus === 'success' && (
+              <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-green-800 font-semibold">Quote Submitted Successfully!</p>
+                  <p className="text-green-600 text-sm">Check your email for confirmation.</p>
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {submitStatus === 'error' && (
+              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-red-800 font-semibold">Something went wrong</p>
+                  <p className="text-red-600 text-sm">Please try again or email us directly.</p>
+                </div>
+              </div>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 bg-gradient-to-r from-[#00E1FF] via-[#0055FF] to-[#FF6B6B] hover:opacity-90 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
+              disabled={isSubmitting || submitStatus === 'success'}
+              className={`w-full py-4 bg-gradient-to-r from-[#00E1FF] via-[#0055FF] to-[#FF6B6B] text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 ${
+                isSubmitting || submitStatus === 'success' ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
+              }`}
             >
-              Submit
+              {isSubmitting ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Submitting...
+                </>
+              ) : submitStatus === 'success' ? (
+                <>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Submitted!
+                </>
+              ) : (
+                'Submit'
+              )}
             </button>
           </form>
         </div>
