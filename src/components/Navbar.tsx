@@ -326,16 +326,16 @@ export default function Navbar() {
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${mobileAccordion === 'industries' ? 'max-h-[500px] pb-4' : 'max-h-0'}`}>
                 <div className="pl-4 space-y-3">
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Healthcare</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Finance & Banking</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">E-commerce & Retail</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Education & E-learning</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Real Estate</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Logistics & Transportation</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Entertainment & Media</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Manufacturing</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Hospitality & Travel</Link>
-                  <Link href="#" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Telecommunications</Link>
+                  <Link href="/industries/healthcare" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Healthcare</Link>
+                  <Link href="/industries/finance-banking" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Finance & Banking</Link>
+                  <Link href="/industries/ecommerce-retail" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">E-commerce & Retail</Link>
+                  <Link href="/industries/education" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Education & E-learning</Link>
+                  <Link href="/industries/real-estate" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Real Estate</Link>
+                  <Link href="/industries/logistics" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Logistics & Transportation</Link>
+                  <Link href="/industries/entertainment" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Entertainment & Media</Link>
+                  <Link href="/industries/manufacturing" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Manufacturing</Link>
+                  <Link href="/industries/hospitality" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Hospitality & Travel</Link>
+                  <Link href="/industries/telecommunications" onClick={toggleMobileMenu} className="block text-white/70 text-sm hover:text-[#00B4FF] transition-colors">Telecommunications</Link>
                 </div>
               </div>
             </div>

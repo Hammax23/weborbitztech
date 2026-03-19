@@ -1,8 +1,30 @@
+# WebOrbitz - Canada's Premier Digital Agency
+# https://weborbitztech.ca
+
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /api/
 
 # Host
-Host: https://weborbitztech.vercel.app
+Host: https://weborbitztech.ca
 
 # Sitemaps
-Sitemap: https://weborbitztech.vercel.app/sitemap.xml
+Sitemap: https://weborbitztech.ca/sitemap.xml
