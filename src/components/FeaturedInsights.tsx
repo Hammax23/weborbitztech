@@ -3,63 +3,50 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { blogPosts } from "@/data/blogData";
 
-// Blog/Insights data
+// Featured Insights data - maps to actual blog posts
 const insights = [
   {
     id: 1,
-    category: "NEWSROOM",
+    slug: blogPosts[0]?.slug || "why-custom-software-beats-off-the-shelf",
+    category: blogPosts[0]?.category.toUpperCase() || "BUSINESS",
     categoryColor: "bg-teal-500",
-    title: "WebOrbitz acquires TechFusion to expand its global presence in North America and Europe",
-    image: "",
+    title: blogPosts[0]?.title || "Why Custom Software Development Beats Off-the-Shelf Solutions",
+    image: blogPosts[0]?.image || "",
     gradient: "bg-gradient-to-br from-[#1e3a5f] via-[#2d1b4e] to-[#1a1a2e]",
     hasOverlay: true,
     overlayType: "circles",
   },
   {
     id: 2,
-    category: "NEWSROOM",
-    categoryColor: "bg-teal-500",
-    title: "WebOrbitz achieves the 2025-2026 Microsoft AI Business Solutions Inner Circle award",
-    image: "",
+    slug: blogPosts[1]?.slug || "web-app-vs-mobile-app-which-to-build-first",
+    category: blogPosts[1]?.category.toUpperCase() || "DEVELOPMENT",
+    categoryColor: "bg-orange-500",
+    title: blogPosts[1]?.title || "Web App vs Mobile App: Which Should You Build First?",
+    image: blogPosts[1]?.image || "",
     gradient: "bg-gradient-to-br from-[#7b2d8e] via-[#9c27b0] to-[#e91e63]",
     hasOverlay: true,
     overlayType: "innerCircle",
   },
   {
     id: 3,
-    category: "NEWSROOM",
-    categoryColor: "bg-teal-500",
-    title: "WebOrbitz Recognized as Aspirant for Banking IT Services in Everest Group's PEAK Matrix Assessment",
-    image: "",
+    slug: blogPosts[2]?.slug || "how-to-choose-tech-stack-for-startup",
+    category: blogPosts[2]?.category.toUpperCase() || "TECHNOLOGY",
+    categoryColor: "bg-purple-500",
+    title: blogPosts[2]?.title || "How to Choose the Right Tech Stack for Your Startup",
+    image: blogPosts[2]?.image || "",
     gradient: "bg-gradient-to-br from-[#e91e63] via-[#ff5722] to-[#ff9800]",
     hasOverlay: true,
     overlayType: "abstract",
   },
   {
     id: 4,
-    category: "NEWSROOM",
+    slug: blogPosts[3]?.slug || "mvp-development-how-long-and-how-much",
+    category: blogPosts[3]?.category.toUpperCase() || "BUSINESS",
     categoryColor: "bg-teal-500",
-    title: "Bank ABC's ila Bank Goes Live with Temenos Core on AWS, Implemented by WebOrbitz",
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&h=800&fit=crop",
-    gradient: "",
-    hasOverlay: false,
-  },
-  {
-    id: 5,
-    category: "BLOG",
-    categoryColor: "bg-orange-500",
-    title: "Empowering the enterprise: AI enablement through enterprise architecture",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=800&fit=crop",
-    gradient: "",
-    hasOverlay: false,
-  },
-  {
-    id: 6,
-    category: "CASE STUDY",
-    categoryColor: "bg-purple-500",
-    title: "Enhancing enterprise mobility through customer-inclusive app",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=800&fit=crop",
+    title: blogPosts[3]?.title || "MVP Development: Realistic Timelines and Costs",
+    image: blogPosts[3]?.image || "https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&h=800&fit=crop",
     gradient: "",
     hasOverlay: false,
   },
@@ -128,7 +115,7 @@ export default function FeaturedInsights() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {insights.slice(0, 4).map((insight, index) => (
               <Link
-                href="#"
+                href={`/blog/${insight.slug}`}
                 key={insight.id}
                 className={`group relative overflow-hidden rounded-xl min-h-[160px] sm:min-h-[180px] md:min-h-[200px] transition-all duration-700 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
